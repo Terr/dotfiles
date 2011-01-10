@@ -35,6 +35,9 @@ set so=7
 " Faster saving
 nmap <Leader>w :w!<cr>
 
+" RabbitVCS
+nmap <Leader>vc :!rabbitvcs commit .<cr>
+
 " Commands
 command NTT :NERDTreeToggle 
 nnoremap <silent> <F8> :NERDTreeToggle<cr>
