@@ -140,3 +140,6 @@ colorscheme wombat-terr
 "autocmd VimEnter * :Project
 "autocmd VimEnter * set winfixwidth
 
+" Start with NERDTree opened
+autocmd VimEnter * exe 'NERDTree' | wincmd l
+autocmd BufEnter * NERDTreeMirror
