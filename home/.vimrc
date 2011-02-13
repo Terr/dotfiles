@@ -125,6 +125,28 @@ let g:SuperTabMappingBackward = '<s-c-space>'
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
+
+" MatchIt
+" Extra patterns for matching Django template elements
+if exists("loaded_matchit")
+    let b:match_ignorecase = 1
+    let b:match_skip = 's:Comment'
+    let b:match_words = '<:>,' .
+    \ '<\@<=[ou]l\>[^>]*\%(>\|$\):<\@<=li\>:<\@<=/[ou]l>,' .
+    \ '<\@<=dl\>[^>]*\%(>\|$\):<\@<=d[td]\>:<\@<=/dl>,' .
+    \ '<\@<=\([^/][^ \t>]*\)[^>]*\%(>\|$\):<\@<=/\1>,'  .
+    \ '{% *if .*%}:{% *else *%}:{% *endif *%},' .
+    \ '{% *ifequal .*%}:{% *else *%}:{% *endifequal *%},' .
+    \ '{% *ifnotequal .*%}:{% *else *%}:{% *endifnotequal *%},' .
+    \ '{% *ifchanged .*%}:{% *else *%}:{% *endifchanged *%},' .
+    \ '{% *for .*%}:{% *endfor *%},' .
+    \ '{% *with .*%}:{% *endwith *%},' .
+    \ '{% *comment .*%}:{% *endcomment *%},' .
+    \ '{% *block .*%}:{% *endblock *%},' .
+    \ '{% *filter .*%}:{% *endfilter *%},' .
+    \ '{% *spaceless .*%}:{% *endspaceless *%}'
+endif
+
 "Allow switching from an unsaved buffer to another
 set hidden
 
