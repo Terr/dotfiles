@@ -90,6 +90,12 @@ vmap <S-Insert>		<C-V>
 noremap <C-Q>		<C-V>
 " End of /usr/share/vim/vim72/mswin.vim
 
+" Omni completion
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
 " Remove trailing whitespace on save
 autocmd FileType c,cpp,java,php,python,javascript,html autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
