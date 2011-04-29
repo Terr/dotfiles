@@ -161,8 +161,21 @@ set hidden
 "colorscheme koehler
 "let g:zenburn_high_Contrast = 1
 "colorscheme zenburn
-colorscheme wombat-terr
+"colorscheme wombat-terr
 "colorscheme coderay
+
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+
+syntax enable
+colorscheme solarized
+
+nmap <unique> <F5> <Plug>ToggleBackground
+imap <unique> <F5> <Plug>ToggleBackground
+vmap <unique> <F5> <Plug>ToggleBackground
 
 " Startup
 "autocmd VimEnter * :Project
@@ -171,4 +184,4 @@ colorscheme wombat-terr
 " Start with NERDTree opened
 autocmd VimEnter * exe 'NERDTree' 
 "| wincmd l
-autocmd BufEnter * NERDTreeMirror
+"autocmd BufEnter * NERDTreeMirror
