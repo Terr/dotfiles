@@ -184,6 +184,6 @@ vmap <unique> <F5> <Plug>ToggleBackground
 "autocmd VimEnter * set winfixwidth
 
 " Start with NERDTree opened
-autocmd VimEnter * exe 'NERDTree' 
+"autocmd VimEnter * exe 'NERDTree' 
 "| wincmd l
 "autocmd BufEnter * NERDTreeMirror
