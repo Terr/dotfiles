@@ -84,3 +84,28 @@ snippet ifmain
 # __magic__
 snippet _
 	__${1:init}__${2}
+
+# Django snippets
+# Management command
+snippet management
+	from django.core.management.base import BaseCommand, CommandError
+
+	from optparse import make_option
+
+
+	class Command(BaseCommand):
+		args = ''
+		help = ''
+		option_list = BaseCommand.option_list + (
+			make_option(
+				'--arg',
+				action='store',
+				type='int',
+				dest='arg',
+				default=1,
+				help='Something (default: 1)'
+				),
+		)
+
+		def handle(self, *args, **options):
+			${1:pass}
