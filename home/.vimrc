@@ -25,6 +25,8 @@ set smartindent
 filetype plugin on
 filetype plugin indent on
 
+set wildignore+=*.o,*.obj,.git,*.pyc,*.pyo,*.jpg,*.jpeg,*.gif,*.png
+
 " Line numbers
 set number
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
