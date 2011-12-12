@@ -36,7 +36,7 @@ endfun
 fun! vam#install#RewriteName(name)
   if a:name[:6]==#'github:'
     let rest = a:name[len('github:'):]
-    return {'type' : 'git', 'url' : 'git://github.com/'.(rest =~ '/' ? rest : rest.'/vim-addon-'.rest)}
+    return {'type' : 'git', 'url' : 'https://github.com/'.(rest =~ '/' ? rest : rest.'/vim-addon-'.rest)}
   elseif a:name[:3]==#'git:'
     return {'type' : 'git', 'url' : a:name[len('git:'):]}
   endif

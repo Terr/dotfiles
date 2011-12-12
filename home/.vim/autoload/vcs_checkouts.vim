@@ -69,6 +69,9 @@ endf
 " repository = {'type': git|hg|svn|bzr, 'url': .. }
 fun! vcs_checkouts#Checkout(targetDir, repository)
   if a:repository.type =~ '^\%(git\|hg\|bzr\|svn\)$'
+    if a:repository.url[:3]==#'git:'
+      let a:repository.url = 'https:' . a:repository.url[len('git:'):]
+	endif
     let c = s:c[(a:repository.type) . '_checkout']
     call call(c.f, c.a + [a:repository, a:targetDir])
   else

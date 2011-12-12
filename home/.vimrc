@@ -187,3 +187,7 @@ vmap <unique> <F5> <Plug>ToggleBackground
 "autocmd VimEnter * exe 'NERDTree' 
 "| wincmd l
 "autocmd BufEnter * NERDTreeMirror
+
+" VAM (Vim Addon Manager) install list
+"call vam#ActivateAddons(["The_NERD_tree","snipmate-snippets"])
+call vam#ActivateAddons(["The_NERD_tree","github:garbas/vim-snipmate"])
