@@ -25,6 +25,8 @@ set smartindent
 filetype plugin on
 filetype plugin indent on
 
+set wildignore+=*.o,*.obj,.git,*.pyc,*.pyo,*.jpg,*.jpeg,*.gif,*.png
+
 " Line numbers
 set number
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
@@ -182,6 +184,10 @@ vmap <unique> <F5> <Plug>ToggleBackground
 "autocmd VimEnter * set winfixwidth
 
 " Start with NERDTree opened
-autocmd VimEnter * exe 'NERDTree' 
+"autocmd VimEnter * exe 'NERDTree' 
 "| wincmd l
 "autocmd BufEnter * NERDTreeMirror
+
+" VAM (Vim Addon Manager) install list
+"call vam#ActivateAddons(["The_NERD_tree","snipmate-snippets"])
+call vam#ActivateAddons(["The_NERD_tree","github:garbas/vim-snipmate"])
