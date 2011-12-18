@@ -1,7 +1,15 @@
+"Use Vim settings, rather then Vi settings (much better!).
+"This must be first, because it changes other options as a side effect.
+set nocompatible
+
 set cindent
 set smartindent
 set autoindent
 set textwidth=79
+
+" Pathogen
+call pathogen#infect()
+call pathogen#helptags()
 
 " Search
 set incsearch
@@ -15,6 +23,9 @@ set nobackup
 set nowb
 set noswapfile
 
+" Automaticaly reload files changed outside of vim
+"set autoread
+
 " Tab settings
 set tabstop=4
 set shiftwidth=4
@@ -23,22 +34,42 @@ set autoindent
 "set expandtab
 set smartindent
 filetype plugin on
-filetype plugin indent on
+filetype indent on
 
+" Ignore list for Command-T
+set wildmode=list:longest
+set wildmenu
 set wildignore+=*.o,*.obj,.git,*.pyc,*.pyo,*.jpg,*.jpeg,*.gif,*.png
 
+" Window settings
+set showcmd
+set showmode
 " Line numbers
 set number
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
+" Disable cursor blink
+set gcr=a:blinkon0
+
+set wrap " As opposed to nowrap
+set linebreak
+
 " Keep X lines above/below the cursor when scrolling
-set so=7
+set scrolloff=7
+set sidescrolloff=7
+set sidescroll=1
 
 " Faster saving
 nmap <Leader>w :w!<cr>
 
-" RabbitVCS
-nmap <Leader>vc :!rabbitvcs commit .<cr>
+" Prevent 'Press ENTER..' on error messages
+"set shortmess=atI
+
+" Save up to 100 marks and f1 means global marks (capital letters) are enabled
+set viminfo='100,f1
+" Do not automatically enable showmarks, as it interferes with some smaller buffer windows
+let g:showmarks_enable=0 
+let g:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.'`^<>[]{}()\""
 
 " Commands
 command NTT :NERDTreeToggle 
@@ -46,13 +77,13 @@ nnoremap <silent> <F8> :NERDTreeToggle<cr>
 nnoremap <S-F8> :3winc h\|vertical res -60<cr>
 
 " Window and buffer switching
-"map <silent> <C-Up> :winc k<cr>
-"map <silent> <C-Right> :winc l<cr>
-"map <silent> <C-Down> :winc j<cr>
-"map <silent> <C-Left> :winc h<cr>
+map <silent> <C-Up> :winc k<cr>
+map <silent> <C-Right> :winc l<cr>
+map <silent> <C-Down> :winc j<cr>
+map <silent> <C-Left> :winc h<cr>
 
-"map <silent> <A-Left> :bprev<cr>
-"map <silent> <A-Right> :bnext<cr>
+map <silent> <A-Left> :bprev<cr>
+map <silent> <A-Right> :bnext<cr>
 
 " Bubble single line
 nmap <C-S-Up> [e
@@ -98,6 +129,9 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
+autocmd FileType python set ft=python.django " For SnipMate
+autocmd FileType html set ft=htmldjango.html " For SnipMate
+
 " Remove trailing whitespace on save
 autocmd FileType c,cpp,java,php,python,javascript,html autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
@@ -118,15 +152,54 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
 
+" Syntastic
+let g:syntastic_mode_map = { 'mode': 'active',
+			\ 'active_filetypes': ['coffee', 'php', 'python', 'javascript'],
+			\ 'passive_filetypes': ['ruby'] }
+" Autocompletion
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_disable_auto_complete = 0
+"let g:neocomplcache_enable_cursor_hold_i = 1
+"let g:neocomplcache_enable_auto_select = 1
+"let g:neocomplcache_cursor_hold_i_time = 300
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+
+" Neocmplcache plugin key-mappings.
+imap  <silent><expr><TAB>  neocomplcache#sources#snippets_complete#expandable() ? "\<plug>(neocomplcache_snippets_expand)" : (pumvisible() ? "\<c-e>" : "\<tab>")
+smap  <TAB>  <right><plug>(neocomplcache_snippets_jump) 
+inoremap <expr><c-e>     neocomplcache#complete_common_string()
+inoremap <expr><C-y>  neocomplcache#close_popup()
+"imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+"smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+"inoremap <expr><C-g>     neocomplcache#undo_completion()
+"inoremap <expr><TAB>     neocomplcache#complete_common_string()
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+" <TAB>: completion.
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+"inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
 " Pydiction
-let g:pydiction_location = '~/.vim/after/ftplugin/pydiction/complete-dict'
+"let g:pydiction_location = '~/.vim/after/ftplugin/pydiction/complete-dict'
 
 " SuperTab
 "let g:SuperTabMappingForward = '<C-Space>'
-let SuperTabKey = '<c-space>'
-let g:SuperTabCrMapping = 0
-let g:SuperTabMappingForward = '<c-space>'
-let g:SuperTabMappingBackward = '<s-c-space>'
+"let SuperTabKey = '<c-space>'
+"let g:SuperTabCrMapping = 0
+"let g:SuperTabMappingForward = '<c-space>'
+"let g:SuperTabMappingBackward = '<s-c-space>'
 
 " MiniBufExpl
 "let g:miniBufExplMapWindowNavVim = 0
@@ -184,10 +257,7 @@ vmap <unique> <F5> <Plug>ToggleBackground
 "autocmd VimEnter * set winfixwidth
 
 " Start with NERDTree opened
-"autocmd VimEnter * exe 'NERDTree' 
-"| wincmd l
+"autocmd VimEnter * NERDTree
 "autocmd BufEnter * NERDTreeMirror
+autocmd VimEnter * wincmd w
 
-" VAM (Vim Addon Manager) install list
-"call vam#ActivateAddons(["The_NERD_tree","snipmate-snippets"])
-call vam#ActivateAddons(["The_NERD_tree","github:garbas/vim-snipmate"])
