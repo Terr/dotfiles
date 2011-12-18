@@ -1,0 +1,114 @@
+[submodule "home/.vim/bundle/AutoTag"]
+	path = home/.vim/bundle/AutoTag
+	url = https://github.com/vim-scripts/AutoTag.git
+[submodule "home/.vim/bundle/EasyMotion"]
+	path = home/.vim/bundle/EasyMotion
+	url = https://github.com/vim-scripts/EasyMotion.git
+[submodule "tomtom-tcomment_vim"]
+	path = home/.vim/bundle/tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim.git
+[submodule "scrooloose-nerdtree"]
+	path = home/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "jistr-vim-nerdtree-tabs"]
+	path = home/.vim/bundle/vim-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "vim-scripts-AutoTag"]
+	path = home/.vim/bundle/vim-scripts-AutoTag
+	url = https://github.com/vim-scripts/AutoTag.git
+[submodule "vim-scripts-IndexedSearch"]
+	path = home/.vim/bundle/IndexedSearch
+	url = https://github.com/vim-scripts/IndexedSearch.git
+[submodule "scrooloose-syntastic"]
+	path = home/.vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "sjbach-lusty"]
+	path = home/.vim/bundle/lusty
+	url = https://github.com/sjbach/lusty.git
+[submodule "tjennings-git-grep-vim"]
+	path = home/.vim/bundle/git-grep-vim
+	url = https://github.com/tjennings/git-grep-vim
+[submodule "skwp-greplace"]
+	path = home/.vim/bundle/skwp-greplace
+	url = https://github.com/skwp/greplace.vim
+[submodule "vim-repeat"]
+	path = home/.vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "vim-scripts-taglist"]
+	path = home/.vim/bundle/taglist.vim
+	url = https://github.com/vim-scripts/taglist.vim.git
+[submodule "vim-surround"]
+	path = home/.vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim-scripts-matchit.zip"]
+	path = home/.vim/bundle/matchit.zip
+	url = https://github.com/vim-scripts/matchit.zip.git
+[submodule "Shougo-neocomplcache"]
+	path = home/.vim/bundle/neocomplcache
+	url = https://github.com/Shougo/neocomplcache.git
+[submodule "skwp-vim-colors-solarized"]
+	path = home/.vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git 
+[submodule "vim-pathogen"]
+	path = home/.vim/bundle/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen
+[submodule "vim-fugitive"]
+	path = home/.vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "mikefarmer-snipmate"]
+	path = home/.vim/bundle/snipmate.vim
+	url = https://github.com/mikefarmer/snipmate.vim.git
+[submodule "home/.vim/snippets"]
+	path = home/.vim/snippets
+	url = https://github.com/scrooloose/snipmate-snippets.git
+[submodule "wincent-Command-T"]
+	path = home/.vim/bundle/wincent-Command-T
+	url = https://github.com/wincent/Command-T
+[submodule "vim-unimpaired"]
+	path = home/.vim/bundle/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired
+[submodule "vim-git"]
+	path = home/.vim/bundle/vim-git
+	url = https://github.com/tpope/vim-git
+[submodule "vim-scripts-lastpos"]
+	path = home/.vim/bundle/vim-scripts-lastpos
+	url = https://github.com/vim-scripts/lastpos.vim
+[submodule "sjl-gundo"]
+	path = home/.vim/bundle/gundo.vim
+	url = https://github.com/sjl/gundo.vim
+[submodule "mileszs-ack"]
+	path = home/.vim/bundle/mileszs-ack
+	url = https://github.com/mileszs/ack.vim
+[submodule "kogakure-vim-sparkup"]
+	path = home/.vim/bundle/kogakure-vim-sparkup
+	url = https://github.com/kogakure/vim-sparkup.git
+[submodule "mattn-zencoding-vim"]
+	path = home/.vim/bundle/zencoding-vim
+	url = https://github.com/mattn/zencoding-vim
+[submodule "austintaylor-vim-indentobject"]
+	path = home/.vim/bundle/vim-indentobject
+	url = https://github.com/austintaylor/vim-indentobject
+[submodule "vim-scripts-ZoomWin"]
+	path = home/.vim/bundle/vim-scripts-ZoomWin
+	url = https://github.com/vim-scripts/ZoomWin.git
+[submodule "dterei-VimBookmarking"]
+	path = home/.vim/bundle/VimBookmarking
+	url = https://github.com/dterei/VimBookmarking
+[submodule "chrismetcalf-vim-yankring"]
+	path = home/.vim/bundle/chrismetcalf-vim-yankring
+	url = https://github.com/chrismetcalf/vim-yankring.git
+[submodule "home/.vim/bundle/minibufexpl.vim"]
+	path = home/.vim/bundle/minibufexpl.vim
+	url = https://github.com/fholgado/minibufexpl.vim.git
+[submodule "home/.vim/bundle/mru.vim"]
+	path = home/.vim/bundle/mru.vim
+	url = https://github.com/vim-scripts/mru.vim.git
+[submodule "home/.vim/bundle/vim-showmarks"]
+	path = home/.vim/bundle/vim-showmarks
+	url = https://github.com/garbas/vim-showmarks
+[submodule "home/.vim/bundle/delimitMate"]
+	path = home/.vim/bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
+[submodule "home/.vim/bundle/vim-markdown-preview"]
+	path = home/.vim/bundle/vim-markdown-preview
+	url = https://github.com/nelstrom/vim-markdown-preview
