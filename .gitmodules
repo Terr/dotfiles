@@ -112,3 +112,6 @@
 [submodule "home/.vim/bundle/vim-markdown-preview"]
 	path = home/.vim/bundle/vim-markdown-preview
 	url = https://github.com/nelstrom/vim-markdown-preview
+[submodule "home/.vim/bundle/ctrlp.vim"]
+	path = home/.vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git

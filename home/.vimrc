@@ -39,7 +39,8 @@ filetype indent on
 " Ignore list for Command-T
 set wildmode=list:longest
 set wildmenu
-set wildignore+=*.o,*.obj,.git,*.pyc,*.pyo,*.jpg,*.jpeg,*.gif,*.png
+set wildignore+=*.o,*.obj,*/.git/*,*.pyc,*.pyo,*.jpg,*.jpeg,*.gif,*.png,*/.svn/*,*/.hg/*
+set wildignore+=*/.cache/*
 
 " Window settings
 set showcmd
@@ -151,6 +152,14 @@ let Tlist_Compact_Format = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_File_Fold_Auto_Close = 1
+
+" ctrlp
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_lazy_update = 0
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_max_height = 20
 
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
