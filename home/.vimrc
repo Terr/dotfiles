@@ -219,6 +219,7 @@ inoremap <expr><C-y>  neocomplcache#close_popup()
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
+let g:miniBufExplCheckDupeBufs = 0
 
 " MatchIt
 " Extra patterns for matching Django template elements
