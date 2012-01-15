@@ -7,6 +7,10 @@ set smartindent
 set autoindent
 set textwidth=79
 
+if has('gui_running')
+  set guifont=DejaVu\ Sans\ Mono\ 10
+endif
+
 " Pathogen
 call pathogen#infect()
 call pathogen#helptags()
