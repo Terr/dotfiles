@@ -169,6 +169,12 @@ let g:ctrlp_max_height = 20
 let g:syntastic_mode_map = { 'mode': 'active',
 			\ 'active_filetypes': ['coffee', 'php', 'python', 'javascript'],
 			\ 'passive_filetypes': ['ruby'] }
+
+" YankRing
+nnoremap <silent> <F11> :YRShow<CR>
+let g:yankring_replace_n_nkey = '}'
+let g:yankring_replace_n_pkey = '{'
+
 " Autocompletion
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -264,11 +270,12 @@ endif
 syntax enable
 colorscheme solarized
 
-nmap <unique> <F5> <Plug>ToggleBackground
-imap <unique> <F5> <Plug>ToggleBackground
-vmap <unique> <F5> <Plug>ToggleBackground
+"nmap <unique> <F5> <Plug>ToggleBackground
+"imap <unique> <F5> <Plug>ToggleBackground
+"vmap <unique> <F5> <Plug>ToggleBackground
 
 " Startup
+
 "autocmd VimEnter * :Project
 "autocmd VimEnter * set winfixwidth
 
@@ -276,4 +283,3 @@ vmap <unique> <F5> <Plug>ToggleBackground
 "autocmd VimEnter * NERDTree
 "autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * wincmd w
-

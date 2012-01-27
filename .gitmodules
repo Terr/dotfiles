@@ -115,3 +115,6 @@
 [submodule "home/.vim/bundle/ctrlp.vim"]
 	path = home/.vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "home/.vim/bundle/vim-yankring"]
+	path = home/.vim/bundle/vim-yankring
+	url = https://github.com/vim-scripts/YankRing.vim.git
