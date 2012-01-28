@@ -172,7 +172,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
 " Autocompletion
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_at_startup = 0
 let g:neocomplcache_disable_auto_complete = 0
 "let g:neocomplcache_enable_cursor_hold_i = 1
 "let g:neocomplcache_enable_auto_select = 1
