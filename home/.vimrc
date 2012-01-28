@@ -43,7 +43,8 @@ filetype indent on
 " Ignore list for Command-T
 set wildmode=list:longest
 set wildmenu
-set wildignore+=*.o,*.obj,*/.git/*,*.pyc,*.pyo,*.jpg,*.jpeg,*.gif,*.png,*/.svn/*,*/.hg/*
+"set wildignore+=*.o,*.obj,*/.git/*,*.pyc,*.pyo,*.jpg,*.jpeg,*.gif,*.png,*/.svn/*,*/.hg/*
+set wildignore+=*.o,*.obj,*.pyc,*.pyo,*.jpg,*.jpeg,*.gif,*.png,*/.svn/*,*/.hg/*
 set wildignore+=*/.cache/*
 
 " Window settings
@@ -169,6 +170,12 @@ let g:ctrlp_max_height = 20
 let g:syntastic_mode_map = { 'mode': 'active',
 			\ 'active_filetypes': ['coffee', 'php', 'python', 'javascript'],
 			\ 'passive_filetypes': ['ruby'] }
+
+" YankRing
+nnoremap <silent> <F11> :YRShow<CR>
+let g:yankring_replace_n_nkey = '}'
+let g:yankring_replace_n_pkey = '{'
+
 " Autocompletion
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -219,6 +226,8 @@ inoremap <expr><C-y>  neocomplcache#close_popup()
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
+" This is a fix for sluggishness when having > ~7 buffers open
+" See https://github.com/fholgado/minibufexpl.vim/issues/6 
 let g:miniBufExplCheckDupeBufs = 0
 
 " MatchIt
@@ -262,11 +271,12 @@ endif
 syntax enable
 colorscheme solarized
 
-nmap <unique> <F5> <Plug>ToggleBackground
-imap <unique> <F5> <Plug>ToggleBackground
-vmap <unique> <F5> <Plug>ToggleBackground
+"nmap <unique> <F5> <Plug>ToggleBackground
+"imap <unique> <F5> <Plug>ToggleBackground
+"vmap <unique> <F5> <Plug>ToggleBackground
 
 " Startup
+
 "autocmd VimEnter * :Project
 "autocmd VimEnter * set winfixwidth
 
@@ -274,4 +284,3 @@ vmap <unique> <F5> <Plug>ToggleBackground
 "autocmd VimEnter * NERDTree
 "autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * wincmd w
-
