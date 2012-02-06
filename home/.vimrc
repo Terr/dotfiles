@@ -176,6 +176,14 @@ nnoremap <silent> <F11> :YRShow<CR>
 let g:yankring_replace_n_nkey = '}'
 let g:yankring_replace_n_pkey = '{'
 
+" Fugitive
+autocmd User fugitive
+  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+  \   nnoremap <buffer> .. :edit %:h<CR> |
+  \ endif
+autocmd BufReadPost fugitive://* set bufhidden=delete
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P " Shows branch name
+
 " Autocompletion
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -192,11 +200,11 @@ let g:neocomplcache_enable_camel_case_completion = 1
 imap  <silent><expr><TAB>  neocomplcache#sources#snippets_complete#expandable() ? "\<plug>(neocomplcache_snippets_expand)" : (pumvisible() ? "\<c-e>" : "\<tab>")
 smap  <TAB>  <right><plug>(neocomplcache_snippets_jump) 
 inoremap <expr><c-e>     neocomplcache#complete_common_string()
-inoremap <expr><C-y>  neocomplcache#close_popup()
-"imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-"smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-"inoremap <expr><C-g>     neocomplcache#undo_completion()
-"inoremap <expr><TAB>     neocomplcache#complete_common_string()
+noremap <expr><C-y>  neocomplcache#close_popup()
+imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><TAB>     neocomplcache#complete_common_string()
 
 " SuperTab like snippets behavior.
 "imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
