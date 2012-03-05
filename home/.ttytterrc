@@ -8,4 +8,5 @@ verify=1
 readline=1
 # Check for mentions from people I don't follow
 mentions=1
-
+# Enable SSL
+ssl=1
