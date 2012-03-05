@@ -1,0 +1,11 @@
+# Check version
+vcheck=1
+# Colo(u)rs
+ansi=1
+# Prompt before a tweet post, just in case
+verify=1
+# Use some readline magic
+readline=1
+# Check for mentions from people I don't follow
+mentions=1
+
