@@ -184,6 +184,9 @@ autocmd User fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P " Shows branch name
 
+" Vim CSS colors
+autocmd! FileType sass,scss,stylus syn cluster sassCssAttributes add=@cssColors
+
 " Autocompletion
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
