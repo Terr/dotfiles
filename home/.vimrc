@@ -6,6 +6,7 @@ set cindent
 set smartindent
 set autoindent
 set textwidth=79
+set t_Co=256
 
 if has('gui_running')
   set guifont=DejaVu\ Sans\ Mono\ 10
@@ -77,6 +78,19 @@ set viminfo='100,f1
 let g:showmarks_enable=0 
 let g:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.'`^<>[]{}()\""
 
+if ! has('gui_running')
+	" Map 'Home' and 'End' keys to expected actions
+	" For some reason home and end keys are not mapping properly.
+	" Home key
+	imap <esc>OH <esc>0i
+	cmap <esc>OH <home>
+	nmap <esc>OH 0
+	" End key
+	nmap <esc>OF $
+	imap <esc>OF <esc>$a
+	cmap <esc>OF <end>
+endif
+
 " Commands
 command NTT :NERDTreeToggle 
 nnoremap <silent> <F8> :NERDTreeToggle<cr>
@@ -101,6 +115,7 @@ vmap <C-S-Down> ]egv
 " From /usr/share/vim/vim72/mswin.vim
 " CTRL-X and SHIFT-Del are Cut
 vnoremap <C-X> "+x
+vnoremap <S-Del> "+x
 vnoremap <S-Del> "+x
 
 " CTRL-C and CTRL-Insert are Copy
@@ -273,13 +288,15 @@ set hidden
 "colorscheme wombat-terr
 "colorscheme coderay
 
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
+"if has('gui_running')
+"    set background=light
+"else
+"    set background=dark
+"endif
+set background=light
 
 syntax enable
+let g:solarized_termcolors=256
 colorscheme solarized
 
 "nmap <unique> <F5> <Plug>ToggleBackground
