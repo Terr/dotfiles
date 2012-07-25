@@ -247,15 +247,6 @@ inoremap <expr><TAB>     neocomplcache#complete_common_string()
 "let g:SuperTabMappingForward = '<c-space>'
 "let g:SuperTabMappingBackward = '<s-c-space>'
 
-" MiniBufExpl
-"let g:miniBufExplMapWindowNavVim = 0
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-" This is a fix for sluggishness when having > ~7 buffers open
-" See https://github.com/fholgado/minibufexpl.vim/issues/6 
-let g:miniBufExplCheckDupeBufs = 0
-
 " MatchIt
 " Extra patterns for matching Django template elements
 if exists("loaded_matchit")
