@@ -121,3 +121,6 @@
 [submodule "home/.vim/bundle/vim-css-color"]
 	path = home/.vim/bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
+[submodule "home/.vim/bundle/sudo.vim"]
+	path = home/.vim/bundle/sudo.vim
+	url = https://github.com/vim-scripts/sudo.vim.git
