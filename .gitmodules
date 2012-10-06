@@ -102,7 +102,8 @@
 	url = https://github.com/vim-scripts/mru.vim.git
 [submodule "home/.vim/bundle/vim-showmarks"]
 	path = home/.vim/bundle/vim-showmarks
-	url = https://github.com/garbas/vim-showmarks
+	#url = https://github.com/garbas/vim-showmarks
+	url = https://github.com/jacquesbh/vim-showmarks.git
 [submodule "home/.vim/bundle/delimitMate"]
 	path = home/.vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
@@ -124,3 +125,9 @@
 [submodule "home/.vim/bundle/sudo.vim"]
 	path = home/.vim/bundle/sudo.vim
 	url = https://github.com/vim-scripts/sudo.vim.git
+[submodule "home/.vim/bundle/vim-taglist-plus"]
+	path = home/.vim/bundle/vim-taglist-plus
+	url = https://github.com/klen/vim-taglist-plus.git
+[submodule "home/.vim/bundle/vim-powerline"]
+	path = home/.vim/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git

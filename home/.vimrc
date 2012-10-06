@@ -9,8 +9,13 @@ set textwidth=79
 set t_Co=256
 
 if has('gui_running')
-  set guifont=DejaVu\ Sans\ Mono\ 10
+  "set guifont=DejaVu\ Sans\ Mono\ 10
+  " Patched font for vim-powerline
+  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
 endif
+
+" vim-powerline
+let g:Powerline_symbols = 'fancy'
 
 " Pathogen
 call pathogen#infect()

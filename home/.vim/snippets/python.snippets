@@ -1,0 +1,13 @@
+# Shell script with initialized Django
+snippet djangoscript
+	import os
+	import sys
+	sys.path.insert(0, os.path.realpath('..'))
+
+	from django.core.management import setup_environ
+
+	import settings
+
+	setup_environ(settings)
+
+	
