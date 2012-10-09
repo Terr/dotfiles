@@ -52,7 +52,7 @@ source /etc/bash_completion.d/virtualenvwrapper
 # Aliases
 alias tmux="TERM=xterm-256color tmux -2"
 alias -g L="| less"
-alias -g G="| grep -"
+alias -g G="| grep"
 
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
