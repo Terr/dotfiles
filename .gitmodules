@@ -103,7 +103,8 @@
 [submodule "home/.vim/bundle/vim-showmarks"]
 	path = home/.vim/bundle/vim-showmarks
 	#url = https://github.com/garbas/vim-showmarks
-	url = https://github.com/jacquesbh/vim-showmarks.git
+	#url = https://github.com/jacquesbh/vim-showmarks.git
+	url = https://github.com/zakj/vim-showmarks.git
 [submodule "home/.vim/bundle/delimitMate"]
 	path = home/.vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
