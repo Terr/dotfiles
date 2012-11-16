@@ -192,6 +192,34 @@ let g:syntastic_mode_map = { 'mode': 'active',
 			\ 'active_filetypes': ['coffee', 'php', 'python', 'javascript'],
 			\ 'passive_filetypes': ['ruby'] }
 
+" python-mode settings
+" Load show documentation plugin
+let g:pymode_doc = 1
+" Load pylint code plugin
+let g:pymode_lint = 1
+" Auto fix vim python paths if virtualenv enabled
+let g:pymode_virtualenv = 1
+" Enable python objects and motion
+let g:pymode_motion = 1
+" Enable rope plugin
+let g:pymode_rope = 1
+" Disable python folding
+let g:pymode_folding = 0
+" Disable custom syntax highlighting
+let g:pymode_syntax = 0
+
+" Skip errors and warnings
+" Mostly cosmetic stuff like redundant backslashes or over-identation when
+" breaking up lines
+let g:pymode_lint_ignore = "E126,E127,E128,E302,E501,E502"
+" Do not automatically open quickfix window
+let g:pymode_lint_cwindow = 0
+
+" Key for show python documentation
+let g:pymode_doc_key = 'K'
+" Rope bindings
+let g:pymode_rope_local_prefix = '<C-x>r'
+
 " YankRing
 nnoremap <silent> <F11> :YRShow<CR>
 let g:yankring_replace_n_nkey = '}'
