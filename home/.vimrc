@@ -2,11 +2,22 @@
 "This must be first, because it changes other options as a side effect.
 set nocompatible
 
+filetype plugin on
+filetype indent on
+
 set cindent
 set smartindent
 set autoindent
 set textwidth=79
 set t_Co=256
+
+" Tab settings
+set tabstop=4
+set shiftwidth=4
+"set softtabstop=4
+
+" Enable line breaks/wrapping in Python files
+autocmd FileType python setlocal formatoptions+=t
 
 if has('gui_running')
   "set guifont=DejaVu\ Sans\ Mono\ 10
@@ -35,16 +46,6 @@ set noswapfile
 
 " Automaticaly reload files changed outside of vim
 "set autoread
-
-" Tab settings
-set tabstop=4
-set shiftwidth=4
-"set softtabstop=4
-set autoindent
-"set expandtab
-set smartindent
-filetype plugin on
-filetype indent on
 
 " Ignore list for Command-T
 set wildmode=list:longest
