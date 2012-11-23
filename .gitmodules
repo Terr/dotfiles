@@ -22,9 +22,6 @@
 [submodule "scrooloose-syntastic"]
 	path = home/.vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "sjbach-lusty"]
-	path = home/.vim/bundle/lusty
-	url = https://github.com/sjbach/lusty.git
 [submodule "tjennings-git-grep-vim"]
 	path = home/.vim/bundle/git-grep-vim
 	url = https://github.com/tjennings/git-grep-vim
