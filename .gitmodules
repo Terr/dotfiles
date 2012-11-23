@@ -128,3 +128,6 @@
 [submodule "home/.vim/bundle/python-mode"]
 	path = home/.vim/bundle/python-mode
 	url = https://github.com/klen/python-mode.git
+[submodule "home/.vim/bundle/tasklist"]
+	path = home/.vim/bundle/tasklist
+	url = https://github.com/vim-scripts/TaskList.vim.git
