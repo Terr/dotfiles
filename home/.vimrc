@@ -220,6 +220,9 @@ let g:pymode_doc_key = 'K'
 " Rope bindings
 let g:pymode_rope_local_prefix = '<C-x>r'
 
+" Jedi
+let g:jedi#popup_on_dot = 0
+
 " YankRing
 nnoremap <silent> <F11> :YRShow<CR>
 let g:yankring_replace_n_nkey = '}'
