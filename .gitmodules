@@ -22,9 +22,6 @@
 [submodule "scrooloose-syntastic"]
 	path = home/.vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "sjbach-lusty"]
-	path = home/.vim/bundle/lusty
-	url = https://github.com/sjbach/lusty.git
 [submodule "tjennings-git-grep-vim"]
 	path = home/.vim/bundle/git-grep-vim
 	url = https://github.com/tjennings/git-grep-vim
@@ -131,3 +128,12 @@
 [submodule "home/.vim/bundle/vim-powerline"]
 	path = home/.vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "home/.vim/bundle/python-mode"]
+	path = home/.vim/bundle/python-mode
+	url = https://github.com/klen/python-mode.git
+[submodule "home/.vim/bundle/tasklist"]
+	path = home/.vim/bundle/tasklist
+	url = https://github.com/vim-scripts/TaskList.vim.git
+[submodule "home/.vim/bundle/jedi-vim"]
+	path = home/.vim/bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
