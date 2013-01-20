@@ -121,6 +121,8 @@ map <silent> <C-Left> :winc h<cr>
 
 map <silent> <A-Left> :bprev<cr>
 map <silent> <A-Right> :bnext<cr>
+map <silent> <A-h> :bprev<cr>
+map <silent> <A-l> :bnext<cr>
 
 " Bubble single line
 nmap <C-S-Up> [e
