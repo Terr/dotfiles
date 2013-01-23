@@ -2,11 +2,33 @@
 "This must be first, because it changes other options as a side effect.
 set nocompatible
 
+filetype plugin on
+filetype indent on
+
 set cindent
 set smartindent
 set autoindent
 set textwidth=79
 set t_Co=256
+
+" Map escape sequences as if they're alt/meta key presses (which they probably
+" are). See http://stackoverflow.com/a/10216459/390441 for details.
+let c='a'
+while c <= 'z'
+	exec "set <A-".c.">=\e".c
+	exec "imap \e".c." <A-".c.">"
+	let c = nr2char(1+char2nr(c))
+endw
+
+set timeout ttimeoutlen=50
+
+" Tab settings
+set tabstop=4
+set shiftwidth=4
+"set softtabstop=4
+
+" Enable line breaks/wrapping in Python files
+autocmd FileType python setlocal formatoptions+=t
 
 if has('gui_running')
   "set guifont=DejaVu\ Sans\ Mono\ 10
@@ -35,16 +57,6 @@ set noswapfile
 
 " Automaticaly reload files changed outside of vim
 "set autoread
-
-" Tab settings
-set tabstop=4
-set shiftwidth=4
-"set softtabstop=4
-set autoindent
-"set expandtab
-set smartindent
-filetype plugin on
-filetype indent on
 
 " Ignore list for Command-T
 set wildmode=list:longest
@@ -109,6 +121,8 @@ map <silent> <C-Left> :winc h<cr>
 
 map <silent> <A-Left> :bprev<cr>
 map <silent> <A-Right> :bnext<cr>
+map <silent> <A-h> :bprev<cr>
+map <silent> <A-l> :bnext<cr>
 
 " Bubble single line
 nmap <C-S-Up> [e
@@ -191,6 +205,45 @@ let g:syntastic_mode_map = { 'mode': 'active',
 			\ 'active_filetypes': ['coffee', 'php', 'python', 'javascript'],
 			\ 'passive_filetypes': ['ruby'] }
 
+" python-mode settings
+" 'Show documentation' plugin
+let g:pymode_doc = 0
+" Load pylint code plugin
+let g:pymode_lint = 1
+" Auto fix vim python paths if virtualenv enabled
+let g:pymode_virtualenv = 1
+" Enable python objects and motion
+let g:pymode_motion = 1
+" Disable python folding
+let g:pymode_folding = 0
+" Disable custom syntax highlighting
+let g:pymode_syntax = 0
+
+" Skip errors and warnings
+" Mostly cosmetic stuff like redundant backslashes or over-identation when
+" breaking up lines
+let g:pymode_lint_ignore = "E126,E127,E128,E302,E501,E502"
+" Do not automatically open quickfix window
+let g:pymode_lint_cwindow = 0
+
+" Key for show python documentation
+" let g:pymode_doc_key = 'K'
+"
+" pymode: rope settings
+let g:pymode_rope = 0
+let g:pymode_rope_extended_complete = 1
+let g:pymode_rope_autoimport_modules = ["os","shutil","datetime","django.*"]
+let g:pymode_rope_goto_def_newwin = 1
+" Rope keybindings
+let g:pymode_rope_global_prefix = '<C-x>p'
+let g:pymode_rope_local_prefix = '<C-x>r'
+noremap <C-x>g :call RopeGotoDefinition()<CR>
+noremap <C-x>r :call RopeRename()<CR>
+imap <c-space> <C-R>=RopeCodeAssistInsertMode()<CR>
+
+" Jedi
+let g:jedi#popup_on_dot = 0
+
 " YankRing
 nnoremap <silent> <F11> :YRShow<CR>
 let g:yankring_replace_n_nkey = '}'
@@ -251,15 +304,6 @@ inoremap <expr><TAB>     neocomplcache#complete_common_string()
 "let g:SuperTabCrMapping = 0
 "let g:SuperTabMappingForward = '<c-space>'
 "let g:SuperTabMappingBackward = '<s-c-space>'
-
-" MiniBufExpl
-"let g:miniBufExplMapWindowNavVim = 0
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
-" This is a fix for sluggishness when having > ~7 buffers open
-" See https://github.com/fholgado/minibufexpl.vim/issues/6 
-let g:miniBufExplCheckDupeBufs = 0
 
 " MatchIt
 " Extra patterns for matching Django template elements
