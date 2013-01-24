@@ -11,17 +11,6 @@ set autoindent
 set textwidth=79
 set t_Co=256
 
-" Map escape sequences as if they're alt/meta key presses (which they probably
-" are). See http://stackoverflow.com/a/10216459/390441 for details.
-let c='a'
-while c <= 'z'
-	exec "set <A-".c.">=\e".c
-	exec "imap \e".c." <A-".c.">"
-	let c = nr2char(1+char2nr(c))
-endw
-
-set timeout ttimeoutlen=50
-
 " Tab settings
 set tabstop=4
 set shiftwidth=4
