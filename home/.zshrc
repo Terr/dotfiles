@@ -9,7 +9,7 @@ export TERM=screen-256color
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="terr"
+ZSH_THEME="norm"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -57,9 +57,10 @@ export PROJECT_HOME=/var/work/code/
 source /etc/bash_completion.d/virtualenvwrapper
 
 # Aliases
-alias tmux="TERM=xterm-256color tmux -2"
+alias tmux="TERM=xterm-256color tmux -2"  # Start tmux in 256 color mode
 alias -g L="| less"
 alias -g G="| grep"
+alias git-root='cd $(git rev-parse --show-cdup)'  # cd to root of current git repository
 
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
