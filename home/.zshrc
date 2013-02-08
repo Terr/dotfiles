@@ -30,16 +30,20 @@ ZSH_THEME="norm"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
-export EDITOR=vim
-export SHELL=zsh
-export LESS=-FRX
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+#
+# Override / set custom environment variables from here
+#
+
+export EDITOR=vim
+export SHELL=zsh
+export LESS=-FRX
 
 # Customize to your needs...
 export PATH=/home/terr/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/mysql/bin:/var/work/Applications/mongodb-linux-x86_64-2.0.1/bin/:/var/work/Applications/redis-2.4.2/src/
