@@ -320,26 +320,12 @@ set hidden
 
 " Color scheme & syntax highlighting
 :syntax on
-"colorscheme koehler
-"let g:zenburn_high_Contrast = 1
-"colorscheme zenburn
-"colorscheme wombat-terr
-"colorscheme coderay
 
-"if has('gui_running')
-"    set background=light
-"else
-"    set background=dark
-"endif
 set background=light
 
 syntax enable
 let g:solarized_termcolors=256
 colorscheme solarized
-
-"nmap <unique> <F5> <Plug>ToggleBackground
-"imap <unique> <F5> <Plug>ToggleBackground
-"vmap <unique> <F5> <Plug>ToggleBackground
 
 " Startup
 
