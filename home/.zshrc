@@ -46,7 +46,7 @@ export SHELL=zsh
 export LESS=-FRX
 
 # Customize to your needs...
-export PATH=/home/terr/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/mysql/bin:/var/work/Applications/mongodb-linux-x86_64-2.0.1/bin/:/var/work/Applications/redis-2.4.2/src/
+export PATH=/home/terr/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/mysql/bin:/var/work/Applications/mongodb-linux-x86_64-2.0.1/bin/
 
 # Enable shared history
 # Appends every command to the history file once it is executed
