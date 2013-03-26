@@ -43,7 +43,11 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR=vim
 export SHELL=zsh
+# Settings for less: quit if only 1 page of text, output color control
+# characters in raw format and do not clear screen when starting/quitting less
 export LESS=-FRX
+# Tell ack to display colored, paged results
+export ACK_PAGER_COLOR="${PAGER:-less}"
 
 # Customize to your needs...
 export PATH=/home/terr/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/mysql/bin:/var/work/Applications/mongodb-linux-x86_64-2.0.1/bin/
