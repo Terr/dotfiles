@@ -4,9 +4,6 @@
 [submodule "home/.vim/bundle/EasyMotion"]
 	path = home/.vim/bundle/EasyMotion
 	url = https://github.com/vim-scripts/EasyMotion.git
-[submodule "tomtom-tcomment_vim"]
-	path = home/.vim/bundle/tcomment_vim
-	url = https://github.com/tomtom/tcomment_vim.git
 [submodule "scrooloose-nerdtree"]
 	path = home/.vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -129,3 +126,15 @@
 [submodule "home/.vim/bundle/vim-powerline"]
 	path = home/.vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "home/.vim/bundle/python-mode"]
+	path = home/.vim/bundle/python-mode
+	url = https://github.com/klen/python-mode.git
+[submodule "home/.vim/bundle/tasklist"]
+	path = home/.vim/bundle/tasklist
+	url = https://github.com/vim-scripts/TaskList.vim.git
+[submodule "home/.vim/bundle/jedi-vim"]
+	path = home/.vim/bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "home/.vim/bundle/closetag.vim"]
+	path = home/.vim/bundle/closetag.vim
+	url = https://github.com/vim-scripts/closetag.vim.git

@@ -9,7 +9,7 @@ export TERM=screen-256color
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="terr"
+ZSH_THEME="norm"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -30,19 +30,27 @@ ZSH_THEME="terr"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
-export EDITOR=vim
-export SHELL=zsh
-export LESS=-FRX
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git mercurial django svn)
 
 source $ZSH/oh-my-zsh.sh
 
+#
+# Override / set custom environment variables from here
+#
+
+export EDITOR=vim
+export SHELL=zsh
+# Settings for less: quit if only 1 page of text, output color control
+# characters in raw format and do not clear screen when starting/quitting less
+export LESS=-FRX
+# Tell ack to display colored, paged results
+export ACK_PAGER_COLOR="${PAGER:-less}"
+
 # Customize to your needs...
-export PATH=/home/terr/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/mysql/bin:/var/work/Applications/mongodb-linux-x86_64-2.0.1/bin/:/var/work/Applications/redis-2.4.2/src/
+export PATH=/home/terr/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/mysql/bin:/var/work/Applications/mongodb-linux-x86_64-2.0.1/bin/
 
 # Enable shared history
 # Appends every command to the history file once it is executed
@@ -57,9 +65,10 @@ export PROJECT_HOME=/var/work/code/
 source /etc/bash_completion.d/virtualenvwrapper
 
 # Aliases
-alias tmux="TERM=xterm-256color tmux -2"
+alias tmux="TERM=xterm-256color tmux -2"  # Start tmux in 256 color mode
 alias -g L="| less"
 alias -g G="| grep"
+alias git-root='cd $(git rev-parse --show-cdup)'  # cd to root of current git repository
 
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator

@@ -11,17 +11,6 @@ set autoindent
 set textwidth=79
 set t_Co=256
 
-" Map escape sequences as if they're alt/meta key presses (which they probably
-" are). See http://stackoverflow.com/a/10216459/390441 for details.
-let c='a'
-while c <= 'z'
-	exec "set <A-".c.">=\e".c
-	exec "imap \e".c." <A-".c.">"
-	let c = nr2char(1+char2nr(c))
-endw
-
-set timeout ttimeoutlen=50
-
 " Tab settings
 set tabstop=4
 set shiftwidth=4
@@ -331,26 +320,12 @@ set hidden
 
 " Color scheme & syntax highlighting
 :syntax on
-"colorscheme koehler
-"let g:zenburn_high_Contrast = 1
-"colorscheme zenburn
-"colorscheme wombat-terr
-"colorscheme coderay
 
-"if has('gui_running')
-"    set background=light
-"else
-"    set background=dark
-"endif
 set background=light
 
 syntax enable
 let g:solarized_termcolors=256
 colorscheme solarized
-
-"nmap <unique> <F5> <Plug>ToggleBackground
-"imap <unique> <F5> <Plug>ToggleBackground
-"vmap <unique> <F5> <Plug>ToggleBackground
 
 " Startup
 
