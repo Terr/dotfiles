@@ -69,6 +69,9 @@ set scrolloff=7
 set sidescrolloff=7
 set sidescroll=1
 
+" Rebind <Leader> key
+let mapleader = ','
+
 " Faster saving
 nmap <Leader>w :w!<cr>
 
