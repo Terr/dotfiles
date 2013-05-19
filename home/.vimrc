@@ -67,6 +67,7 @@ set showmode
 " Line numbers
 set number
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+set mouse=a
 
 " Disable cursor blink
 set gcr=a:blinkon0
