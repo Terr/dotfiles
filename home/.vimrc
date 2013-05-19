@@ -11,16 +11,25 @@ filetype indent on
 set cindent
 set smartindent
 set autoindent
-set textwidth=79
 set t_Co=256
 
 " Tab settings
 set tabstop=4
 set shiftwidth=4
-"set softtabstop=4
+set fo-=t   " don't automatically wrap text when typing
+"set wrap " As opposed to nowrap
+set nowrap
+set linebreak
 
 " Enable line breaks/wrapping in Python files
-autocmd FileType python setlocal formatoptions+=t
+" autocmd FileType python setlocal formatoptions+=t
+autocmd! FileType python call SetPythonOptions() 
+function! SetPythonOptions()
+	setlocal textwidth=79
+	setlocal expandtab
+	setlocal softtabstop=4
+	set colorcolumn=80
+endfunction
 
 " vim-powerline
 let g:Powerline_symbols = 'fancy'
@@ -60,9 +69,6 @@ nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 " Disable cursor blink
 set gcr=a:blinkon0
-
-set wrap " As opposed to nowrap
-set linebreak
 
 " Keep X lines above/below the cursor when scrolling
 set scrolloff=7
