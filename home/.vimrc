@@ -75,6 +75,10 @@ let mapleader = ','
 " Faster saving
 nmap <Leader>w :w!<cr>
 
+" Redo visual selection after indenting
+vnoremap < <gv " better indentation
+vnoremap > >gv " better indentation
+
 " Make Y behave like other capticals
 map Y y$
 
