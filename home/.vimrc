@@ -231,17 +231,22 @@ let g:syntastic_mode_map = { 'mode': 'active',
 
 " python-mode settings
 " 'Show documentation' plugin
-let g:pymode_doc = 0
+let g:pymode_doc = 1
+" Key for show python documentation
+let g:pymode_doc_key = 'K'
 " Load pylint code plugin
 let g:pymode_lint = 1
 " Auto fix vim python paths if virtualenv enabled
 let g:pymode_virtualenv = 1
 " Enable python objects and motion
 let g:pymode_motion = 1
-" Disable python folding
+" Python folding
 let g:pymode_folding = 0
-" Disable custom syntax highlighting
-let g:pymode_syntax = 0
+" Custom syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_breakpoint = 0
+let g:pymode_syntax_builtin_objs = 0
+let g:pymode_syntax_builtin_funcs = 0
 
 " Skip errors and warnings
 " Mostly cosmetic stuff like redundant backslashes or over-identation when
@@ -250,19 +255,17 @@ let g:pymode_lint_ignore = "E126,E127,E128,E302,E501,E502"
 " Do not automatically open quickfix window
 let g:pymode_lint_cwindow = 0
 
-" Key for show python documentation
-" let g:pymode_doc_key = 'K'
 "
 " pymode: rope settings
-let g:pymode_rope = 0
+let g:pymode_rope = 1
 let g:pymode_rope_extended_complete = 1
-let g:pymode_rope_autoimport_modules = ["os","shutil","datetime","django.*"]
-let g:pymode_rope_goto_def_newwin = 1
+let g:pymode_rope_autoimport_modules = ["os","sys","shutil","datetime","django.*"]
+let g:pymode_rope_goto_def_newwin = "vnew"
 " Rope keybindings
 let g:pymode_rope_global_prefix = '<C-x>p'
 let g:pymode_rope_local_prefix = '<C-x>r'
-noremap <C-x>g :call RopeGotoDefinition()<CR>
-noremap <C-x>r :call RopeRename()<CR>
+noremap <Leader>g :call RopeGotoDefinition()<CR>
+noremap <Leader>r :call RopeRename()<CR>
 imap <c-space> <C-R>=RopeCodeAssistInsertMode()<CR>
 
 " Jedi
