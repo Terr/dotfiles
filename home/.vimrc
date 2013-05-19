@@ -75,6 +75,12 @@ let mapleader = ','
 " Faster saving
 nmap <Leader>w :w!<cr>
 
+" Move up/down to wrapped lines instead as if they were real lines
+nnoremap j gj
+nnoremap k gk
+nnoremap <Up> gk
+nnoremap <Down> gj
+
 " Prevent 'Press ENTER..' on error messages
 "set shortmess=atI
 
