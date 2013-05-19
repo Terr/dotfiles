@@ -356,6 +356,9 @@ endif
 
 "Allow switching from an unsaved buffer to another
 set hidden
+" Default UTF-8 text encoding
+set encoding=utf-8   
+set fileencoding=utf-8
 
 " Color scheme & syntax highlighting
 :syntax on
