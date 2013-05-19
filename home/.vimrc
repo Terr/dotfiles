@@ -32,20 +32,6 @@ function! SetPythonOptions()
 	setlocal shiftround
 endfunction
 
-" Format / wrap paragraphs
-vmap Q gq
-nmap Q gqap
-
-" Make vim's regex handling less weird
-nnoremap / /\v
-vnoremap / /\v
-
-" Use jk combination as <Esc>
-inoremap jk <Esc>
-
-" Clear search highlights
-noremap <silent><Leader>/ :nohls<CR>
-
 " vim-powerline
 let g:Powerline_symbols = 'fancy'
 
@@ -110,6 +96,20 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <Up> gk
 nnoremap <Down> gj
+
+" Format / wrap paragraphs
+vmap Q gq
+nmap Q gqap
+
+" Make vim's regex handling less weird
+nnoremap / /\v
+vnoremap / /\v
+
+" Use jk combination as <Esc>
+inoremap jk <Esc>
+
+" Clear search highlights
+noremap <silent><Leader>/ :nohls<CR>
 
 " Prevent 'Press ENTER..' on error messages
 "set shortmess=atI
