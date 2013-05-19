@@ -31,6 +31,10 @@ function! SetPythonOptions()
 	set colorcolumn=80
 endfunction
 
+" Format / wrap paragraphs
+vmap Q gq
+nmap Q gqap
+
 " vim-powerline
 let g:Powerline_symbols = 'fancy'
 
