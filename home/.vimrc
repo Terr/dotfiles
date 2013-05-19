@@ -36,6 +36,16 @@ endfunction
 vmap Q gq
 nmap Q gqap
 
+" Make vim's regex handling less weird
+nnoremap / /\v
+vnoremap / /\v
+
+" Use jk combination as <Esc>
+inoremap jk <Esc>
+
+" Clear search highlights
+noremap <silent><Leader>/ :nohls<CR>
+
 " vim-powerline
 let g:Powerline_symbols = 'fancy'
 
@@ -85,6 +95,8 @@ let mapleader = ','
 
 " Faster saving
 nmap <Leader>w :w!<cr>
+" Force saving files that require root permission
+cmap w!! %!sudo tee > /dev/null %
 
 " Redo visual selection after indenting
 vnoremap < <gv " better indentation
