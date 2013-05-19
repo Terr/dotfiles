@@ -2,6 +2,9 @@
 "This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
+
 filetype plugin on
 filetype indent on
 
