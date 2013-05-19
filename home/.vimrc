@@ -99,7 +99,7 @@ nnoremap <Down> gj
 
 " Format / wrap paragraphs
 vmap Q gq
-nmap Q gqap
+nmap Q gqgq
 
 " Make vim's regex handling less weird
 nnoremap / /\v
