@@ -28,7 +28,8 @@ function! SetPythonOptions()
 	setlocal textwidth=79
 	setlocal expandtab
 	setlocal softtabstop=4
-	set colorcolumn=80
+	setlocal colorcolumn=80
+	setlocal shiftround
 endfunction
 
 " Format / wrap paragraphs
