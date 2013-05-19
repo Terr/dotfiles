@@ -138,3 +138,6 @@
 [submodule "home/.vim/bundle/closetag.vim"]
 	path = home/.vim/bundle/closetag.vim
 	url = https://github.com/vim-scripts/closetag.vim.git
+[submodule "home/.vim/bundle/relops"]
+	path = home/.vim/bundle/relops
+	url = https://github.com/vim-scripts/RelOps.git
