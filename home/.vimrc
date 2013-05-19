@@ -23,12 +23,20 @@ set linebreak
 
 " Enable line breaks/wrapping in Python files
 " autocmd FileType python setlocal formatoptions+=t
+autocmd! FileType * set noexpandtab " Set multiple options using set a=1|set b=2
 autocmd! FileType python call SetPythonOptions() 
+autocmd! FileType php call SetPhpOptions() 
+
 function! SetPythonOptions()
 	setlocal textwidth=79
 	setlocal expandtab
 	setlocal softtabstop=4
 	setlocal colorcolumn=80
+	setlocal shiftround
+endfunction
+
+function! SetPhpOptions()
+	setlocal expandtab
 	setlocal shiftround
 endfunction
 
