@@ -75,6 +75,9 @@ let mapleader = ','
 " Faster saving
 nmap <Leader>w :w!<cr>
 
+" Make Y behave like other capticals
+map Y y$
+
 " Move up/down to wrapped lines instead as if they were real lines
 nnoremap j gj
 nnoremap k gk
