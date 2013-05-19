@@ -95,7 +95,6 @@ if ! has('gui_running')
 endif
 
 " Commands
-command NTT :NERDTreeToggle 
 nnoremap <silent> <F8> :NERDTreeToggle<cr>
 nnoremap <S-F8> :3winc h\|vertical res -60<cr>
 
