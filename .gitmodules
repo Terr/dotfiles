@@ -19,6 +19,9 @@
 [submodule "scrooloose-syntastic"]
 	path = home/.vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "sjbach-lusty"]
+	path = home/.vim/bundle/lusty
+	url = https://github.com/sjbach/lusty.git
 [submodule "tjennings-git-grep-vim"]
 	path = home/.vim/bundle/git-grep-vim
 	url = https://github.com/tjennings/git-grep-vim
@@ -55,15 +58,27 @@
 [submodule "home/.vim/snippets"]
 	path = home/.vim/snippets
 	url = https://github.com/scrooloose/snipmate-snippets.git
+[submodule "wincent-Command-T"]
+	path = home/.vim/bundle/wincent-Command-T
+	url = https://github.com/wincent/Command-T
 [submodule "vim-unimpaired"]
 	path = home/.vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
 [submodule "vim-git"]
 	path = home/.vim/bundle/vim-git
 	url = https://github.com/tpope/vim-git
+[submodule "vim-scripts-lastpos"]
+	path = home/.vim/bundle/vim-scripts-lastpos
+	url = https://github.com/vim-scripts/lastpos.vim
 [submodule "sjl-gundo"]
 	path = home/.vim/bundle/gundo.vim
 	url = https://github.com/sjl/gundo.vim
+[submodule "mileszs-ack"]
+	path = home/.vim/bundle/mileszs-ack
+	url = https://github.com/mileszs/ack.vim
+[submodule "kogakure-vim-sparkup"]
+	path = home/.vim/bundle/kogakure-vim-sparkup
+	url = https://github.com/kogakure/vim-sparkup.git
 [submodule "mattn-zencoding-vim"]
 	path = home/.vim/bundle/zencoding-vim
 	url = https://github.com/mattn/zencoding-vim
@@ -73,6 +88,20 @@
 [submodule "vim-scripts-ZoomWin"]
 	path = home/.vim/bundle/vim-scripts-ZoomWin
 	url = https://github.com/vim-scripts/ZoomWin.git
+[submodule "dterei-VimBookmarking"]
+	path = home/.vim/bundle/VimBookmarking
+	url = https://github.com/dterei/VimBookmarking
+[submodule "chrismetcalf-vim-yankring"]
+	path = home/.vim/bundle/chrismetcalf-vim-yankring
+	url = https://github.com/chrismetcalf/vim-yankring.git
+[submodule "home/.vim/bundle/mru.vim"]
+	path = home/.vim/bundle/mru.vim
+	url = https://github.com/vim-scripts/mru.vim.git
+[submodule "home/.vim/bundle/vim-showmarks"]
+	path = home/.vim/bundle/vim-showmarks
+	#url = https://github.com/garbas/vim-showmarks
+	#url = https://github.com/jacquesbh/vim-showmarks.git
+	url = https://github.com/zakj/vim-showmarks.git
 [submodule "home/.vim/bundle/delimitMate"]
 	path = home/.vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
@@ -91,9 +120,6 @@
 [submodule "home/.vim/bundle/vim-css-color"]
 	path = home/.vim/bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
-[submodule "home/.vim/bundle/sudo.vim"]
-	path = home/.vim/bundle/sudo.vim
-	url = https://github.com/vim-scripts/sudo.vim.git
 [submodule "home/.vim/bundle/vim-taglist-plus"]
 	path = home/.vim/bundle/vim-taglist-plus
 	url = https://github.com/klen/vim-taglist-plus.git
@@ -112,3 +138,6 @@
 [submodule "home/.vim/bundle/closetag.vim"]
 	path = home/.vim/bundle/closetag.vim
 	url = https://github.com/vim-scripts/closetag.vim.git
+[submodule "home/.vim/bundle/relops"]
+	path = home/.vim/bundle/relops
+	url = https://github.com/vim-scripts/RelOps.git
