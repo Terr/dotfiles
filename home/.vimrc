@@ -280,6 +280,7 @@ imap <c-space> <C-R>=RopeCodeAssistInsertMode()<CR>
 
 " Jedi
 let g:jedi#popup_on_dot = 0
+let g:jedi#goto_command = "<leader>h"
 
 " YankRing
 nnoremap <silent> <F11> :YRShow<CR>
