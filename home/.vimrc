@@ -40,7 +40,7 @@ function! SetPythonOptions()
 endfunction
 
 function! SetPhpOptions()
-	setlocal expandtab
+	" setlocal expandtab
 	setlocal shiftround
 endfunction
 
