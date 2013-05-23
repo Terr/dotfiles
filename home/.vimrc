@@ -26,6 +26,10 @@ set linebreak
 autocmd! FileType * set noexpandtab " Set multiple options using set a=1|set b=2
 autocmd! FileType python call SetPythonOptions() 
 autocmd! FileType php call SetPhpOptions() 
+" autocmd! FileType python call SetPythonOptions() 
+" autocmd! FileType php call SetPhpOptions() 
+au BufEnter,BufRead *.py call SetPythonOptions()
+au BufEnter,BufRead *.php call SetPythonOptions()
 
 function! SetPythonOptions()
 	setlocal textwidth=79
