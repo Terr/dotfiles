@@ -272,6 +272,8 @@ let g:pymode_lint_cwindow = 0
 "
 " pymode: rope settings
 let g:pymode_rope = 1
+let g:pymode_rope_auto_project = 1
+let g:pymode_rope_vim_completion = 1
 let g:pymode_rope_extended_complete = 1
 let g:pymode_rope_autoimport_modules = ["os","sys","shutil","datetime","django.*"]
 let g:pymode_rope_goto_def_newwin = "vnew"
@@ -280,7 +282,7 @@ let g:pymode_rope_global_prefix = '<C-x>p'
 let g:pymode_rope_local_prefix = '<C-x>r'
 noremap <Leader>g :call RopeGotoDefinition()<CR>
 noremap <Leader>r :call RopeRename()<CR>
-imap <c-space> <C-R>=RopeCodeAssistInsertMode()<CR>
+imap <cs-space> <C-R>=RopeCodeAssistInsertMode()<CR>
 
 " Jedi
 let g:jedi#popup_on_dot = 0
