@@ -253,7 +253,8 @@ let g:pymode_motion = 1
 let g:pymode_folding = 0
 " Custom syntax highlighting
 let g:pymode_syntax = 1
-let g:pymode_breakpoint = 0
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_cmd = "import pudb; pudb.set_trace()  # XXX BREAKPOINT"
 let g:pymode_syntax_builtin_objs = 0
 let g:pymode_syntax_builtin_funcs = 0
 
