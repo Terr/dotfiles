@@ -31,9 +31,6 @@
 [submodule "vim-repeat"]
 	path = home/.vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
-[submodule "vim-scripts-taglist"]
-	path = home/.vim/bundle/taglist.vim
-	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "vim-surround"]
 	path = home/.vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
@@ -122,7 +119,7 @@
 	url = https://github.com/ap/vim-css-color.git
 [submodule "home/.vim/bundle/vim-taglist-plus"]
 	path = home/.vim/bundle/vim-taglist-plus
-	url = https://github.com/klen/vim-taglist-plus.git
+	url = https://github.com/yazug/vim-taglist-plus.git
 [submodule "home/.vim/bundle/vim-powerline"]
 	path = home/.vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
