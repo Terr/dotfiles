@@ -72,3 +72,10 @@ alias git-root='cd $(git rev-parse --show-cdup)'  # cd to root of current git re
 
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+# Apply local settings, such as custom PATHs or aliases. This file is not stored in the dotfiles repository.
+if [[ -a $HOME/.zshrc.local ]]; then
+	echo "Applying local settings from $HOME/.zshrc.local"
+	source $HOME/.zshrc.local
+fi
+
