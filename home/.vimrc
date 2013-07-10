@@ -25,8 +25,6 @@ set linebreak
 " Enable line breaks/wrapping in Python files
 " autocmd FileType python setlocal formatoptions+=t
 autocmd! FileType * set noexpandtab " Set multiple options using set a=1|set b=2
-" autocmd! FileType python call SetPythonOptions() 
-" autocmd! FileType php call SetPhpOptions() 
 au BufEnter,BufRead *.py call SetPythonOptions()
 au BufEnter,BufRead *.php call SetPythonOptions()
 
@@ -328,28 +326,6 @@ smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><TAB>     neocomplcache#complete_common_string()
 
-" SuperTab like snippets behavior.
-"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-" <TAB>: completion.
-"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><C-e>  neocomplcache#cancel_popup()
-
-" Pydiction
-"let g:pydiction_location = '~/.vim/after/ftplugin/pydiction/complete-dict'
-
-" SuperTab
-"let g:SuperTabMappingForward = '<C-Space>'
-"let SuperTabKey = '<c-space>'
-"let g:SuperTabCrMapping = 0
-"let g:SuperTabMappingForward = '<c-space>'
-"let g:SuperTabMappingBackward = '<s-c-space>'
 
 " MatchIt
 " Extra patterns for matching Django template elements
