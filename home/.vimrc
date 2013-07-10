@@ -112,6 +112,9 @@ nnoremap <Down> gj
 vmap Q gq
 nmap Q gqgq
 
+" Sort selection
+vmap s :sort<CR>
+
 " Make vim's regex handling less weird
 nnoremap / /\v
 vnoremap / /\v
