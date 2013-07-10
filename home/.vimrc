@@ -117,9 +117,6 @@ vmap s :sort<CR>
 nnoremap / /\v
 vnoremap / /\v
 
-" Use jk combination as <Esc>
-inoremap jk <Esc>
-
 " Clear search highlights
 noremap <silent><Leader>/ :nohls<CR>
 
