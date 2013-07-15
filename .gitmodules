@@ -120,9 +120,6 @@
 [submodule "home/.vim/bundle/vim-taglist-plus"]
 	path = home/.vim/bundle/vim-taglist-plus
 	url = https://github.com/yazug/vim-taglist-plus.git
-[submodule "home/.vim/bundle/vim-powerline"]
-	path = home/.vim/bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
 [submodule "home/.vim/bundle/python-mode"]
 	path = home/.vim/bundle/python-mode
 	url = https://github.com/klen/python-mode.git
@@ -138,3 +135,6 @@
 [submodule "home/.vim/bundle/numbers.vim"]
 	path = home/.vim/bundle/numbers.vim
 	url = https://github.com/myusuf3/numbers.vim.git
+[submodule "home/.vim/bundle/vim-airline"]
+	path = home/.vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
