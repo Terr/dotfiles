@@ -335,6 +335,8 @@ smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><TAB>     neocomplcache#complete_common_string()
 
+" numbers.vim
+nnoremap <F3> :NumbersToggle<CR>
 
 " MatchIt
 " Extra patterns for matching Django template elements
