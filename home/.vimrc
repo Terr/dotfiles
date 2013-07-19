@@ -79,7 +79,7 @@ set noswapfile
 " Automaticaly reload files changed outside of vim
 "set autoread
 
-" Ignore list for Command-T
+" Ignore list for Ctrl-P
 set wildmode=list:longest
 set wildmenu
 "set wildignore+=*.o,*.obj,*/.git/*,*.pyc,*.pyo,*.jpg,*.jpeg,*.gif,*.png,*/.svn/*,*/.hg/*
