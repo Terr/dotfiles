@@ -181,6 +181,9 @@ nmap <C-S-Down> ]e
 vmap <C-S-Up> [egv
 vmap <C-S-Down> ]egv
 
+" Shortcut for select last changed (or pasted) text
+nnoremap gp `[v`]
+
 " From /usr/share/vim/vim72/mswin.vim
 " CTRL-X and SHIFT-Del are Cut
 vnoremap <C-X> "+x
