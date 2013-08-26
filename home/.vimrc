@@ -40,6 +40,12 @@ function! SetPhpOptions()
 	setlocal shiftround
 endfunction
 
+if has('gui_running')
+	set guioptions-=m  "remove menu bar
+	set guioptions-=T  "remove toolbar
+	set guioptions-=r  "remove right-hand scroll bar
+endif
+
 " vim-powerline
 "let g:Powerline_symbols = 'fancy'
 
