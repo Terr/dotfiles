@@ -138,3 +138,6 @@
 [submodule "home/.vim/bundle/vim-airline"]
 	path = home/.vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
+[submodule "home/.vim/bundle/greplace"]
+	path = home/.vim/bundle/greplace
+	url = https://github.com/vim-scripts/greplace.vim.git
