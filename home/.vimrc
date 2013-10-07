@@ -351,6 +351,7 @@ inoremap <expr><TAB>     neocomplcache#complete_common_string()
 
 " numbers.vim
 nnoremap <F3> :NumbersToggle<CR>
+let g:numbers_exclude = ['nerdtree']
 
 " MatchIt
 " Extra patterns for matching Django template elements
