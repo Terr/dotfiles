@@ -138,3 +138,6 @@
 [submodule "home/.vim/bundle/greplace"]
 	path = home/.vim/bundle/greplace
 	url = https://github.com/vim-scripts/greplace.vim.git
+[submodule "home/.vim/bundle/YouCompleteMe"]
+	path = home/.vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
