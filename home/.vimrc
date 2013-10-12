@@ -389,6 +389,9 @@ syntax enable
 let g:solarized_termcolors=256
 colorscheme solarized
 
+" Change color of selected character more distinct
+hi MatchParen guibg=bg guifg=gray
+
 " Startup
 
 "autocmd VimEnter * :Project
