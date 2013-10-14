@@ -166,8 +166,11 @@ if ! has('gui_running')
 	cmap <esc>OF <end>
 endif
 
-" Commands
+" NERDTree
 nnoremap <silent> <F8> :NERDTreeToggle<cr>
+let g:nerdtree_tabs_open_on_gui_startup = 0
+
+" Commands
 nnoremap <S-F8> :3winc h\|vertical res -60<cr>
 
 " Window and buffer switching
