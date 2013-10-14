@@ -21,6 +21,7 @@ set fo-=t   " don't automatically wrap text when typing
 "set wrap " As opposed to nowrap
 set nowrap
 set linebreak
+set backspace=indent,eol,start
 
 " Enable line breaks/wrapping in Python files
 " autocmd FileType python setlocal formatoptions+=t
