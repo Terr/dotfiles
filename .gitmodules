@@ -117,9 +117,6 @@
 [submodule "home/.vim/bundle/vim-css-color"]
 	path = home/.vim/bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
-[submodule "home/.vim/bundle/vim-taglist-plus"]
-	path = home/.vim/bundle/vim-taglist-plus
-	url = https://github.com/yazug/vim-taglist-plus.git
 [submodule "home/.vim/bundle/python-mode"]
 	path = home/.vim/bundle/python-mode
 	url = https://github.com/klen/python-mode.git
