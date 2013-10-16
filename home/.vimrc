@@ -250,6 +250,7 @@ let g:ctrlp_max_height = 20
 let g:syntastic_mode_map = { 'mode': 'active',
 			\ 'active_filetypes': ['coffee', 'php', 'javascript'],
 			\ 'passive_filetypes': ['ruby', 'python', 'html'] }
+let g:syntastic_javascript_checkers=['jsl']
 
 " python-mode settings
 " 'Show documentation' plugin
