@@ -166,8 +166,11 @@ if ! has('gui_running')
 	cmap <esc>OF <end>
 endif
 
-" Commands
+" NERDTree
 nnoremap <silent> <F8> :NERDTreeToggle<cr>
+let g:nerdtree_tabs_open_on_gui_startup = 0
+
+" Commands
 nnoremap <S-F8> :3winc h\|vertical res -60<cr>
 
 " Window and buffer switching
@@ -297,7 +300,7 @@ imap <cs-space> <C-R>=RopeCodeAssistInsertMode()<CR>
 
 " Jedi
 let g:jedi#popup_on_dot = 0
-let g:jedi#goto_command = "<leader>h"
+let g:jedi#goto_assigment_command = "<leader>h"
 
 " YankRing
 nnoremap <silent> <F11> :YRShow<CR>
@@ -314,28 +317,6 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P " Shows
 
 " Vim CSS colors
 autocmd! FileType sass,scss,stylus syn cluster sassCssAttributes add=@cssColors
-
-" Autocompletion
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_disable_auto_complete = 0
-"let g:neocomplcache_enable_cursor_hold_i = 1
-"let g:neocomplcache_enable_auto_select = 1
-"let g:neocomplcache_cursor_hold_i_time = 300
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-
-" Neocmplcache plugin key-mappings.
-imap  <silent><expr><TAB>  neocomplcache#sources#snippets_complete#expandable() ? "\<plug>(neocomplcache_snippets_expand)" : (pumvisible() ? "\<c-e>" : "\<tab>")
-smap  <TAB>  <right><plug>(neocomplcache_snippets_jump) 
-inoremap <expr><c-e>     neocomplcache#complete_common_string()
-noremap <expr><C-y>  neocomplcache#close_popup()
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><TAB>     neocomplcache#complete_common_string()
 
 " numbers.vim
 nnoremap <F3> :NumbersToggle<CR>
@@ -376,6 +357,9 @@ set background=light
 syntax enable
 let g:solarized_termcolors=256
 colorscheme solarized
+
+" Change color of selected character more distinct
+hi MatchParen guibg=bg guifg=gray
 
 " Startup
 
