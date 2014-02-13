@@ -239,7 +239,7 @@ autocmd FileType html set ft=htmldjango.html " For SnipMate
 autocmd FileType c,cpp,java,php,python,javascript,html autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 " Tagbar
-nnoremap <silent> <F7> :TagbarToggle<cr>
+nnoremap <silent> <F7> :TagbarOpenAutoClose<cr>
 
 " ctrlp
 let g:ctrlp_match_window_reversed = 0
