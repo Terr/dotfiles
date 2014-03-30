@@ -3,7 +3,11 @@ ZSH=$HOME/.oh-my-zsh
 
 # Set xterm (and xterm-alike) to 256 colors
 #export TERM=xterm-256color
-export TERM=screen-256color
+if [[ $TERM == "xterm" ]]; then
+	export TERM=xterm-256color
+else
+	export TERM=screen-256color
+fi
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
