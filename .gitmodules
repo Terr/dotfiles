@@ -70,9 +70,6 @@
 [submodule "kogakure-vim-sparkup"]
 	path = home/.vim/bundle/kogakure-vim-sparkup
 	url = https://github.com/kogakure/vim-sparkup.git
-[submodule "mattn-zencoding-vim"]
-	path = home/.vim/bundle/zencoding-vim
-	url = https://github.com/mattn/zencoding-vim
 [submodule "austintaylor-vim-indentobject"]
 	path = home/.vim/bundle/vim-indentobject
 	url = https://github.com/austintaylor/vim-indentobject
@@ -132,3 +129,6 @@
 [submodule "home/.vim/bundle/tagbar"]
 	path = home/.vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "home/.vim/bundle/emmet-vim"]
+	path = home/.vim/bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
