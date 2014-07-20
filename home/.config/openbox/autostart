@@ -1,9 +1,9 @@
 # Composite manager
-compton &
 
 # Enable US and Russian keyboard layouts, switchable via Alt-Shift and with the
 # Scroll Lock light indicating which of the two is active
 setxkbmap -layout us,ru -variant -option grp:alt_shift_toggle,grp_led:scroll,terminate:ctrl_alt_bksp &
+compton --backend glx --vsync opengl-swc &
 
 # Set background
 hsetroot -fill ~/Pictures/Daylight\ 1920x1200.jpg &
