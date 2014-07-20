@@ -22,9 +22,6 @@
 [submodule "sjbach-lusty"]
 	path = home/.vim/bundle/lusty
 	url = https://github.com/sjbach/lusty.git
-[submodule "tjennings-git-grep-vim"]
-	path = home/.vim/bundle/git-grep-vim
-	url = https://github.com/tjennings/git-grep-vim
 [submodule "skwp-greplace"]
 	path = home/.vim/bundle/skwp-greplace
 	url = https://github.com/skwp/greplace.vim
