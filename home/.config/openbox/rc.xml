@@ -346,7 +346,7 @@
     <!-- Launch gnome-screenshot when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot "/home/terr/Pictures/Screenshot\ `date`.png"</command>
+        <command>scrot "/home/terr/Pictures/Screenshot %Y-%m-%d %H:%M:%S.png"</command>
       </action>
     </keybind>
   </keyboard>
