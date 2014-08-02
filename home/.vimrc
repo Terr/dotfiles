@@ -255,6 +255,23 @@ let g:syntastic_mode_map = { 'mode': 'active',
 			\ 'passive_filetypes': ['ruby', 'python', 'html'] }
 let g:syntastic_javascript_checkers=['jsl']
 
+" YouCompleteMe settings
+" Blacklist Python files because of conflicts with Rope/python-mode
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'qf' : 1,
+      \ 'notes' : 1,
+      \ 'markdown' : 1,
+      \ 'unite' : 1,
+      \ 'text' : 1,
+      \ 'vimwiki' : 1,
+      \ 'pandoc' : 1,
+      \ 'infolog' : 1,
+      \ 'mail' : 1,
+      \ 'python': 1,
+      \ 'python.django': 1
+\}
+
 " python-mode settings
 " 'Show documentation' plugin
 let g:pymode_doc = 1
