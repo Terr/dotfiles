@@ -294,9 +294,9 @@ let g:pymode_rope_goto_def_newwin = "vnew"
 let g:pymode_rope_global_prefix = '<C-x>p'
 let g:pymode_rope_local_prefix = '<C-x>r'
 let g:pymode_rope_goto_def_newwin = "split"
-noremap <Leader>g :call RopeGotoDefinition()<CR>
-noremap <Leader>r :call RopeRename()<CR>
-imap <cs-space> <C-R>=RopeCodeAssistInsertMode()<CR>
+let g:pymode_rope_goto_definition_bind = '<Leader>g'
+let g:pymode_rope_rename_bind = '<Leader>r'
+"imap <cs-space> <C-R>=RopeCodeAssistInsertMode()<CR>
 
 " Jedi
 let g:jedi#popup_on_dot = 0
