@@ -53,6 +53,9 @@ export LESS=-FRX
 # Tell ack to display colored, paged results
 export ACK_PAGER_COLOR="${PAGER:-less}"
 
+# Colors for ls
+export LSCOLORS=ExGxcxdxCxegedabagacad
+
 # Customize to your needs...
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 #
