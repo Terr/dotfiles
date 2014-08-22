@@ -69,7 +69,10 @@ setopt share_history
 export WORKON_HOME=$HOME/.virtualenvs
 export PYTHONPATH=/var/work/code/
 export PROJECT_HOME=/var/work/code/
-source /etc/bash_completion.d/virtualenvwrapper
+
+if [ -e /etc/bash_completion.d/virtualenvwrapper ]; then
+	source /etc/bash_completion.d/virtualenvwrapper
+fi
 
 # Aliases
 alias tmux="TERM=xterm-256color tmux -2"  # Start tmux in 256 color mode
