@@ -256,7 +256,6 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_javascript_checkers=['jsl']
 
 " YouCompleteMe settings
-" Blacklist Python files because of conflicts with Rope/python-mode
 let g:ycm_filetype_blacklist = {
       \ 'tagbar' : 1,
       \ 'qf' : 1,
@@ -267,10 +266,12 @@ let g:ycm_filetype_blacklist = {
       \ 'vimwiki' : 1,
       \ 'pandoc' : 1,
       \ 'infolog' : 1,
-      \ 'mail' : 1,
-      \ 'python': 1,
-      \ 'python.django': 1
+      \ 'mail' : 1
 \}
+" Add this to blacklist Python file, in case there is a conflict with
+" Rope/python-mode (when pyrope 'complete_on_dot' is on).
+"      \ 'python': 1,
+"      \ 'python.django': 1
 
 " python-mode settings
 " 'Show documentation' plugin
@@ -313,6 +314,7 @@ let g:pymode_rope_local_prefix = '<C-x>r'
 let g:pymode_rope_goto_def_newwin = "split"
 let g:pymode_rope_goto_definition_bind = '<Leader>g'
 let g:pymode_rope_rename_bind = '<Leader>r'
+let g:pymode_rope_complete_on_dot = 0
 "imap <cs-space> <C-R>=RopeCodeAssistInsertMode()<CR>
 
 " Jedi
