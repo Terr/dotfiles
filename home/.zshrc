@@ -53,6 +53,9 @@ export LESS=-FRX
 # Tell ack to display colored, paged results
 export ACK_PAGER_COLOR="${PAGER:-less}"
 
+# Colors for ls
+export LSCOLORS=ExGxcxdxCxegedabagacad
+
 # Customize to your needs...
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 #
@@ -66,13 +69,17 @@ setopt share_history
 export WORKON_HOME=$HOME/.virtualenvs
 export PYTHONPATH=/var/work/code/
 export PROJECT_HOME=/var/work/code/
-source /etc/bash_completion.d/virtualenvwrapper
+
+if [ -e /etc/bash_completion.d/virtualenvwrapper ]; then
+	source /etc/bash_completion.d/virtualenvwrapper
+fi
 
 # Aliases
 alias tmux="TERM=xterm-256color tmux -2"  # Start tmux in 256 color mode
 alias -g L="| less"
 alias -g G="| grep"
 alias git-root='cd $(git rev-parse --show-cdup)'  # cd to root of current git repository
+alias l="ls -oa"
 
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator

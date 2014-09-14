@@ -22,24 +22,32 @@ set fo-=t   " don't automatically wrap text when typing
 set nowrap
 set linebreak
 set backspace=indent,eol,start
+set shiftround
 
 " Enable line breaks/wrapping in Python files
 " autocmd FileType python setlocal formatoptions+=t
 autocmd! FileType * set noexpandtab " Set multiple options using set a=1|set b=2
 au BufEnter,BufRead *.py call SetPythonOptions()
 au BufEnter,BufRead *.php call SetPhpOptions()
+au BufEnter,BufRead *.yml,*.yaml call SetYamlOptions()
 
 function! SetPythonOptions()
 	setlocal textwidth=79
 	setlocal expandtab
 	setlocal colorcolumn=80
-	setlocal shiftround
 endfunction
 
 function! SetPhpOptions()
 	setlocal noexpandtab
-	setlocal shiftround
 endfunction
+
+function! SetYamlOptions()
+	setlocal expandtab
+	setlocal tabstop=2
+	setlocal shiftwidth=2
+	setlocal softtabstop=2
+endfunction
+
 
 if has('gui_running')
 	set guioptions-=m  "remove menu bar
