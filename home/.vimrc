@@ -30,6 +30,7 @@ autocmd! FileType * set noexpandtab " Set multiple options using set a=1|set b=2
 au BufEnter,BufRead *.py call SetPythonOptions()
 au BufEnter,BufRead *.php call SetPhpOptions()
 au BufEnter,BufRead *.yml,*.yaml call SetYamlOptions()
+au BufEnter,BufRead *.rb,*.pp call SetRubyOptions()
 
 function! SetPythonOptions()
 	setlocal textwidth=79
@@ -48,6 +49,12 @@ function! SetYamlOptions()
 	setlocal softtabstop=2
 endfunction
 
+function! SetRubyOptions()
+	setlocal expandtab
+	setlocal tabstop=2
+	setlocal shiftwidth=2
+	setlocal softtabstop=2
+endfunction
 
 if has('gui_running')
 	set guioptions-=m  "remove menu bar
