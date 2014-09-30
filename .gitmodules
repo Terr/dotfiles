@@ -132,3 +132,6 @@
 [submodule "home/.vim/bundle/emmet-vim"]
 	path = home/.vim/bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "home/.vim/bundle/ultisnips"]
+	path = home/.vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
