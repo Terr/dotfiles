@@ -288,6 +288,11 @@ let g:ycm_filetype_blacklist = {
 "      \ 'python': 1,
 "      \ 'python.django': 1
 
+" Relieve Tab of autocomplete duties
+let g:ycm_key_list_select_completion = ['`', '<Down>']
+let g:ycm_key_list_previous_completion = ['~', '<Up>']
+
+
 " python-mode settings
 " 'Show documentation' plugin
 let g:pymode_doc = 1
@@ -376,6 +381,7 @@ if exists("loaded_matchit")
     \ '{% *filter .*%}:{% *endfilter *%},' .
     \ '{% *spaceless .*%}:{% *endspaceless *%}'
 endif
+
 
 "Allow switching from an unsaved buffer to another
 set hidden
