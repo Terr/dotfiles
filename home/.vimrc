@@ -247,8 +247,8 @@ autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
-autocmd FileType python set ft=python.django " For SnipMate
-autocmd FileType html set ft=htmldjango.html " For SnipMate
+autocmd FileType python set ft=python.django
+autocmd FileType html set ft=htmldjango.html
 
 " Remove trailing whitespace on save
 autocmd FileType c,cpp,java,php,python,javascript,html autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
@@ -287,6 +287,11 @@ let g:ycm_filetype_blacklist = {
 " Rope/python-mode (when pyrope 'complete_on_dot' is on).
 "      \ 'python': 1,
 "      \ 'python.django': 1
+
+" Relieve Tab of autocomplete duties
+let g:ycm_key_list_select_completion = ['`', '<Down>']
+let g:ycm_key_list_previous_completion = ['~', '<Up>']
+
 
 " python-mode settings
 " 'Show documentation' plugin
@@ -376,6 +381,13 @@ if exists("loaded_matchit")
     \ '{% *filter .*%}:{% *endfilter *%},' .
     \ '{% *spaceless .*%}:{% *endspaceless *%}'
 endif
+
+
+" UltiSnips
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" Split screen vertically when starting to edit snippets
+let g:UltiSnipsEditSplit="vertical"
 
 "Allow switching from an unsaved buffer to another
 set hidden
