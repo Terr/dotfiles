@@ -22,8 +22,8 @@
 [submodule "sjbach-lusty"]
 	path = home/.vim/bundle/lusty
 	url = https://github.com/sjbach/lusty.git
-[submodule "skwp-greplace"]
-	path = home/.vim/bundle/skwp-greplace
+[submodule "greplace"]
+	path = home/.vim/bundle/greplace
 	url = https://github.com/skwp/greplace.vim
 [submodule "vim-repeat"]
 	path = home/.vim/bundle/vim-repeat
@@ -120,9 +120,6 @@
 [submodule "home/.vim/bundle/vim-airline"]
 	path = home/.vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
-[submodule "home/.vim/bundle/greplace"]
-	path = home/.vim/bundle/greplace
-	url = https://github.com/vim-scripts/greplace.vim.git
 [submodule "home/.vim/bundle/YouCompleteMe"]
 	path = home/.vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
