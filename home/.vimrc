@@ -17,6 +17,7 @@ set t_Co=256
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set expandtab
 set fo-=t   " don't automatically wrap text when typing
 "set wrap " As opposed to nowrap
 set nowrap
@@ -26,7 +27,6 @@ set shiftround
 
 " Enable line breaks/wrapping in Python files
 " autocmd FileType python setlocal formatoptions+=t
-autocmd! FileType * set noexpandtab " Set multiple options using set a=1|set b=2
 au BufEnter,BufRead *.py call SetPythonOptions()
 au BufEnter,BufRead *.php call SetPhpOptions()
 au BufEnter,BufRead *.yml,*.yaml call SetYamlOptions()
@@ -34,23 +34,21 @@ au BufEnter,BufRead *.rb,*.pp call SetRubyOptions()
 
 function! SetPythonOptions()
 	setlocal textwidth=79
-	setlocal expandtab
 	setlocal colorcolumn=80
 endfunction
 
 function! SetPhpOptions()
-	setlocal noexpandtab
+	setlocal textwidth=119
+	setlocal colorcolumn=120
 endfunction
 
 function! SetYamlOptions()
-	setlocal expandtab
 	setlocal tabstop=2
 	setlocal shiftwidth=2
 	setlocal softtabstop=2
 endfunction
 
 function! SetRubyOptions()
-	setlocal expandtab
 	setlocal tabstop=2
 	setlocal shiftwidth=2
 	setlocal softtabstop=2
