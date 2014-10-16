@@ -394,11 +394,10 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 " Color scheme & syntax highlighting
-:syntax on
+syntax on
+syntax enable
 
 set background=light
-
-syntax enable
 let g:solarized_termcolors=256
 colorscheme solarized
 
