@@ -129,3 +129,6 @@
 [submodule "home/.vim/bundle/ultisnips"]
 	path = home/.vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "home/.vim/bundle/closetag.vim"]
+	path = home/.vim/bundle/closetag.vim
+	url = https://github.com/docunext/closetag.vim.git
