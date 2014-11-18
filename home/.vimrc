@@ -157,6 +157,9 @@ vnoremap / /\v
 " Clear search highlights
 noremap <silent><Leader>/ :nohls<CR>
 
+" Insert close braces and position cursor after opening a brace + <enter>
+inoremap {<cr> {<cr>}<c-o>O
+
 " Prevent 'Press ENTER..' on error messages
 "set shortmess=atI
 
