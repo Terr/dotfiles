@@ -294,54 +294,6 @@ let g:ycm_key_list_select_completion = ['`', '<Down>']
 let g:ycm_key_list_previous_completion = ['~', '<Up>']
 
 
-" python-mode settings
-" 'Show documentation' plugin
-let g:pymode_doc = 1
-" Key for show python documentation
-let g:pymode_doc_key = 'K'
-" Load pylint code plugin
-let g:pymode_lint = 1
-" Auto fix vim python paths if virtualenv enabled
-let g:pymode_virtualenv = 1
-" Enable python objects and motion
-let g:pymode_motion = 1
-" Python folding
-let g:pymode_folding = 0
-" Custom syntax highlighting
-let g:pymode_syntax = 1
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_cmd = "import pudb; pudb.set_trace()  # XXX BREAKPOINT"
-let g:pymode_syntax_builtin_objs = 0
-let g:pymode_syntax_builtin_funcs = 0
-
-" Skip errors and warnings
-" Mostly cosmetic stuff like redundant backslashes or over-identation when
-" breaking up lines
-let g:pymode_lint_ignore = "E126,E127,E128,E302,E501,E502"
-" Do not automatically open quickfix window
-let g:pymode_lint_cwindow = 0
-
-"
-" pymode: rope settings
-let g:pymode_rope = 1
-let g:pymode_rope_auto_project = 1
-let g:pymode_rope_vim_completion = 1
-let g:pymode_rope_extended_complete = 1
-let g:pymode_rope_autoimport_modules = ["os","sys","shutil","datetime","django.*"]
-let g:pymode_rope_goto_def_newwin = "vnew"
-" Rope keybindings
-let g:pymode_rope_global_prefix = '<C-x>p'
-let g:pymode_rope_local_prefix = '<C-x>r'
-let g:pymode_rope_goto_def_newwin = "split"
-let g:pymode_rope_goto_definition_bind = '<Leader>g'
-let g:pymode_rope_rename_bind = '<Leader>r'
-let g:pymode_rope_complete_on_dot = 0
-"imap <cs-space> <C-R>=RopeCodeAssistInsertMode()<CR>
-
-" Jedi
-let g:jedi#popup_on_dot = 0
-let g:jedi#goto_assigment_command = "<leader>h"
-
 " YankRing
 nnoremap <silent> <F11> :YRShow<CR>
 let g:yankring_replace_n_nkey = '}'
