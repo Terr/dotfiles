@@ -242,11 +242,6 @@ vmap <S-Insert>		<C-V>
 noremap <C-Q>		<C-V>
 " End of /usr/share/vim/vim72/mswin.vim
 
-" Omni completion
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 autocmd FileType python set ft=python.django
 autocmd FileType html set ft=htmldjango.html
