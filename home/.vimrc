@@ -288,6 +288,11 @@ let g:ycm_filetype_blacklist = {
 let g:ycm_key_list_select_completion = ['`', '<Down>']
 let g:ycm_key_list_previous_completion = ['~', '<Up>']
 
+" Ensure preview window option is set in "completeopt"
+let g:ycm_add_preview_to_completeopt = 1
+" Close preview window after completion and/or leaving insert mode
+"let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " YankRing
 nnoremap <silent> <F11> :YRShow<CR>
