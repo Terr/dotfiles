@@ -249,7 +249,7 @@ autocmd FileType python set ft=python.django
 autocmd FileType html set ft=htmldjango.html
 
 " Remove trailing whitespace on save
-autocmd FileType c,cpp,java,php,python,javascript,html autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+autocmd FileType c,cpp,java,php,python,javascript,html,ruby autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 
 " Tagbar
 nnoremap <silent> <F7> :TagbarOpenAutoClose<cr>
