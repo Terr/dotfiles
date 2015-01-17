@@ -43,15 +43,6 @@
 [submodule "vim-fugitive"]
 	path = home/.vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "mikefarmer-snipmate"]
-	path = home/.vim/bundle/snipmate.vim
-	url = https://github.com/mikefarmer/snipmate.vim.git
-[submodule "home/.vim/snippets"]
-	path = home/.vim/snippets
-	url = https://github.com/scrooloose/snipmate-snippets.git
-[submodule "wincent-Command-T"]
-	path = home/.vim/bundle/wincent-Command-T
-	url = https://github.com/wincent/Command-T
 [submodule "vim-unimpaired"]
 	path = home/.vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
@@ -108,15 +99,9 @@
 [submodule "home/.vim/bundle/vim-css-color"]
 	path = home/.vim/bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
-[submodule "home/.vim/bundle/python-mode"]
-	path = home/.vim/bundle/python-mode
-	url = https://github.com/klen/python-mode.git
 [submodule "home/.vim/bundle/tasklist"]
 	path = home/.vim/bundle/tasklist
 	url = https://github.com/vim-scripts/TaskList.vim.git
-[submodule "home/.vim/bundle/closetag.vim"]
-	path = home/.vim/bundle/closetag.vim
-	url = https://github.com/vim-scripts/closetag.vim.git
 [submodule "home/.vim/bundle/vim-airline"]
 	path = home/.vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
@@ -132,3 +117,12 @@
 [submodule "home/.vim/bundle/ultisnips"]
 	path = home/.vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+[submodule "home/.vim/bundle/closetag.vim"]
+	path = home/.vim/bundle/closetag.vim
+	url = https://github.com/docunext/closetag.vim.git
+[submodule "home/.vim/bundle/tcomment_vim"]
+	path = home/.vim/bundle/tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim.git
+[submodule "home/.vim/bundle/vdebug"]
+	path = home/.vim/bundle/vdebug
+	url = https://github.com/joonty/vdebug.git
