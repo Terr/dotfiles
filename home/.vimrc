@@ -84,12 +84,25 @@ let g:airline_paste_symbol = '∥'
 call pathogen#infect()
 call pathogen#helptags()
 
-" Search
+" Search in files
 set incsearch
 set hlsearch
 " When 'ignorecase' and 'smartcase' are both on, if a pattern contains an uppercase letter, it is case sensitive, otherwise, it is not
 set ignorecase
 set smartcase
+
+" Use 'The Silver Searcher' (ag) when grepping for files (including in CtrlP)
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  " NOTE: For larger projects with thousands of files, caching is still desirable even on a SSD
+  "let g:ctrlp_use_caching = 0
+endif
 
 " Backup settings
 set nobackup
