@@ -272,6 +272,9 @@ let g:ctrlp_lazy_update = 0
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_height = 20
+" Use 'ctrlp-cmatcher' plugin for matching, as it provides a faster matching
+" algorithm writting in C
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'active',
