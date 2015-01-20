@@ -94,10 +94,10 @@ set smartcase
 " Use 'The Silver Searcher' (ag) when grepping for files (including in CtrlP)
 if executable('ag')
   " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ --nogroup\ --nocolor\ -f
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -f -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   " NOTE: For larger projects with thousands of files, caching is still desirable even on a SSD
