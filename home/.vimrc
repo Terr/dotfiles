@@ -288,6 +288,8 @@ let g:ycm_filetype_blacklist = {
 let g:ycm_key_list_select_completion = ['`', '<Down>']
 let g:ycm_key_list_previous_completion = ['~', '<Up>']
 
+nnoremap <Leader>d :YcmCompleter GoToDeclaration<CR>
+
 " Ensure preview window option is set in "completeopt"
 let g:ycm_add_preview_to_completeopt = 1
 " Close preview window after completion and/or leaving insert mode
