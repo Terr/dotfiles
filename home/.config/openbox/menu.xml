@@ -33,7 +33,7 @@
 		<item label="Text Editor">
 			<action name="Execute">
 				<command>
-					geany
+					gvim
 				</command>
 			</action>
 		</item>
