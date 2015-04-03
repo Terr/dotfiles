@@ -358,6 +358,21 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " Split screen vertically when starting to edit snippets
 let g:UltiSnipsEditSplit="vertical"
 
+" PHP refactoring toolbox
+let g:vim_php_refactoring_use_default_mapping = 0
+nnoremap <unique> <Leader>rlv :call PhpRenameLocalVariable()<CR>
+nnoremap <unique> <Leader>rcv :call PhpRenameClassVariable()<CR>
+nnoremap <unique> <Leader>rrm :call PhpRenameMethod()<CR>
+nnoremap <unique> <Leader>reu :call PhpExtractUse()<CR>
+vnoremap <unique> <Leader>rec :call PhpExtractConst()<CR>
+nnoremap <unique> <Leader>rep :call PhpExtractClassProperty()<CR>
+vnoremap <unique> <Leader>rem :call PhpExtractMethod()<CR>
+nnoremap <unique> <Leader>rnp :call PhpCreateProperty()<CR>
+nnoremap <unique> <Leader>rdu :call PhpDetectUnusedUseStatements()<CR>
+vnoremap <unique> <Leader>r== :call PhpAlignAssigns()<CR>
+nnoremap <unique> <Leader>rsg :call PhpCreateSettersAndGetters()<CR>
+nnoremap <unique> <Leader>rda :call PhpDocAll()<CR>
+
 "Allow switching from an unsaved buffer to another
 set hidden
 " Default UTF-8 text encoding
