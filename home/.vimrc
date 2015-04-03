@@ -351,12 +351,19 @@ if exists("loaded_matchit")
     \ '{% *spaceless .*%}:{% *endspaceless *%}'
 endif
 
-
 " UltiSnips
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " Split screen vertically when starting to edit snippets
 let g:UltiSnipsEditSplit="vertical"
+
+" Vdebug
+let g:vdebug_options = {
+    \ 'path_maps': {
+    \},
+    \ 'server': '0.0.0.0',
+    \ 'port': 9000
+\}
 
 " PHP refactoring toolbox
 let g:vim_php_refactoring_use_default_mapping = 0
