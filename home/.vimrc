@@ -323,6 +323,10 @@ autocmd User fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P " Shows branch name
 
+" Dispatch
+autocmd FileType php let b:dispatch = 'phpunit --filter ' . expand('%:t:r')
+nnoremap <F9> :Dispatch<CR>
+
 " Vim CSS colors
 autocmd! FileType sass,scss,stylus syn cluster sassCssAttributes add=@cssColors
 
