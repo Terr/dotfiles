@@ -280,7 +280,11 @@ let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 let g:syntastic_mode_map = { 'mode': 'active',
 			\ 'active_filetypes': ['coffee', 'php', 'javascript'],
 			\ 'passive_filetypes': ['ruby', 'python', 'html'] }
-let g:syntastic_javascript_checkers=['jsl']
+"" JavaScript
+let g:syntastic_javascript_checkers = ['jsl']
+"" PHP
+let g:syntastic_php_checkers = ['php', 'phpcs']
+let g:syntastic_php_phpcs_args = ' --standard=PSR2'
 
 " YouCompleteMe settings
 let g:ycm_filetype_blacklist = {
