@@ -277,9 +277,11 @@ let g:ctrlp_max_height = 20
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " Syntastic
-let g:syntastic_mode_map = { 'mode': 'active',
+let g:syntastic_mode_map = { 
+            \ 'mode': 'active', 
 			\ 'active_filetypes': ['coffee', 'php', 'javascript'],
-			\ 'passive_filetypes': ['ruby', 'python', 'html'] }
+			\ 'passive_filetypes': ['ruby', 'python', 'html'] 
+\ }
 "" JavaScript
 let g:syntastic_javascript_checkers = ['jsl']
 "" PHP
@@ -288,17 +290,18 @@ let g:syntastic_php_phpcs_args = ' --standard=PSR2'
 
 " YouCompleteMe settings
 let g:ycm_filetype_blacklist = {
-      \ 'tagbar' : 1,
-      \ 'qf' : 1,
-      \ 'notes' : 1,
-      \ 'markdown' : 1,
-      \ 'unite' : 1,
-      \ 'text' : 1,
-      \ 'vimwiki' : 1,
-      \ 'pandoc' : 1,
-      \ 'infolog' : 1,
-      \ 'mail' : 1
-\}
+    \ 'tagbar': 1,
+    \ 'qf': 1,
+    \ 'notes': 1,
+    \ 'markdown': 1,
+    \ 'unite': 1,
+    \ 'text': 1,
+    \ 'vimwiki': 1,
+    \ 'pandoc': 1,
+    \ 'infolog': 1,
+    \ 'mail': 1
+\ }
+
 " Add this to blacklist Python file, in case there is a conflict with
 " Rope/python-mode (when pyrope 'complete_on_dot' is on).
 "      \ 'python': 1,
