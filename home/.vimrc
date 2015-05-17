@@ -388,6 +388,15 @@ vnoremap <unique> <Leader>r== :call PhpAlignAssigns()<CR>
 nnoremap <unique> <Leader>rsg :call PhpCreateSettersAndGetters()<CR>
 nnoremap <unique> <Leader>rda :call PhpDocAll()<CR>
 
+" Easytags
+let g:easytags_file = "~/.vimtags/global"
+let g:easytags_by_filetype = "~/.vimtags"
+let g:easytags_auto_highlight = 0
+let g:easytags_async = 0
+"" Update tags on save
+"let g:easytags_events = ['BufWritePost']
+let g:easytags_events = ['CursorHold', 'CursorHoldI']
+
 "Allow switching from an unsaved buffer to another
 set hidden
 " Default UTF-8 text encoding

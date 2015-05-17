@@ -132,6 +132,12 @@
 [submodule "home/.vim/bundle/vim-php-refactoring-toolbox"]
 	path = home/.vim/bundle/vim-php-refactoring-toolbox
 	url = https://github.com/adoy/vim-php-refactoring-toolbox.git
+[submodule "home/.vim/bundle/vim-easytags"]
+	path = home/.vim/bundle/vim-easytags
+	url = https://github.com/xolox/vim-easytags.git
+[submodule "home/.vim/bundle/vim-misc"]
+	path = home/.vim/bundle/vim-misc
+	url = https://github.com/xolox/vim-misc.git
 [submodule "home/.vim/bundle/vim-dispatch"]
 	path = home/.vim/bundle/vim-dispatch
 	url = git://github.com/tpope/vim-dispatch.git
