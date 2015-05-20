@@ -277,24 +277,31 @@ let g:ctrlp_max_height = 20
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 " Syntastic
-let g:syntastic_mode_map = { 'mode': 'active',
+let g:syntastic_mode_map = { 
+            \ 'mode': 'active', 
 			\ 'active_filetypes': ['coffee', 'php', 'javascript'],
-			\ 'passive_filetypes': ['ruby', 'python', 'html'] }
-let g:syntastic_javascript_checkers=['jsl']
+			\ 'passive_filetypes': ['ruby', 'python', 'html'] 
+\ }
+"" JavaScript
+let g:syntastic_javascript_checkers = ['jsl']
+"" PHP
+let g:syntastic_php_checkers = ['php', 'phpcs']
+let g:syntastic_php_phpcs_args = ' --standard=PSR2'
 
 " YouCompleteMe settings
 let g:ycm_filetype_blacklist = {
-      \ 'tagbar' : 1,
-      \ 'qf' : 1,
-      \ 'notes' : 1,
-      \ 'markdown' : 1,
-      \ 'unite' : 1,
-      \ 'text' : 1,
-      \ 'vimwiki' : 1,
-      \ 'pandoc' : 1,
-      \ 'infolog' : 1,
-      \ 'mail' : 1
-\}
+    \ 'tagbar': 1,
+    \ 'qf': 1,
+    \ 'notes': 1,
+    \ 'markdown': 1,
+    \ 'unite': 1,
+    \ 'text': 1,
+    \ 'vimwiki': 1,
+    \ 'pandoc': 1,
+    \ 'infolog': 1,
+    \ 'mail': 1
+\ }
+
 " Add this to blacklist Python file, in case there is a conflict with
 " Rope/python-mode (when pyrope 'complete_on_dot' is on).
 "      \ 'python': 1,
@@ -325,6 +332,10 @@ autocmd User fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P " Shows branch name
 
+" Dispatch
+autocmd FileType php let b:dispatch = 'phpunit --filter ' . expand('%:t:r')
+nnoremap <F9> :Dispatch<CR>
+
 " Vim CSS colors
 autocmd! FileType sass,scss,stylus syn cluster sassCssAttributes add=@cssColors
 
@@ -353,12 +364,43 @@ if exists("loaded_matchit")
     \ '{% *spaceless .*%}:{% *endspaceless *%}'
 endif
 
-
 " UltiSnips
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " Split screen vertically when starting to edit snippets
 let g:UltiSnipsEditSplit="vertical"
+
+" Vdebug
+let g:vdebug_options = {
+    \ 'path_maps': {
+    \},
+    \ 'server': '0.0.0.0',
+    \ 'port': 9000
+\}
+
+" PHP refactoring toolbox
+let g:vim_php_refactoring_use_default_mapping = 0
+nnoremap <unique> <Leader>rlv :call PhpRenameLocalVariable()<CR>
+nnoremap <unique> <Leader>rcv :call PhpRenameClassVariable()<CR>
+nnoremap <unique> <Leader>rrm :call PhpRenameMethod()<CR>
+nnoremap <unique> <Leader>reu :call PhpExtractUse()<CR>
+vnoremap <unique> <Leader>rec :call PhpExtractConst()<CR>
+nnoremap <unique> <Leader>rep :call PhpExtractClassProperty()<CR>
+vnoremap <unique> <Leader>rem :call PhpExtractMethod()<CR>
+nnoremap <unique> <Leader>rnp :call PhpCreateProperty()<CR>
+nnoremap <unique> <Leader>rdu :call PhpDetectUnusedUseStatements()<CR>
+vnoremap <unique> <Leader>r== :call PhpAlignAssigns()<CR>
+nnoremap <unique> <Leader>rsg :call PhpCreateSettersAndGetters()<CR>
+nnoremap <unique> <Leader>rda :call PhpDocAll()<CR>
+
+" Easytags
+let g:easytags_file = "~/.vimtags/global"
+let g:easytags_by_filetype = "~/.vimtags"
+let g:easytags_auto_highlight = 0
+let g:easytags_async = 0
+"" Update tags on save
+"let g:easytags_events = ['BufWritePost']
+let g:easytags_events = ['CursorHold', 'CursorHoldI']
 
 "Allow switching from an unsaved buffer to another
 set hidden

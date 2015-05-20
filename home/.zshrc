@@ -81,6 +81,11 @@ alias -g G="| grep"
 alias git-root='cd $(git rev-parse --show-cdup)'  # cd to root of current git repository
 alias l="ls -oa"
 
+## Vagrant aliases
+alias vs="vagrant ssh"
+alias vu="vagrant up"
+alias vh="vagrant halt"
+
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
