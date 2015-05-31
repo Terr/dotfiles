@@ -9,3 +9,6 @@ tint2 &
 
 # Set keyboard rate
 xset r rate 200 &
+
+# Start Quicktile
+quicktile.py -d &
