@@ -179,18 +179,6 @@
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- Keybindings for desktop switching -->
-    <keybind key="W-Left">
-      <action name="GoToDesktop">
-        <to>left</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-Right">
-      <action name="GoToDesktop">
-        <to>right</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
     <keybind key="W-1">
       <action name="GoToDesktop">
         <to>1</to>
@@ -316,27 +304,47 @@
         </finalactions>
       </action>
     </keybind>
+
     <!-- Keybindings for window switching with the arrow keys -->
-    <keybind key="W-S-Right">
+    <keybind key="W-Right">
       <action name="DirectionalCycleWindows">
         <direction>right</direction>
+        <dialog>no</dialog>
+        <raise>yes</raise>
       </action>
     </keybind>
-    <keybind key="W-S-Left">
+    <keybind key="W-Left">
       <action name="DirectionalCycleWindows">
         <direction>left</direction>
+        <dialog>no</dialog>
+        <raise>yes</raise>
       </action>
     </keybind>
-    <keybind key="W-S-Up">
+    <keybind key="W-Up">
       <action name="DirectionalCycleWindows">
         <direction>up</direction>
+        <dialog>no</dialog>
+        <raise>yes</raise>
       </action>
     </keybind>
-    <keybind key="W-S-Down">
+    <keybind key="W-Down">
       <action name="DirectionalCycleWindows">
         <direction>down</direction>
+        <dialog>no</dialog>
+        <raise>yes</raise>
       </action>
     </keybind>
+
+    <!-- Locks the screen -->
+    <keybind key="W-l">
+        <action name="Execute">
+            <startupnotify>
+                <enabled>false</enabled>
+            </startupnotify>
+            <command>~/.config/i3/lock</command>
+        </action>
+    </keybind>
+
     <!-- Keybindings for running applications -->
     <keybind key="W-e">
       <action name="Execute">
