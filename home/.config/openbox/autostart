@@ -2,7 +2,7 @@
 compton -b --backend glx --vsync opengl-swc -t 0 -r 6
 
 # Set background
-hsetroot -fill ~/Pictures/Daylight\ 1920x1200.jpg &
+hsetroot -fill ~/Pictures/Wallpapers/Daylight\ 1920x1200.jpg &
 
 # Panel
 tint2 &
