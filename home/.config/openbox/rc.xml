@@ -361,6 +361,24 @@
         <command>scrot "/home/terr/Pictures/Screenshot %Y-%m-%d %H:%M:%S.png"</command>
       </action>
     </keybind>
+
+    <!-- Adjust volume -->
+    <keybind key="XF86AudioRaiseVolume">
+        <action name="Execute">
+            <command>amixer sset Master,0 5+</command>
+        </action>
+    </keybind>
+    <keybind key="XF86AudioLowerVolume">
+        <action name="Execute">
+            <command>amixer sset Master,0 5-</command>
+        </action>
+    </keybind>
+    <keybind key="XF86AudioMute">
+        <action name="Execute">
+            <command>amixer sset Master,0 toggle</command>
+        </action>
+    </keybind>
+
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
