@@ -235,8 +235,6 @@
         <follow>no</follow>
       </action>
     </keybind>
-    </keybind>
-    </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
