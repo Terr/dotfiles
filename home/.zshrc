@@ -94,4 +94,3 @@ if [[ -a $HOME/.zshrc.local ]]; then
 	echo "Applying local settings from $HOME/.zshrc.local"
 	source $HOME/.zshrc.local
 fi
-
