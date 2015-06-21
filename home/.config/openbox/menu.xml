@@ -262,12 +262,6 @@
                     <command>java -jar /usr/games/Minecraft.jar</command>
                 </action>
             </item>
-            <item label="World of Warcraft">
-                <action name="Execute">
-                    <!--<command>wine /mnt/SSDATA/World\ of\ Warcraft/WoW.exe</command>-->
-                    <command>bash /home/terr/bin/wow.sh</command>
-                </action>
-            </item>
             <separator/>
             <item label="Diablo III (launcher)">
                 <action name="Execute">
@@ -276,8 +270,6 @@
             </item>
             <item label="World of Warcraft (launcher)">
                 <action name="Execute">
-                    <!--<command>wine /mnt/GIGANT/World\ of\ Warcraft/World\ of\ Warcraft\ Launcher.exe</command>-->
-                    <!--<command>wine /mnt/SSDATA/World\ of\ Warcraft/World\ of\ Warcraft\ Launcher.exe</command>-->
                     <command>bash /home/terr/bin/wow_launcher.sh</command>
                 </action>
             </item>
