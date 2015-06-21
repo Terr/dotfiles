@@ -355,7 +355,8 @@
         <command>kfmclient openProfile filemanagement</command>
       </action>
     </keybind>
-    <!-- Launch gnome-screenshot when Print is pressed -->
+
+    <!-- Take screenshot -->
     <keybind key="Print">
       <action name="Execute">
         <command>scrot "/home/terr/Pictures/Screenshot %Y-%m-%d %H:%M:%S.png"</command>
