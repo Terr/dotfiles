@@ -1,5 +1,6 @@
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore_global
 [help]
 	format = web
 [alias]
