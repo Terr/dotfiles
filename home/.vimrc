@@ -335,6 +335,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P " Shows
 " Dispatch
 autocmd FileType php let b:dispatch = 'phpunit --filter ' . expand('%:t:r')
 nnoremap <F9> :Dispatch<CR>
+nnoremap <S-F9> :Start<CR>
 
 " Vim CSS colors
 autocmd! FileType sass,scss,stylus syn cluster sassCssAttributes add=@cssColors
