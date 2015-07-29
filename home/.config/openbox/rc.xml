@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>egtk-zuki</name>
+    <name>Zukitre</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -302,7 +302,6 @@
         </finalactions>
       </action>
     </keybind>
-
     <!-- Keybindings for window switching with the arrow keys -->
     <keybind key="W-Right">
       <action name="DirectionalCycleWindows">
@@ -332,17 +331,15 @@
         <raise>yes</raise>
       </action>
     </keybind>
-
     <!-- Locks the screen -->
     <keybind key="W-l">
-        <action name="Execute">
-            <startupnotify>
-                <enabled>false</enabled>
-            </startupnotify>
-            <command>~/.config/i3/lock</command>
-        </action>
+      <action name="Execute">
+        <startupnotify>
+          <enabled>false</enabled>
+        </startupnotify>
+        <command>~/.config/i3/lock</command>
+      </action>
     </keybind>
-
     <!-- Keybindings for running applications -->
     <keybind key="W-e">
       <action name="Execute">
@@ -359,24 +356,22 @@
         <command>scrot "/home/terr/Pictures/Screenshot %Y-%m-%d %H:%M:%S.png"</command>
       </action>
     </keybind>
-
     <!-- Adjust volume -->
     <keybind key="XF86AudioRaiseVolume">
-        <action name="Execute">
-            <command>amixer sset Master,0 5+</command>
-        </action>
+      <action name="Execute">
+        <command>amixer sset Master,0 5+</command>
+      </action>
     </keybind>
     <keybind key="XF86AudioLowerVolume">
-        <action name="Execute">
-            <command>amixer sset Master,0 5-</command>
-        </action>
+      <action name="Execute">
+        <command>amixer sset Master,0 5-</command>
+      </action>
     </keybind>
     <keybind key="XF86AudioMute">
-        <action name="Execute">
-            <command>amixer sset Master,0 toggle</command>
-        </action>
+      <action name="Execute">
+        <command>amixer sset Master,0 toggle</command>
+      </action>
     </keybind>
-
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
