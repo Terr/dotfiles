@@ -1,5 +1,6 @@
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore_global
 [help]
 	format = web
 [alias]
@@ -9,3 +10,5 @@
 	ci = commit
 	co = checkout
 	re = remote
+[include]
+    path = ~/.gitconfig.local
