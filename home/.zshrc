@@ -72,6 +72,12 @@ alias vh="vagrant halt"
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
+# fzf
+if [[ -e $HOME/.fzf/shell/ ]]; then
+    source $HOME/.fzf/shell/completion.zsh
+    source $HOME/.fzf/shell/key-bindings.zsh
+fi
+
 # Apply local settings, such as custom PATHs or aliases. This file is not stored in the dotfiles repository.
 if [[ -a $HOME/.zshrc.local ]]; then
 	echo "Applying local settings from $HOME/.zshrc.local"

@@ -144,3 +144,6 @@
 [submodule "home/.vim/bundle/padawan.vim"]
 	path = home/.vim/bundle/padawan.vim
 	url = https://github.com/mkusher/padawan.vim.git
+[submodule "home/.fzf"]
+	path = home/.fzf
+	url = https://github.com/junegunn/fzf.git
