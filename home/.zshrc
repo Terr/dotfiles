@@ -79,7 +79,7 @@ if [[ -e $HOME/.fzf/shell/ ]]; then
 fi
 
 # Apply local settings, such as custom PATHs or aliases. This file is not stored in the dotfiles repository.
-if [[ -a $HOME/.zshrc.local ]]; then
+if [[ -e $HOME/.zshrc.local ]]; then
 	echo "Applying local settings from $HOME/.zshrc.local"
 	source $HOME/.zshrc.local
 fi
