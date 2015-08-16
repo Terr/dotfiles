@@ -15,7 +15,7 @@ export LSCOLORS=ExGxcxdxCxegedabagacad
 export FZF_COMPLETION_TRIGGER='~~'
 
 # Customize to your needs...
-export PATH=$HOME/bin:$HOME/.fzf:$HOME/.fzf/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.fzf:$HOME/.fzf/bin
 
 # Apply local environments, such as custom PATHs or aliases. This file is not stored in the dotfiles repository.
 if [[ -e $HOME/.zshenv.local ]]; then
