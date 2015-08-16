@@ -37,6 +37,10 @@ plugins=(git mercurial django svn)
 
 source $ZSH/oh-my-zsh.sh
 
+# Limit history
+HISTSIZE=5000
+SAVEHIST=$HISTSIZE
+
 #
 # Enable shared history
 # Appends every command to the history file once it is executed
