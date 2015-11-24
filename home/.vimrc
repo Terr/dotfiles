@@ -289,6 +289,7 @@ let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_php_phpcs_args = ' --standard=PSR2'
 
 " YouCompleteMe settings
+let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_filetype_blacklist = {
     \ 'tagbar': 1,
     \ 'qf': 1,
@@ -306,6 +307,10 @@ let g:ycm_filetype_blacklist = {
 " Rope/python-mode (when pyrope 'complete_on_dot' is on).
 "      \ 'python': 1,
 "      \ 'python.django': 1
+
+let g:ycm_semantic_triggers = {}
+let g:ycm_semantic_triggers.php =
+    \ ['->', '::', '(', 'use ', 'namespace ', '\']
 
 " Relieve Tab of autocomplete duties
 let g:ycm_key_list_select_completion = ['`', '<Down>']
