@@ -399,6 +399,9 @@ vnoremap <unique> <Leader>r== :call PhpAlignAssigns()<CR>
 nnoremap <unique> <Leader>rsg :call PhpCreateSettersAndGetters()<CR>
 nnoremap <unique> <Leader>rda :call PhpDocAll()<CR>
 
+" Padawan
+let g:padawan#enabled = 0
+let g:padawan#composer_command = "php /usr/local/bin/composer"
 
 "Allow switching from an unsaved buffer to another
 set hidden
