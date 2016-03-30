@@ -280,7 +280,7 @@ let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 let g:syntastic_mode_map = { 
             \ 'mode': 'active', 
 			\ 'active_filetypes': ['coffee', 'php', 'javascript'],
-			\ 'passive_filetypes': ['ruby', 'python', 'html'] 
+			\ 'passive_filetypes': ['ruby', 'html'] 
 \ }
 "" JavaScript
 let g:syntastic_javascript_checkers = ['jsl']
@@ -289,6 +289,7 @@ let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_php_phpcs_args = ' --standard=PSR2'
 
 " YouCompleteMe settings
+let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_filetype_blacklist = {
     \ 'tagbar': 1,
     \ 'qf': 1,
@@ -306,6 +307,10 @@ let g:ycm_filetype_blacklist = {
 " Rope/python-mode (when pyrope 'complete_on_dot' is on).
 "      \ 'python': 1,
 "      \ 'python.django': 1
+
+let g:ycm_semantic_triggers = {}
+let g:ycm_semantic_triggers.php =
+    \ ['->', '::', '(', 'use ', 'namespace ', '\']
 
 " Relieve Tab of autocomplete duties
 let g:ycm_key_list_select_completion = ['`', '<Down>']
@@ -394,14 +399,9 @@ vnoremap <unique> <Leader>r== :call PhpAlignAssigns()<CR>
 nnoremap <unique> <Leader>rsg :call PhpCreateSettersAndGetters()<CR>
 nnoremap <unique> <Leader>rda :call PhpDocAll()<CR>
 
-" Easytags
-let g:easytags_file = "~/.vimtags/global"
-let g:easytags_by_filetype = "~/.vimtags"
-let g:easytags_auto_highlight = 0
-let g:easytags_async = 0
-"" Update tags on save
-"let g:easytags_events = ['BufWritePost']
-let g:easytags_events = ['CursorHold', 'CursorHoldI']
+" Padawan
+let g:padawan#enabled = 0
+let g:padawan#composer_command = "php /usr/local/bin/composer"
 
 "Allow switching from an unsaved buffer to another
 set hidden
