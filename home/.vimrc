@@ -280,7 +280,7 @@ let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 let g:syntastic_mode_map = { 
             \ 'mode': 'active', 
 			\ 'active_filetypes': ['coffee', 'php', 'javascript'],
-			\ 'passive_filetypes': ['ruby', 'python', 'html'] 
+			\ 'passive_filetypes': ['ruby', 'html'] 
 \ }
 "" JavaScript
 let g:syntastic_javascript_checkers = ['jsl']
