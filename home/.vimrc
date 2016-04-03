@@ -124,6 +124,8 @@ set showcmd
 set showmode
 " Line numbers
 set number
+" Relative line numbers
+set relativenumber
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 set mouse=a
 
