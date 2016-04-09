@@ -344,6 +344,15 @@ autocmd FileType php let b:dispatch = 'phpunit --filter ' . expand('%:t:r')
 nnoremap <F9> :Dispatch<CR>
 nnoremap <S-F9> :Start<CR>
 
+" vim-test
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+" make test commands execute using dispatch.vim
+let test#strategy = "dispatch"
+
 " Vim CSS colors
 autocmd! FileType sass,scss,stylus syn cluster sassCssAttributes add=@cssColors
 

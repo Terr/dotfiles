@@ -147,3 +147,6 @@
 [submodule "home/.vim/bundle/vim-gutentags"]
 	path = home/.vim/bundle/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "home/.vim/bundle/vim-test"]
+	path = home/.vim/bundle/vim-test
+	url = https://github.com/janko-m/vim-test.git
