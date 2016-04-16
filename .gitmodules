@@ -147,3 +147,6 @@
 [submodule "home/.vim/bundle/vim-test"]
 	path = home/.vim/bundle/vim-test
 	url = https://github.com/janko-m/vim-test.git
+[submodule "home/.vim/bundle/ropevim"]
+	path = home/.vim/bundle/ropevim
+	url = https://github.com/python-rope/ropevim.git

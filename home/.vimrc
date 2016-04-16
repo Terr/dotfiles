@@ -281,7 +281,7 @@ let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 " Syntastic
 let g:syntastic_mode_map = { 
             \ 'mode': 'active', 
-			\ 'active_filetypes': ['coffee', 'php', 'javascript'],
+			\ 'active_filetypes': ['coffee', 'php', 'javascript', 'python'],
 			\ 'passive_filetypes': ['ruby', 'html'] 
 \ }
 "" JavaScript
@@ -413,6 +413,10 @@ nnoremap <unique> <Leader>rda :call PhpDocAll()<CR>
 " Padawan
 let g:padawan#enabled = 0
 let g:padawan#composer_command = "php /usr/local/bin/composer"
+
+" ropevim
+"" Use completion provided by YouCompleteMe instead
+let ropevim_vim_completion = 0
 
 "Allow switching from an unsaved buffer to another
 set hidden
