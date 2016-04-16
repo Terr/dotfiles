@@ -364,10 +364,6 @@ let test#python#djangotest#executable = 'python manage.py test --noinput'
 " Vim CSS colors
 autocmd! FileType sass,scss,stylus syn cluster sassCssAttributes add=@cssColors
 
-" numbers.vim
-nnoremap <F3> :NumbersToggle<CR>
-let g:numbers_exclude = ['nerdtree', 'tagbar']
-
 " MatchIt
 " Extra patterns for matching Django template elements
 if exists("loaded_matchit")
