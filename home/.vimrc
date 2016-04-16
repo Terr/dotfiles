@@ -54,6 +54,12 @@ function! SetRubyOptions()
 	setlocal softtabstop=2
 endfunction
 
+au FileType qf call AdjustWindowHeight(3, 17)
+function! AdjustWindowHeight(minheight, maxheight)
+  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
+
+
 if has('gui_running')
 	set guioptions-=m  "remove menu bar
 	set guioptions-=T  "remove toolbar
@@ -352,6 +358,8 @@ nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 " make test commands execute using dispatch.vim
 let test#strategy = "dispatch"
+" don't ask anything, for example if dropping existing test database is okay
+let test#python#djangotest#executable = 'python manage.py test --noinput'
 
 " Vim CSS colors
 autocmd! FileType sass,scss,stylus syn cluster sassCssAttributes add=@cssColors
