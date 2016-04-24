@@ -1,9 +1,9 @@
-all: youcompleteme ctrlp-cmatcher padawan
+all: youcompleteme ctrlp-cmatcher composer padawan
 
 composer:
 	curl -sS https://getcomposer.org/installer | php && \
-	mkdir -p /usr/local/bin && \
-	mv composer.phar /usr/local/bin/composer
+	sudo mkdir -p /usr/local/bin && \
+	sudo mv composer.phar /usr/local/bin/composer
 
 youcompleteme:
 	cd home/.vim/bundle/YouCompleteMe && \
@@ -15,7 +15,4 @@ ctrlp-cmatcher:
 	./install.sh
 
 padawan: composer
-	cd home/.vim/bundle/padawan.vim && \
-	git submodule update --init --recursive && \
-	cd padawan.php && \
-	composer install
+	composer global require mkusher/padawan
