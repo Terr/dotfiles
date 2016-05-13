@@ -2,5 +2,5 @@
 " if not for MacVim not setting that variable 
 
 if has("gui_macvim")
-	set guifont=Monaco:h13
+	set guifont=Monaco:h14
 endif
