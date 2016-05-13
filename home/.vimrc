@@ -255,7 +255,6 @@ vmap <S-Insert>		<C-V>
 noremap <C-Q>		<C-V>
 " End of /usr/share/vim/vim72/mswin.vim
 
-
 autocmd FileType python set ft=python.django
 autocmd FileType html set ft=htmldjango.html
 
@@ -264,6 +263,9 @@ autocmd FileType c,cpp,java,php,python,javascript,html,ruby autocmd BufWritePre 
 
 " Tagbar
 nnoremap <silent> <F7> :TagbarOpenAutoClose<cr>
+
+" Gutentags
+let g:gutentags_ctags_executable_php = "phpctags"
 
 " ctrlp
 let g:ctrlp_match_window_reversed = 0
