@@ -144,3 +144,6 @@
 [submodule "home/.vim/bundle/vim-test"]
 	path = home/.vim/bundle/vim-test
 	url = https://github.com/janko-m/vim-test.git
+[submodule "home/.vim/bundle/django-plus.vim"]
+	path = home/.vim/bundle/django-plus.vim
+	url = https://github.com/tweekmonster/django-plus.vim.git
