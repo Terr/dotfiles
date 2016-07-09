@@ -14,3 +14,5 @@
     path = ~/.gitconfig.local
 [push]
 	default = simple
+[rebase]
+	autosquash = true
