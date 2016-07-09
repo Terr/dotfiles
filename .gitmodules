@@ -150,3 +150,6 @@
 [submodule "home/.vim/bundle/ropevim"]
 	path = home/.vim/bundle/ropevim
 	url = https://github.com/python-rope/ropevim.git
+[submodule "home/.vim/bundle/vim-eunuch"]
+	path = home/.vim/bundle/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch.git
