@@ -50,8 +50,6 @@ setopt share_history
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-export PYTHONPATH=/var/work/code/
-export PROJECT_HOME=/var/work/code/
 
 if [ -e /etc/bash_completion.d/virtualenvwrapper ]; then
 	source /etc/bash_completion.d/virtualenvwrapper
