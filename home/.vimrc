@@ -225,6 +225,16 @@ nnoremap <silent> <C-Up> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-Right> :TmuxNavigateRight<cr>
 nnoremap <silent> <C-BS> :TmuxNavigatePrevious<cr>
 
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    " These settings will make Ctrl-Shift mappings work in iTerm (and
+    " possibly others)
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
+
 " Buffer switching
 map <silent> <A-Left> :bprev<cr>
 map <silent> <A-Right> :bnext<cr>
