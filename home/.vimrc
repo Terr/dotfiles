@@ -217,12 +217,15 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 " Commands
 nnoremap <S-F8> :3winc h\|vertical res -60<cr>
 
-" Window and buffer switching
-map <silent> <C-Up> :winc k<cr>
-map <silent> <C-Right> :winc l<cr>
-map <silent> <C-Down> :winc j<cr>
-map <silent> <C-Left> :winc h<cr>
+" Window switching, combined with 'stepping' 
+" over into tmux panes
+nnoremap <silent> <C-Left> :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-Down> :TmuxNavigateDown<cr>
+nnoremap <silent> <C-Up> :TmuxNavigateUp<cr>
+nnoremap <silent> <C-Right> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-BS> :TmuxNavigatePrevious<cr>
 
+" Buffer switching
 map <silent> <A-Left> :bprev<cr>
 map <silent> <A-Right> :bnext<cr>
 map <silent> <A-h> :bprev<cr>
