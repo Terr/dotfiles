@@ -158,6 +158,13 @@ vnoremap > >gv " better indentation
 " Make Y behave like other capticals
 map Y y$
 
+" Switch to previous buffer with backspace
+nmap <BS> <C-^>
+
+" Remap backtick (= go to mark, including vertical position) to quote (= go to
+" mark, beginning of line)
+nnoremap ' `
+
 " Move up/down to wrapped lines instead as if they were real lines
 nnoremap j gj
 nnoremap k gk
@@ -283,6 +290,11 @@ let g:ctrlp_max_height = 20
 " Use 'ctrlp-cmatcher' plugin for matching, as it provides a faster matching
 " algorithm writting in C
 let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+let g:ctrlp_map = '`'
+let g:ctrlp_prompt_mappings = {
+    \ 'ToggleType(1)':  ['`', '<c-up>'],
+    \ 'ToggleType(-1)': ['~', '<c-down>'],
+\ }
 
 " Syntastic
 let g:syntastic_mode_map = { 
@@ -320,9 +332,8 @@ let g:ycm_semantic_triggers = {}
 let g:ycm_semantic_triggers.php =
     \ ['->', '::', '(', 'use ', 'namespace ', '\']
 
-" Relieve Tab of autocomplete duties
-let g:ycm_key_list_select_completion = ['`', '<Down>']
-let g:ycm_key_list_previous_completion = ['~', '<Up>']
+let g:ycm_key_list_select_completion = ['<Tab>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<S-Tab>', '<Up>']
 
 nnoremap <Leader>d :YcmCompleter GoToDeclaration<CR>
 
