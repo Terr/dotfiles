@@ -452,6 +452,11 @@ colorscheme solarized
 " Change color of selected character more distinct
 hi MatchParen guibg=bg guifg=gray
 
+augroup quickfix
+    autocmd!
+    autocmd FileType qf setlocal wrap
+augroup END
+
 " Startup
 
 "autocmd VimEnter * :Project
