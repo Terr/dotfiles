@@ -66,9 +66,6 @@ if has('gui_running')
 	set guioptions-=r  "remove right-hand scroll bar
 endif
 
-" vim-powerline
-"let g:Powerline_symbols = 'fancy'
-
 " vim-airline
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
@@ -184,9 +181,6 @@ vnoremap / /\v
 
 " Clear search highlights
 noremap <silent><Leader>/ :nohls<CR>
-
-" Insert close braces and position cursor after opening a brace + <enter>
-inoremap {<cr> {<cr>}<c-o>O
 
 " Prevent 'Press ENTER..' on error messages
 "set shortmess=atI
@@ -434,6 +428,10 @@ let g:padawan#composer_command = "php /usr/local/bin/composer"
 " ropevim
 "" Use completion provided by YouCompleteMe instead
 let ropevim_vim_completion = 0
+
+" delimitMate
+let delimitMate_expand_cr = 1
+let delimitMate_expand_space = 1
 
 "Allow switching from an unsaved buffer to another
 set hidden
