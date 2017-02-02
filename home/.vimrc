@@ -433,6 +433,11 @@ let ropevim_vim_completion = 0
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 
+" vim-fswitch
+nmap <silent> <Leader>of :FSHere<CR>
+au! BufEnter *.cpp let b:fswitchdst = 'h'
+au! BufEnter *.h let b:fswitchdst = 'cpp'
+
 "Allow switching from an unsaved buffer to another
 set hidden
 " Default UTF-8 text encoding
