@@ -355,7 +355,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P " Shows
 " Dispatch
 autocmd FileType php let b:dispatch = 'vendor/bin/phpunit --filter ' . expand('%:t:r')
 nnoremap <F9> :Dispatch<CR>
-nnoremap <S-F9> :Start<CR>
+nnoremap <F10> :Start<CR>
 
 " vim-test
 nmap <silent> <leader>t :TestNearest<CR>
