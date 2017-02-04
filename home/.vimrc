@@ -432,6 +432,9 @@ let ropevim_vim_completion = 0
 " delimitMate
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
+"
+" clang_complete
+let g:clang_library_path='/usr/lib/x86_64-linux-gnu/libclang-3.8.so.1'
 
 " vim-fswitch
 nmap <silent> <Leader>of :FSHere<CR>
