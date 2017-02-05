@@ -355,7 +355,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P " Shows
 " Dispatch
 autocmd FileType php let b:dispatch = 'vendor/bin/phpunit --filter ' . expand('%:t:r')
 nnoremap <F9> :Dispatch<CR>
-nnoremap <S-F9> :Start<CR>
+nnoremap <F10> :Start<CR>
 
 " vim-test
 nmap <silent> <leader>t :TestNearest<CR>
@@ -432,6 +432,14 @@ let ropevim_vim_completion = 0
 " delimitMate
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
+"
+" clang_complete
+let g:clang_library_path='/usr/lib/x86_64-linux-gnu/libclang-3.8.so.1'
+
+" vim-fswitch
+nmap <silent> <Leader>of :FSHere<CR>
+au! BufEnter *.cpp let b:fswitchdst = 'h'
+au! BufEnter *.h let b:fswitchdst = 'cpp'
 
 "Allow switching from an unsaved buffer to another
 set hidden

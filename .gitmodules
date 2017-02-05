@@ -129,6 +129,9 @@
 [submodule "home/.vim/bundle/vim-dispatch"]
 	path = home/.vim/bundle/vim-dispatch
 	url = git://github.com/tpope/vim-dispatch.git
+[submodule "home/.vim/bundle/clang_complete"]
+	path = home/.vim/bundle/clang_complete
+	url = https://github.com/Rip-Rip/clang_complete.git
 [submodule "home/.fzf"]
 	path = home/.fzf
 	url = https://github.com/junegunn/fzf.git
@@ -153,3 +156,6 @@
 [submodule "home/.vim/bundle/vim-airline-themes"]
     path = home/.vim/bundle/vim-airline-themes
     url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "home/.vim/bundle/vim-fswitch"]
+	path = home/.vim/bundle/vim-fswitch
+	url = https://github.com/derekwyatt/vim-fswitch.git
