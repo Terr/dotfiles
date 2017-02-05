@@ -393,10 +393,10 @@ if exists("loaded_matchit")
 endif
 
 " UltiSnips
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" Split screen vertically when starting to edit snippets
-let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger = "<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<c-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsEditSplit="horizontal"
 
 " Vdebug
 let g:vdebug_options = {
