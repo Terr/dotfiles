@@ -5,7 +5,11 @@ set nocompatible
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 
-filetype plugin on
+" Pathogen
+call pathogen#infect()
+call pathogen#helptags()
+
+syntax on
 filetype indent on
 
 set cindent
@@ -82,10 +86,6 @@ let g:airline#extensions#branch#prefix = '⎇ '
 let g:airline_paste_symbol = 'ρ'
 let g:airline_paste_symbol = 'Þ'
 let g:airline_paste_symbol = '∥'
-
-" Pathogen
-call pathogen#infect()
-call pathogen#helptags()
 
 " Search in files
 set incsearch
@@ -447,10 +447,7 @@ set hidden
 set encoding=utf-8   
 set fileencoding=utf-8
 
-" Color scheme & syntax highlighting
-syntax on
-syntax enable
-
+" Color scheme 
 set background=light
 let g:solarized_termcolors=256
 colorscheme solarized
