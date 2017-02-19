@@ -70,6 +70,10 @@ alias vh="vagrant halt"
 ## Git aliases (on top of those of oh-my-zsh's git plugin)
 alias gst="git status -s"
 
+## ag / Silver Searcher aliases
+alias aphp="ag --php"
+alias apy="ag --py"
+
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
