@@ -74,6 +74,12 @@ alias gst="git status -s"
 alias aphp="ag --php"
 alias apy="ag --py"
 
+# mkdir & cd
+function mkcd() 
+{
+    mkdir -p -- "$1" && cd -P -- "$1"
+}
+
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
