@@ -10,3 +10,5 @@ readline=1
 mentions=1
 # Enable SSL
 ssl=1
+# Use real time stream instead of REST API
+dostream=1
