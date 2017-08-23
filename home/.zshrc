@@ -69,6 +69,7 @@ alias vh="vagrant halt"
 
 ## Git aliases (on top of those of oh-my-zsh's git plugin)
 alias gst="git status -s"
+alias gcfix="git commit --fixup"
 
 ## ag / Silver Searcher aliases
 alias aphp="ag --php"
