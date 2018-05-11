@@ -47,6 +47,8 @@ SAVEHIST=$HISTSIZE
 setopt inc_append_history
 # Reloads the history whenever you use it
 setopt share_history
+# Don't store commands that are preceded by a space
+setopt HIST_IGNORE_SPACE
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
