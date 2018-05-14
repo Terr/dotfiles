@@ -76,6 +76,7 @@ alias gcfix="git commit --fixup"
 ## Have ag ignore files specified in git/hg/svnignore
 export FZF_DEFAULT_COMMAND='ag -g ""'
 ## ag / Silver Searcher aliases
+alias ag="ag --pager less"
 alias aphp="ag --php"
 alias apy="ag --py"
 
