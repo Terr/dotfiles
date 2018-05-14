@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
+ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
 # Set xterm (and xterm-alike) to 256 colors
 #export TERM=xterm-256color
@@ -10,10 +11,7 @@ else
 fi
 
 # Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="nicoulaj"
+ZSH_THEME="nicoulaj-modifaj"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
