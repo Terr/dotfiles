@@ -12,3 +12,6 @@ mentions=1
 ssl=1
 # Use real time stream instead of REST API
 dostream=1
+# Allow longer lines
+linelength=280
+quotelinelength=256
