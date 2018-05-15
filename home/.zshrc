@@ -66,6 +66,8 @@ alias l="ls -oa"
 alias vs="vagrant ssh"
 alias vu="vagrant up"
 alias vh="vagrant halt"
+alias vst="vagrant status"
+alias vpr="vagrant provision"
 
 ## Git aliases (on top of those of oh-my-zsh's git plugin)
 alias gst="git status -s"
