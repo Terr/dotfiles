@@ -1,69 +1,24 @@
-[submodule "home/.vim/bundle/AutoTag"]
-	path = home/.vim/bundle/AutoTag
-	url = https://github.com/vim-scripts/AutoTag.git
-[submodule "home/.vim/bundle/EasyMotion"]
-	path = home/.vim/bundle/EasyMotion
-	url = https://github.com/vim-scripts/EasyMotion.git
-[submodule "scrooloose-nerdtree"]
-	path = home/.vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "jistr-vim-nerdtree-tabs"]
-	path = home/.vim/bundle/vim-nerdtree-tabs
-	url = https://github.com/jistr/vim-nerdtree-tabs.git
 [submodule "vim-scripts-AutoTag"]
 	path = home/.vim/bundle/vim-scripts-AutoTag
 	url = https://github.com/vim-scripts/AutoTag.git
-[submodule "vim-scripts-IndexedSearch"]
-	path = home/.vim/bundle/IndexedSearch
-	url = https://github.com/vim-scripts/IndexedSearch.git
-[submodule "scrooloose-syntastic"]
-	path = home/.vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "sjbach-lusty"]
 	path = home/.vim/bundle/lusty
 	url = https://github.com/sjbach/lusty.git
-[submodule "greplace"]
-	path = home/.vim/bundle/greplace
-	url = https://github.com/skwp/greplace.vim
-[submodule "vim-repeat"]
-	path = home/.vim/bundle/vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
-[submodule "vim-surround"]
-	path = home/.vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "vim-scripts-matchit.zip"]
-	path = home/.vim/bundle/matchit.zip
-	url = https://github.com/vim-scripts/matchit.zip.git
-[submodule "skwp-vim-colors-solarized"]
-	path = home/.vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git 
 [submodule "vim-pathogen"]
 	path = home/.vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
-[submodule "vim-fugitive"]
-	path = home/.vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule "vim-unimpaired"]
-	path = home/.vim/bundle/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired
 [submodule "vim-git"]
 	path = home/.vim/bundle/vim-git
 	url = https://github.com/tpope/vim-git
 [submodule "vim-scripts-lastpos"]
 	path = home/.vim/bundle/vim-scripts-lastpos
 	url = https://github.com/vim-scripts/lastpos.vim
-[submodule "sjl-gundo"]
-	path = home/.vim/bundle/gundo.vim
-	url = https://github.com/sjl/gundo.vim
 [submodule "mileszs-ack"]
 	path = home/.vim/bundle/mileszs-ack
 	url = https://github.com/mileszs/ack.vim
 [submodule "kogakure-vim-sparkup"]
 	path = home/.vim/bundle/kogakure-vim-sparkup
 	url = https://github.com/kogakure/vim-sparkup.git
-[submodule "austintaylor-vim-indentobject"]
-	path = home/.vim/bundle/vim-indentobject
-	url = https://github.com/austintaylor/vim-indentobject
 [submodule "vim-scripts-ZoomWin"]
 	path = home/.vim/bundle/vim-scripts-ZoomWin
 	url = https://github.com/vim-scripts/ZoomWin.git
@@ -81,81 +36,6 @@
 	#url = https://github.com/garbas/vim-showmarks
 	#url = https://github.com/jacquesbh/vim-showmarks.git
 	url = https://github.com/zakj/vim-showmarks.git
-[submodule "home/.vim/bundle/delimitMate"]
-	path = home/.vim/bundle/delimitMate
-	url = https://github.com/Raimondi/delimitMate.git
-[submodule "home/.vim/bundle/ctrlp.vim"]
-	path = home/.vim/bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
-[submodule "home/.vim/bundle/vim-yankring"]
-	path = home/.vim/bundle/vim-yankring
-	url = https://github.com/vim-scripts/YankRing.vim.git
-[submodule "home/.vim/bundle/gitv"]
-	path = home/.vim/bundle/gitv
-	url = https://github.com/gregsexton/gitv.git
-[submodule "home/.vim/bundle/vim-css-color"]
-	path = home/.vim/bundle/vim-css-color
-	url = https://github.com/ap/vim-css-color.git
-[submodule "home/.vim/bundle/vim-airline"]
-	path = home/.vim/bundle/vim-airline
-	url = https://github.com/bling/vim-airline.git
-[submodule "home/.vim/bundle/YouCompleteMe"]
-	path = home/.vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
-[submodule "home/.vim/bundle/tagbar"]
-	path = home/.vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
-[submodule "home/.vim/bundle/emmet-vim"]
-	path = home/.vim/bundle/emmet-vim
-	url = https://github.com/mattn/emmet-vim.git
-[submodule "home/.vim/bundle/ultisnips"]
-	path = home/.vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
-[submodule "home/.vim/bundle/closetag.vim"]
-	path = home/.vim/bundle/closetag.vim
-	url = https://github.com/docunext/closetag.vim.git
-[submodule "home/.vim/bundle/tcomment_vim"]
-	path = home/.vim/bundle/tcomment_vim
-	url = https://github.com/tomtom/tcomment_vim.git
-[submodule "home/.vim/bundle/vdebug"]
-	path = home/.vim/bundle/vdebug
-	url = https://github.com/joonty/vdebug.git
-[submodule "home/.vim/bundle/vim-php-refactoring-toolbox"]
-	path = home/.vim/bundle/vim-php-refactoring-toolbox
-	url = https://github.com/adoy/vim-php-refactoring-toolbox.git
-[submodule "home/.vim/bundle/vim-misc"]
-	path = home/.vim/bundle/vim-misc
-	url = https://github.com/xolox/vim-misc.git
-[submodule "home/.vim/bundle/vim-dispatch"]
-	path = home/.vim/bundle/vim-dispatch
-	url = git://github.com/tpope/vim-dispatch.git
-[submodule "home/.vim/bundle/clang_complete"]
-	path = home/.vim/bundle/clang_complete
-	url = https://github.com/Rip-Rip/clang_complete.git
 [submodule "home/.fzf"]
 	path = home/.fzf
 	url = https://github.com/junegunn/fzf.git
-[submodule "home/.vim/bundle/vim-gutentags"]
-	path = home/.vim/bundle/vim-gutentags
-	url = https://github.com/ludovicchabant/vim-gutentags.git
-[submodule "home/.vim/bundle/vim-test"]
-	path = home/.vim/bundle/vim-test
-	url = https://github.com/janko-m/vim-test.git
-[submodule "home/.vim/bundle/ropevim"]
-	path = home/.vim/bundle/ropevim
-	url = https://github.com/python-rope/ropevim.git
-[submodule "home/.vim/bundle/vim-eunuch"]
-	path = home/.vim/bundle/vim-eunuch
-	url = https://github.com/tpope/vim-eunuch.git
-[submodule "home/.vim/bundle/django-plus.vim"]
-	path = home/.vim/bundle/django-plus.vim
-	url = https://github.com/tweekmonster/django-plus.vim.git
-[submodule "home/.vim/bundle/vim-tmux-navigator"]
-	path = home/.vim/bundle/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator.git
-[submodule "home/.vim/bundle/vim-airline-themes"]
-    path = home/.vim/bundle/vim-airline-themes
-    url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "home/.vim/bundle/vim-fswitch"]
-	path = home/.vim/bundle/vim-fswitch
-	url = https://github.com/derekwyatt/vim-fswitch.git
