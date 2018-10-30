@@ -73,12 +73,14 @@ alias vpr="vagrant provision"
 alias gst="git status -s"
 alias gcfix="git commit --fixup"
 
-## Have ag ignore files specified in git/hg/svnignore
-export FZF_DEFAULT_COMMAND='ag -g ""'
-## ag / Silver Searcher aliases
-alias ag="ag --pager less"
-alias aphp="ag --php"
-alias apy="ag --py"
+
+## ripgrep aliases
+alias rg="rg --pretty"
+alias rphp="rg --type php"
+alias rpy="rg --type py"
+alias rts="rg --type js --type ts"
+alias rjs="rts"
+alias rw="rg --type web"
 
 # mkdir & cd
 function mkcd() 
@@ -90,6 +92,8 @@ function mkcd()
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # fzf
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
 if [[ -e $HOME/.fzf/shell/ ]]; then
     source $HOME/.fzf/shell/completion.zsh
     source $HOME/.fzf/shell/key-bindings.zsh
