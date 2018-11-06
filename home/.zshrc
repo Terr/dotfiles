@@ -73,6 +73,7 @@ alias vrl="vagrant reload"
 ## Git aliases (on top of those of oh-my-zsh's git plugin)
 alias gst="git status -s"
 alias gcfix="git commit --fixup"
+alias gpfwl="git push --force-with-lease"
 
 
 ## ripgrep aliases
