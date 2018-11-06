@@ -75,6 +75,8 @@ alias gst="git status --short"
 alias gcfix="git commit --fixup"
 alias gpfwl="git push --force-with-lease"
 
+# Python poetry
+alias pt="poetry"
 
 ## ripgrep aliases
 alias rg="rg --pretty"
