@@ -42,11 +42,13 @@ SAVEHIST=$HISTSIZE
 #
 # Enable shared history
 # Appends every command to the history file once it is executed
-setopt inc_append_history
+setopt INC_APPEND_HISTORY
 # Reloads the history whenever you use it
-setopt share_history
+setopt SHARE_HISTORY
 # Don't store commands that are preceded by a space
 setopt HIST_IGNORE_SPACE
+# Don't store duplicate lines
+setopt HIST_IGNORE_ALL_DUPS
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
