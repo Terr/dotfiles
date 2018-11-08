@@ -82,10 +82,11 @@ alias pt="poetry"
 
 ## ripgrep aliases
 alias rg="rg --pretty"
+alias rjs="rts"
 alias rphp="rg --type php"
 alias rpy="rg --type py"
+alias rs="rg --type rust"
 alias rts="rg --type js --type ts"
-alias rjs="rts"
 alias rw="rg --type web"
 
 # mkdir & cd
