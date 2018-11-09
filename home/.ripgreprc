@@ -11,4 +11,4 @@
 
 # Web (front end) development related files
 --type-add 
-web:include:js,ts,html,jinja,tpl,sass
+web:*.js,*.ts,*.html,*.jinja,*.tpl,*.sass
