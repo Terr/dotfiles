@@ -1,6 +1,12 @@
 # Limit length of lines displayed (useful with minimized files)
 --max-columns=150
 
+# Colors
+--colors=path:fg:green 
+--colors=path:style:bold 
+--colors=line:fg:yellow 
+--colors=line:style:bold 
+
 --smart-case
 
 # Web (front end) development related files
