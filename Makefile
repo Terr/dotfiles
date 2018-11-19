@@ -3,7 +3,7 @@ NPROC ?= $(shell nproc --all)
 
 .PHONY: cargo ripgrep tmux automake
 
-all: cargo ripgrep tmux
+all: cargo ripgrep bat fselect tmux
 
 cargo: 
 	sh ${MAKEFILE_DIR}/scripts/rustup.sh
@@ -11,6 +11,14 @@ cargo:
 ripgrep:
 	@if [ ! -x ${HOME}/.cargo/bin/cargo ]; then make cargo; fi
 	cargo install ripgrep
+
+bat:
+	@if [ ! -x ${HOME}/.cargo/bin/cargo ]; then make cargo; fi
+	cargo install bat
+
+fselect:
+	@if [ ! -x ${HOME}/.cargo/bin/cargo ]; then make cargo; fi
+	cargo install bat
 
 .ONESHELL:
 tmux: automake
