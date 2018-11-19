@@ -100,11 +100,7 @@ function mkcd()
 
 # fzf
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-
-if [[ -e $HOME/.fzf/shell/ ]]; then
-    source $HOME/.fzf/shell/completion.zsh
-    source $HOME/.fzf/shell/key-bindings.zsh
-fi
+[ -f ~/.fzf.zsh  ] && source ~/.fzf.zsh
 
 # Apply local settings, such as custom PATHs or aliases. This file is not stored in the dotfiles repository.
 if [[ -e $HOME/.zshrc.local ]]; then

@@ -3,7 +3,10 @@ NPROC ?= $(shell nproc --all)
 
 .PHONY: cargo ripgrep tmux automake
 
-all: cargo ripgrep bat fselect tmux
+all: submodules cargo ripgrep bat fselect tmux
+
+submodules:
+	git submodule update --init
 
 cargo: 
 	sh ${MAKEFILE_DIR}/scripts/rustup.sh
