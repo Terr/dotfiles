@@ -1,30 +1,34 @@
 MAKEFILE_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 NPROC ?= $(shell nproc --all)
 
-.PHONY: cargo ripgrep tmux automake
+AUTOMAKE = /usr/bin/automake
+BAT = $(HOME)/.cargo/bin/bat
+CARGO = $(HOME)/.cargo/bin/cargo
+FSELECT = $(HOME)/.cargo/bin/fselect
+RIPGREP = $(HOME)/.cargo/bin/rg
+TMUX = /usr/local/bin/tmux
 
-all: submodules cargo ripgrep bat fselect tmux
+.PHONY: submodules
+
+all: submodules $(CARGO) $(RIPGREP) $(BAT) $(FSELECT) $(TMUX)
 
 submodules:
 	git submodule update --init
 
-cargo: 
-	sh ${MAKEFILE_DIR}/scripts/rustup.sh
+$(CARGO): 
+	$(MAKEFILE_DIR)/scripts/rustup.sh
 
-ripgrep:
-	@if [ ! -x ${HOME}/.cargo/bin/cargo ]; then make cargo; fi
+$(RIPGREP): $(CARGO)
 	cargo install ripgrep
 
-bat:
-	@if [ ! -x ${HOME}/.cargo/bin/cargo ]; then make cargo; fi
+$(BAT): $(CARGO)
 	cargo install bat
 
-fselect:
-	@if [ ! -x ${HOME}/.cargo/bin/cargo ]; then make cargo; fi
-	cargo install bat
+$(FSELECT): $(CARGO)
+	cargo install fselect
 
 .ONESHELL:
-tmux: automake
+$(TMUX): $(AUTOMAKE)
 	# Make a clone of my personal of tmux
 	$(eval TMPDIR := $(shell mktemp --directory))
 	git clone --depth 1 https://github.com/Terr/tmux.git ${TMPDIR}
@@ -32,9 +36,9 @@ tmux: automake
 	./autogen.sh
 	./configure 
 	make -j${NPROC}
-	 sudo make install
+	sudo make install
 	cd -
 	rm -rf ${TMPDIR}
 
-automake:
+$(AUTOMAKE):
 	sudo apt-get install -y automake
