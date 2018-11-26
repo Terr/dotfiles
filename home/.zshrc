@@ -2,14 +2,6 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 
-# Set xterm (and xterm-alike) to 256 colors
-#export TERM=xterm-256color
-if [[ $TERM == "xterm" ]]; then
-	export TERM=xterm-256color
-else
-	export TERM=screen-256color
-fi
-
 # Set name of the theme to load.
 ZSH_THEME="nicoulaj-modifaj"
 
