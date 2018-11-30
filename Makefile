@@ -8,27 +8,30 @@ FSELECT = $(HOME)/.cargo/bin/fselect
 RIPGREP = $(HOME)/.cargo/bin/rg
 TMUX = /usr/local/bin/tmux
 
-.PHONY: submodules
+.PHONY: submodules build-tools
 
 all: submodules $(CARGO) $(RIPGREP) $(BAT) $(FSELECT) $(TMUX)
 
 submodules:
-	git submodule update --init
+	# git submodule update --init
 
-$(CARGO): 
-	$(MAKEFILE_DIR)/scripts/rustup.sh
+$(CARGO): build-tools
+	$(MAKEFILE_DIR)/scripts/rustup.sh -y
 
 $(RIPGREP): $(CARGO)
-	cargo install ripgrep
+	$(CARGO) install --force ripgrep
 
 $(BAT): $(CARGO)
-	cargo install bat
+	$(CARGO) install --force bat
 
 $(FSELECT): $(CARGO)
-	cargo install fselect
+	$(CARGO) install --force fselect
 
 .ONESHELL:
-$(TMUX): $(AUTOMAKE)
+$(TMUX): build-tools
+	sudo apt install -y \
+		libncurses5-dev \
+		libevent-dev
 	# Make a clone of my personal of tmux
 	$(eval TMPDIR := $(shell mktemp --directory))
 	git clone --depth 1 https://github.com/Terr/tmux.git ${TMPDIR}
@@ -40,5 +43,8 @@ $(TMUX): $(AUTOMAKE)
 	cd -
 	rm -rf ${TMPDIR}
 
-$(AUTOMAKE):
-	sudo apt-get install -y automake
+build-tools:
+	sudo apt-get install -y \
+		automake \
+		pkg-config \
+		gcc
