@@ -10,23 +10,28 @@ TMUX = /usr/local/bin/tmux
 
 .PHONY: submodules build-tools
 
-all: submodules $(CARGO) $(RIPGREP) $(BAT) $(FSELECT) $(TMUX)
+all: submodules cargo ripgrep bat fselect tmux
 
 submodules:
-	# git submodule update --init
+	git submodule update --init
 
+cargo: $(CARGO)
 $(CARGO): build-tools
 	$(MAKEFILE_DIR)/scripts/rustup.sh -y
 
+ripgrep: $(RIPGREP)
 $(RIPGREP): $(CARGO)
 	$(CARGO) install --force ripgrep
 
+bat: $(BAT)
 $(BAT): $(CARGO)
 	$(CARGO) install --force bat
 
+fselect: $(FSELECT)
 $(FSELECT): $(CARGO)
 	$(CARGO) install --force fselect
 
+tmux: $(TMUX)
 .ONESHELL:
 $(TMUX): build-tools
 	sudo apt install -y \
