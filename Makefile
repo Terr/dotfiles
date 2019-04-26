@@ -4,13 +4,14 @@ NPROC ?= $(shell nproc --all)
 AUTOMAKE = /usr/bin/automake
 BAT = $(HOME)/.cargo/bin/bat
 CARGO = $(HOME)/.cargo/bin/cargo
+FD = $(HOME)/.cargo/bin/fd
 FSELECT = $(HOME)/.cargo/bin/fselect
 RIPGREP = $(HOME)/.cargo/bin/rg
 TMUX = /usr/local/bin/tmux
 
 .PHONY: submodules build-tools
 
-all: submodules cargo ripgrep bat fselect tmux
+all: submodules $(CARGO) $(RIPGREP) $(BAT) $(FSELECT) $(TMUX) $(FD)
 
 submodules:
 	git submodule update --init
@@ -30,6 +31,10 @@ $(BAT): $(CARGO)
 fselect: $(FSELECT)
 $(FSELECT): $(CARGO)
 	$(CARGO) install --force fselect
+
+fd: $(FD)
+$(FD): $(CARGO)
+	$(CARGO) install --force fd-find
 
 tmux: $(TMUX)
 .ONESHELL:
