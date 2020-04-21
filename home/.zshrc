@@ -75,6 +75,7 @@ alias pt="poetry"
 
 ## ripgrep aliases
 alias rg="rg --pretty"
+alias rc="rg --type c --type cpp"
 alias rjs="rts"
 alias rphp="rg --type php"
 alias rpy="rg --type py"
