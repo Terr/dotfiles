@@ -68,6 +68,7 @@ alias vrl="vagrant reload"
 alias gst="git status --short"
 alias gcfix="git commit --fixup"
 alias gpfwl="git push --force-with-lease"
+alias gmff="git merge --ff-only"
 
 # Python poetry
 alias pt="poetry"
