@@ -83,6 +83,14 @@ alias rs="rg --type rust"
 alias rts="rg --type js --type ts"
 alias rw="rg --type web"
 
+## Docker Compose aliases
+alias dc="docker-compose"
+alias dcu="dc up"
+alias dcud="dc up -d"
+alias dcs="dc stop"
+alias dcrs="dc restart"
+alias dce="dc exec"
+
 # mkdir & cd
 function mkcd() 
 {
