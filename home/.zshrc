@@ -50,7 +50,6 @@ if [ -e /etc/bash_completion.d/virtualenvwrapper ]; then
 fi
 
 # Aliases
-alias tmux="TERM=xterm-256color tmux -2"  # Start tmux in 256 color mode
 alias -g L="| less"
 alias -g G="| grep"
 alias git-root='cd $(git rev-parse --show-cdup)'  # cd to root of current git repository
