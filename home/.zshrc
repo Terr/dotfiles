@@ -35,8 +35,8 @@ SAVEHIST=$HISTSIZE
 # Enable shared history
 # Appends every command to the history file once it is executed
 setopt INC_APPEND_HISTORY
-# Reloads the history whenever you use it
-setopt SHARE_HISTORY
+# Do not reload the command history whenever you use it
+setopt NO_SHARE_HISTORY
 # Don't store commands that are preceded by a space
 setopt HIST_IGNORE_SPACE
 # Don't store duplicate lines
