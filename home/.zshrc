@@ -110,6 +110,10 @@ function mkcd()
     mkdir -p -- "$1" && cd -P -- "$1"
 }
 
+function open() {
+    xdg-open 1>~/.local/open.log 2>&1 $* &
+}
+
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
