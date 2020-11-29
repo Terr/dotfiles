@@ -46,12 +46,13 @@ setopt HIST_IGNORE_ALL_DUPS
 export WORKON_HOME=$HOME/.virtualenvs
 
 if [ -e /etc/bash_completion.d/virtualenvwrapper ]; then
-	source /etc/bash_completion.d/virtualenvwrapper
+    source /etc/bash_completion.d/virtualenvwrapper
 fi
 
 # Aliases
-alias -g L="| less"
-alias -g G="| grep"
+alias -g L="|less"
+alias -g G="|grep"
+alias -g T="|tail -f -n $(tput lines)"
 alias git-root='cd $(git rev-parse --show-cdup)'  # cd to root of current git repository
 alias l="ls -oa"
 
@@ -69,7 +70,7 @@ alias gcfix="git commit --fixup"
 alias gpfwl="git push --force-with-lease"
 alias gmff="git merge --ff-only"
 
-# Python poetry
+## Python poetry
 alias pt="poetry"
 
 ## ripgrep aliases
@@ -82,6 +83,12 @@ alias rs="rg --type rust"
 alias rts="rg --type js --type ts"
 alias rw="rg --type web"
 
+## Docker aliases
+alias drun='docker run --rm -ti'
+alias di="docker images"
+alias dps="docker ps"
+alias dexec="docker exec -ti"
+
 ## Docker Compose aliases
 alias dc="docker-compose"
 alias dcu="dc up"
@@ -89,6 +96,13 @@ alias dcud="dc up -d"
 alias dcs="dc stop"
 alias dcrs="dc restart"
 alias dce="dc exec"
+
+## 7zip
+alias 7x="7z x"
+alias 7l="7z l"
+
+## Send a commonly used TERM when ssh'ing when using something uncommon
+[[ "$TERM" == "tmux-256color" || "$TERM" == "alacritty" ]] && alias ssh="TERM=screen ssh"
 
 # mkdir & cd
 function mkcd() 
