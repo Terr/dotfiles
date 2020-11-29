@@ -115,7 +115,7 @@ function open() {
 }
 
 # tmuxinator
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+[ -s "$HOME/.tmuxinator/scripts/tmuxinator" ] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # fzf
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
