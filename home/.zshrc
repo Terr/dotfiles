@@ -88,6 +88,7 @@ alias drun='docker run --rm -ti'
 alias di="docker images"
 alias dps="docker ps"
 alias dexec="docker exec -ti"
+alias dins="docker inspect"
 
 ## Docker Compose aliases
 alias dc="docker-compose"
@@ -103,6 +104,12 @@ alias 7l="7z l"
 
 ## Send a commonly used TERM when ssh'ing when using something uncommon
 [[ "$TERM" == "tmux-256color" || "$TERM" == "alacritty" ]] && alias ssh="TERM=screen ssh"
+
+# Inspect a Docker Compose container
+function dcins() 
+{
+    docker inspect $(dc ps -q "$1")
+}
 
 # mkdir & cd
 function mkcd() 
