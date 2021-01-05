@@ -42,13 +42,6 @@ setopt HIST_IGNORE_SPACE
 # Don't store duplicate lines
 setopt HIST_IGNORE_ALL_DUPS
 
-# Virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-
-if [ -e /etc/bash_completion.d/virtualenvwrapper ]; then
-    source /etc/bash_completion.d/virtualenvwrapper
-fi
-
 # Aliases
 alias -g L="|less"
 alias -g G="|grep"
