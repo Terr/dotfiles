@@ -58,6 +58,7 @@ alias vpr="vagrant provision"
 alias vrl="vagrant reload"
 
 ## Git aliases (on top of those of oh-my-zsh's git plugin)
+alias gb="git branch -vv"
 alias gst="git status --short"
 alias gcfix="git commit --fixup"
 alias gpfwl="git push --force-with-lease"
