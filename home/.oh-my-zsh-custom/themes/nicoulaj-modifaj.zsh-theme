@@ -22,6 +22,10 @@ PROMPT_VCS_INFO_COLOR=$FG[242]
 # Set required options.
 setopt promptsubst
 
+# Remove RPROMPT when executing a command, to stop it from interfering when
+# copy/pasting multiple lines from the terminal
+setopt transient_rprompt
+
 # Load required modules.
 autoload -U add-zsh-hook
 autoload -Uz vcs_info
