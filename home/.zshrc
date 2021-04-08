@@ -63,6 +63,10 @@ alias gst="git status --short"
 alias gcfix="git commit --fixup"
 alias gpfwl="git push --force-with-lease"
 alias gmff="git merge --ff-only"
+alias gs="git stash"
+alias gsp="git stash pop"
+alias gsa="git stash apply"
+alias gsl="git stash list"
 
 ## Python poetry
 alias pt="poetry"
