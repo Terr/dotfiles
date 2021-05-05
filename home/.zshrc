@@ -116,7 +116,11 @@ function mkcd()
 }
 
 function open() {
-    xdg-open 1>~/.local/open.log 2>&1 $* &
+    if command -v handlr &>/dev/null; then
+        handlr open $@
+    else
+        xdg-open 1>~/.local/open.log 2>&1 $@ &
+    fi
 }
 
 # tmuxinator
