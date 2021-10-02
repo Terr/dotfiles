@@ -14,7 +14,11 @@ export FZF_COMPLETION_TRIGGER='~~'
 # ripgrep
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
-# Apply local environments, such as custom PATHs or aliases. This file is not stored in the dotfiles repository.
+# Homebrew
+export HOMEBREW_NO_EMOJI=1
+export HOMEBREW_NO_ANALYTICS=1 # https://docs.brew.sh/Analytics
+
+# Apply local environments, such as custom PATHs. This file is not stored in the dotfiles repository.
 if [[ -e $HOME/.zshenv.local ]]; then
 	source $HOME/.zshenv.local
 fi
