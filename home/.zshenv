@@ -1,9 +1,9 @@
 export EDITOR=vim
 export SHELL=zsh
 
-# Settings for less: quit if only 1 page of text, output color control
+# Settings for less: quit if only 1 screen of text, output color control
 # characters in raw format and do not clear screen when starting/quitting less
-export LESS=-FRX
+export LESS='--no-init --quit-if-one-screen --raw-control-chars'
 
 # Colors for ls
 export LSCOLORS=ExGxcxdxCxegedabagacad
