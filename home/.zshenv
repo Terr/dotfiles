@@ -5,9 +5,6 @@ export SHELL=zsh
 # characters in raw format and do not clear screen when starting/quitting less
 export LESS=-FRX
 
-# Tell ack to display colored, paged results
-export ACK_PAGER_COLOR="${PAGER:-less}"
-
 # Colors for ls
 export LSCOLORS=ExGxcxdxCxegedabagacad
 
