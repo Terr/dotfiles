@@ -100,6 +100,9 @@ alias dce="dc exec"
 alias 7x="7z x"
 alias 7l="7z l"
 
+## Semgrep
+alias sg="semgrep --disable-version-check"
+
 ## Send a commonly used TERM when ssh'ing when using something uncommon
 [[ "$TERM" == "tmux-256color" || "$TERM" == "alacritty" ]] && alias ssh="TERM=screen ssh"
 

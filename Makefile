@@ -1,6 +1,18 @@
 MAKEFILE_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 NPROC ?= $(shell nproc --all)
 
+IS_MACOS := $(shell if [ "`uname -s`" = "Darwin" ]; then echo 1; else echo 0; fi)
+
+PYTHON := python3
+WGET := wget
+
+ifeq ($(IS_MACOS), 1)
+	PYTHON_VERSION := $(shell $(PYTHON) --version|grep --only-matching --regexp='\d\.\d')
+	PYTHON_USER_BIN := $(HOME)/Library/Python/$(PYTHON_VERSION)/bin
+else
+	PYTHON_USER_BIN := $(HOME)/.local/bin
+endif
+
 AUTOMAKE := /usr/bin/automake
 BAT := $(HOME)/.cargo/bin/bat
 CARGO := $(HOME)/.cargo/bin/cargo
@@ -8,11 +20,12 @@ FASD := $(HOME)/bin/fasd
 FD := $(HOME)/.cargo/bin/fd
 FSELECT := $(HOME)/.cargo/bin/fselect
 RIPGREP := $(HOME)/.cargo/bin/rg
+SEMGREP := $(PYTHON_USER_BIN)/semgrep
 TMUX := /usr/local/bin/tmux
 
 .PHONY: submodules build-tools
 
-all: submodules $(CARGO) $(RIPGREP) $(BAT) $(FSELECT) $(TMUX) $(FD) $(FASD)
+all: submodules $(CARGO) $(RIPGREP) $(BAT) $(FSELECT) $(TMUX) $(FD) $(FASD) $(SEMGREP)
 
 submodules:
 	git submodule update --init
@@ -42,6 +55,10 @@ $(FASD):
 	mkdir -p $$HOME/bin
 	$(WGET) -O $$HOME/bin/fasd https://raw.githubusercontent.com/whjvenyl/fasd/c35874dac5491468ed746dda05d23c560d451dfa/fasd
 	chmod u+x $$HOME/bin/fasd
+
+semgrep: $(SEMGREP)
+$(SEMGREP):
+	$(PYTHON) -m pip install --user --upgrade semgrep
 
 tmux: $(TMUX)
 .ONESHELL:
