@@ -2,6 +2,9 @@ MAKEFILE_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 NPROC ?= $(shell nproc --all)
 
 IS_MACOS := $(shell if [ "`uname -s`" = "Darwin" ]; then echo 1; else echo 0; fi)
+HAS_PACMAN := $(shell command -v pacman >/dev/null && echo 1 || echo 0)
+HAS_APT := $(shell command -v apt-get >/dev/null && echo 1 || echo 0)
+HAS_HOMEBREW := $(shell command -v brew >/dev/null && echo 1 || echo 0)
 
 PYTHON := python3
 WGET := wget
@@ -78,7 +81,10 @@ $(TMUX): build-tools
 	rm -rf ${TMPDIR}
 
 build-tools:
-	sudo apt-get install -y \
-		automake \
-		pkg-config \
-		gcc
+	if [ $(HAS_APT) -eq 1 ]; then \
+		sudo apt-get install -y \
+			automake \
+			pkg-config \
+			gcc; \
+	fi
+	# TODO Other package managers
