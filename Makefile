@@ -1,13 +1,13 @@
 MAKEFILE_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 NPROC ?= $(shell nproc --all)
 
-AUTOMAKE = /usr/bin/automake
-BAT = $(HOME)/.cargo/bin/bat
-CARGO = $(HOME)/.cargo/bin/cargo
-FD = $(HOME)/.cargo/bin/fd
-FSELECT = $(HOME)/.cargo/bin/fselect
-RIPGREP = $(HOME)/.cargo/bin/rg
-TMUX = /usr/local/bin/tmux
+AUTOMAKE := /usr/bin/automake
+BAT := $(HOME)/.cargo/bin/bat
+CARGO := $(HOME)/.cargo/bin/cargo
+FD := $(HOME)/.cargo/bin/fd
+FSELECT := $(HOME)/.cargo/bin/fselect
+RIPGREP := $(HOME)/.cargo/bin/rg
+TMUX := /usr/local/bin/tmux
 
 .PHONY: submodules build-tools
 
