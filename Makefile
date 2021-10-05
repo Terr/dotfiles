@@ -4,6 +4,7 @@ NPROC ?= $(shell nproc --all)
 AUTOMAKE := /usr/bin/automake
 BAT := $(HOME)/.cargo/bin/bat
 CARGO := $(HOME)/.cargo/bin/cargo
+FASD := $(HOME)/bin/fasd
 FD := $(HOME)/.cargo/bin/fd
 FSELECT := $(HOME)/.cargo/bin/fselect
 RIPGREP := $(HOME)/.cargo/bin/rg
@@ -11,7 +12,7 @@ TMUX := /usr/local/bin/tmux
 
 .PHONY: submodules build-tools
 
-all: submodules $(CARGO) $(RIPGREP) $(BAT) $(FSELECT) $(TMUX) $(FD)
+all: submodules $(CARGO) $(RIPGREP) $(BAT) $(FSELECT) $(TMUX) $(FD) $(FASD)
 
 submodules:
 	git submodule update --init
@@ -35,6 +36,12 @@ $(FSELECT): $(CARGO)
 fd: $(FD)
 $(FD): $(CARGO)
 	$(CARGO) install --force fd-find
+
+fasd: $(FASD)
+$(FASD):
+	mkdir -p $$HOME/bin
+	$(WGET) -O $$HOME/bin/fasd https://raw.githubusercontent.com/whjvenyl/fasd/c35874dac5491468ed746dda05d23c560d451dfa/fasd
+	chmod u+x $$HOME/bin/fasd
 
 tmux: $(TMUX)
 .ONESHELL:

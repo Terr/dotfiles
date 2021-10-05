@@ -130,6 +130,9 @@ function open() {
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 [ -f ~/.fzf.zsh  ] && source ~/.fzf.zsh
 
+# fasd
+eval "$($HOME/bin/fasd --init auto)"
+
 # Apply local settings, such as custom aliases. This file is not stored in the dotfiles repository.
 if [[ -e $HOME/.zshrc.local ]]; then
 	echo "Applying local settings from $HOME/.zshrc.local"
