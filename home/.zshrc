@@ -119,7 +119,9 @@ function mkcd()
 }
 
 function open() {
-    if command -v handlr &>/dev/null; then
+    if [ "$(uname)" = "Darwin" ]; then
+        /usr/bin/open $@
+    elif command -v handlr &>/dev/null; then
         handlr open $@
     else
         xdg-open 1>~/.local/open.log 2>&1 $@ &
