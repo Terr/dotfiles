@@ -9,6 +9,7 @@ export LESS='--no-init --quit-if-one-screen --raw-control-chars'
 export LSCOLORS=ExGxcxdxCxegedabagacad
 
 # FZF
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export FZF_COMPLETION_TRIGGER='~~'
 
 # ripgrep

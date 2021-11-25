@@ -132,7 +132,6 @@ function open() {
 [ -s "$HOME/.tmuxinator/scripts/tmuxinator" ] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # fzf
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 [ -f ~/.fzf.zsh  ] && source ~/.fzf.zsh
 
 # fasd
