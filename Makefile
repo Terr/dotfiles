@@ -35,7 +35,7 @@ submodules:
 
 cargo: $(CARGO)
 $(CARGO): build-tools
-	$(MAKEFILE_DIR)/scripts/rustup.sh -y
+	$(MAKEFILE_DIR)/bin/rustup.sh -y
 
 ripgrep: $(RIPGREP)
 $(RIPGREP): $(CARGO)
