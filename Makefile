@@ -30,30 +30,37 @@ ZSH_SYNTAX_HIGHLIGHTING := $(HOME)/bin/zsh-syntax-highlighting-filetypes.zsh
 
 .PHONY: submodules build-tools
 
-all: submodules $(CARGO) $(RIPGREP) $(BAT) $(FSELECT) $(TMUX) $(FD) $(FASD) $(SEMGREP) $(LS_COLORS) $(ZSH_SYNTAX_HIGHLIGHTING)
+all: submodules \
+	$(BAT) \
+	$(CARGO) \
+	$(FASD) \
+	$(FD) \
+	$(FSELECT) \
+	$(LS_COLORS) \
+	$(RIPGREP) \
+	$(SEMGREP) \
+	$(TMUX) \
+	$(ZSH_SYNTAX_HIGHLIGHTING)
+
+build-tools:
+	if [ $(HAS_APT) -eq 1 ]; then \
+		sudo apt-get install -y \
+			automake \
+			pkg-config \
+			gcc; \
+	fi
+	# TODO Other package managers
 
 submodules:
 	git submodule update --init
-
-cargo: $(CARGO)
-$(CARGO): build-tools
-	$(MAKEFILE_DIR)/bin/rustup.sh -y
-
-ripgrep: $(RIPGREP)
-$(RIPGREP): $(CARGO)
-	$(CARGO) install --force ripgrep
 
 bat: $(BAT)
 $(BAT): $(CARGO)
 	$(CARGO) install --force bat
 
-fselect: $(FSELECT)
-$(FSELECT): $(CARGO)
-	$(CARGO) install --force fselect
-
-fd: $(FD)
-$(FD): $(CARGO)
-	$(CARGO) install --force fd-find
+cargo: $(CARGO)
+$(CARGO): build-tools
+	$(MAKEFILE_DIR)/bin/rustup.sh -y
 
 fasd: $(FASD)
 $(FASD):
@@ -61,9 +68,13 @@ $(FASD):
 	$(WGET) -O $$HOME/bin/fasd https://raw.githubusercontent.com/whjvenyl/fasd/c35874dac5491468ed746dda05d23c560d451dfa/fasd
 	chmod u+x $$HOME/bin/fasd
 
-semgrep: $(SEMGREP)
-$(SEMGREP):
-	$(PYTHON) -m pip install --user --upgrade semgrep
+fd: $(FD)
+$(FD): $(CARGO)
+	$(CARGO) install --force fd-find
+
+fselect: $(FSELECT)
+$(FSELECT): $(CARGO)
+	$(CARGO) install --force fselect
 
 ls-colors: $(LS_COLORS)
 $(LS_COLORS):
@@ -76,10 +87,13 @@ ifeq ($(IS_MACOS), 1)
 	fi
 endif
 
-zsh-syntax-highlighting: $(ZSH_SYNTAX_HIGHLIGHTING)
-$(ZSH_SYNTAX_HIGHLIGHTING):
-	mkdir -p $$HOME/bin
-	cp $(MAKEFILE_DIR)/bin/zsh-syntax-highlighting-filetypes.zsh $$HOME/bin
+ripgrep: $(RIPGREP)
+$(RIPGREP): $(CARGO)
+	$(CARGO) install --force ripgrep
+
+semgrep: $(SEMGREP)
+$(SEMGREP):
+	$(PYTHON) -m pip install --user --upgrade semgrep
 
 tmux: $(TMUX)
 .ONESHELL:
@@ -97,15 +111,6 @@ $(TMUX): build-tools
 	sudo make install
 	cd -
 	rm -rf ${TMPDIR}
-
-build-tools:
-	if [ $(HAS_APT) -eq 1 ]; then \
-		sudo apt-get install -y \
-			automake \
-			pkg-config \
-			gcc; \
-	fi
-	# TODO Other package managers
 
 zsh-syntax-highlighting: $(ZSH_SYNTAX_HIGHLIGHTING)
 $(ZSH_SYNTAX_HIGHLIGHTING):
