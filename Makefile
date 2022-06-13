@@ -16,14 +16,17 @@ else
 	PYTHON_USER_BIN := $(HOME)/.local/bin
 endif
 
+CARGO_BIN := $(HOME)/.cargo/bin
+
 AUTOMAKE := /usr/bin/automake
-BAT := $(HOME)/.cargo/bin/bat
-CARGO := $(HOME)/.cargo/bin/cargo
+BAT := $(CARGO_BIN)/bat
+CARGO := $(CARGO_BIN)/cargo
 FASD := $(HOME)/bin/fasd
-FD := $(HOME)/.cargo/bin/fd
-FSELECT := $(HOME)/.cargo/bin/fselect
+FD := $(CARGO_BIN)/fd
+FSELECT := $(CARGO_BIN)/fselect
+HANDLR = $(CARGO_BIN)/handlr
 LS_COLORS := $(HOME)/bin/LS_COLORS
-RIPGREP := $(HOME)/.cargo/bin/rg
+RIPGREP := $(CARGO_BIN)/rg
 SEMGREP := $(PYTHON_USER_BIN)/semgrep
 TMUX := /usr/local/bin/tmux
 ZSH_SYNTAX_HIGHLIGHTING := $(HOME)/bin/zsh-syntax-highlighting-filetypes.zsh
@@ -36,6 +39,7 @@ all: submodules \
 	$(FASD) \
 	$(FD) \
 	$(FSELECT) \
+	$(HANDLR) \
 	$(LS_COLORS) \
 	$(RIPGREP) \
 	$(SEMGREP) \
@@ -75,6 +79,10 @@ $(FD): $(CARGO)
 fselect: $(FSELECT)
 $(FSELECT): $(CARGO)
 	$(CARGO) install --force fselect
+
+handlr: $(HANDLR)
+$(HANDLR): $(CARGO)
+	$(CARGO) install --force handlr
 
 ls-colors: $(LS_COLORS)
 $(LS_COLORS):
