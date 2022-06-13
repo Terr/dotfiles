@@ -128,6 +128,12 @@ function open() {
     fi
 }
 
+# ls colors
+eval $( dircolors -b $HOME/bin/LS_COLORS )
+
+# Command line syntax highlighting
+source $HOME/bin/zsh-syntax-highlighting-filetypes.zsh
+
 # tmuxinator
 [ -s "$HOME/.tmuxinator/scripts/tmuxinator" ] && source $HOME/.tmuxinator/scripts/tmuxinator
 

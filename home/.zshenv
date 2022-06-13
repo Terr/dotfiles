@@ -5,7 +5,7 @@ export SHELL=zsh
 # characters in raw format and do not clear screen when starting/quitting less
 export LESS='--no-init --quit-if-one-screen --raw-control-chars'
 
-# Colors for ls
+# Colors for ls (in case ~/bin/LS_COLORS is missing or dircolors isn't installed)
 export LSCOLORS=ExGxcxdxCxegedabagacad
 
 # FZF

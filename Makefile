@@ -22,13 +22,15 @@ CARGO := $(HOME)/.cargo/bin/cargo
 FASD := $(HOME)/bin/fasd
 FD := $(HOME)/.cargo/bin/fd
 FSELECT := $(HOME)/.cargo/bin/fselect
+LS_COLORS := $(HOME)/bin/LS_COLORS
 RIPGREP := $(HOME)/.cargo/bin/rg
 SEMGREP := $(PYTHON_USER_BIN)/semgrep
 TMUX := /usr/local/bin/tmux
+ZSH_SYNTAX_HIGHLIGHTING := $(HOME)/bin/zsh-syntax-highlighting-filetypes.zsh
 
 .PHONY: submodules build-tools
 
-all: submodules $(CARGO) $(RIPGREP) $(BAT) $(FSELECT) $(TMUX) $(FD) $(FASD) $(SEMGREP)
+all: submodules $(CARGO) $(RIPGREP) $(BAT) $(FSELECT) $(TMUX) $(FD) $(FASD) $(SEMGREP) $(LS_COLORS) $(ZSH_SYNTAX_HIGHLIGHTING)
 
 submodules:
 	git submodule update --init
@@ -63,6 +65,22 @@ semgrep: $(SEMGREP)
 $(SEMGREP):
 	$(PYTHON) -m pip install --user --upgrade semgrep
 
+ls-colors: $(LS_COLORS)
+$(LS_COLORS):
+	mkdir -p $$HOME/bin
+	ln -s $(MAKEFILE_DIR)/bin/LS_COLORS $$HOME/bin
+ifeq ($(IS_MACOS), 1)
+	if [ ! -f $$HOME/bin/dircolors ]; then \
+		brew install coreutils; \
+		ln -s /usr/local/bin/gdircolors $$HOME/bin/dircolors; \
+	fi
+endif
+
+zsh-syntax-highlighting: $(ZSH_SYNTAX_HIGHLIGHTING)
+$(ZSH_SYNTAX_HIGHLIGHTING):
+	mkdir -p $$HOME/bin
+	cp $(MAKEFILE_DIR)/bin/zsh-syntax-highlighting-filetypes.zsh $$HOME/bin
+
 tmux: $(TMUX)
 .ONESHELL:
 $(TMUX): build-tools
@@ -88,3 +106,8 @@ build-tools:
 			gcc; \
 	fi
 	# TODO Other package managers
+
+zsh-syntax-highlighting: $(ZSH_SYNTAX_HIGHLIGHTING)
+$(ZSH_SYNTAX_HIGHLIGHTING):
+	mkdir -p $$HOME/bin
+	ln -s $(MAKEFILE_DIR)/bin/zsh-syntax-highlighting-filetypes.zsh $$HOME/bin
