@@ -129,10 +129,10 @@ function open() {
 }
 
 # ls colors
-eval $( dircolors -b $HOME/bin/LS_COLORS )
+[ -f "$HOME"/bin/LS_COLORS ] && which dircolors >/dev/null && eval $(dircolors -b "$HOME"/bin/LS_COLORS)
 
 # Command line syntax highlighting
-source $HOME/bin/zsh-syntax-highlighting-filetypes.zsh
+[ -f "$HOME"/bin/zsh-syntax-highlighting-filetypes.zsh ] && source $HOME/bin/zsh-syntax-highlighting-filetypes.zsh
 
 # tmuxinator
 [ -s "$HOME/.tmuxinator/scripts/tmuxinator" ] && source $HOME/.tmuxinator/scripts/tmuxinator
@@ -141,7 +141,7 @@ source $HOME/bin/zsh-syntax-highlighting-filetypes.zsh
 [ -f ~/.fzf.zsh  ] && source ~/.fzf.zsh
 
 # fasd
-eval "$($HOME/bin/fasd --init auto)"
+[ -f  "$HOME"/bin/fasd ] && eval "$($HOME/bin/fasd --init auto)"
 
 # Apply local settings, such as custom aliases. This file is not stored in the dotfiles repository.
 if [[ -e $HOME/.zshrc.local ]]; then
