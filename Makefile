@@ -24,14 +24,13 @@ CARGO := $(CARGO_BIN)/cargo
 FASD := $(HOME)/bin/fasd
 FD := $(CARGO_BIN)/fd
 FSELECT := $(CARGO_BIN)/fselect
+GCC := /usr/bin/gcc
 HANDLR = $(CARGO_BIN)/handlr
 LS_COLORS := $(HOME)/bin/LS_COLORS
 RIPGREP := $(CARGO_BIN)/rg
 SEMGREP := $(PYTHON_USER_BIN)/semgrep
 TMUX := /usr/local/bin/tmux
 ZSH_SYNTAX_HIGHLIGHTING := $(HOME)/bin/zsh-syntax-highlighting-filetypes.zsh
-
-.PHONY: submodules build-tools
 
 all: submodules \
 	$(BAT) \
@@ -46,7 +45,8 @@ all: submodules \
 	$(TMUX) \
 	$(ZSH_SYNTAX_HIGHLIGHTING)
 
-build-tools:
+build-tools: $(GCC)
+$(GCC):
 	if [ $(HAS_APT) -eq 1 ]; then \
 		sudo apt-get install -y \
 			automake \
@@ -55,6 +55,7 @@ build-tools:
 	fi
 	# TODO Other package managers
 
+.PHONY:
 submodules:
 	git submodule update --init
 
@@ -63,7 +64,7 @@ $(BAT): $(CARGO)
 	$(CARGO) install --force bat
 
 cargo: $(CARGO)
-$(CARGO): build-tools
+$(CARGO): $(GCC)
 	$(MAKEFILE_DIR)/bin/rustup.sh -y
 
 fasd: $(FASD)
@@ -105,7 +106,7 @@ $(SEMGREP):
 
 tmux: $(TMUX)
 .ONESHELL:
-$(TMUX): build-tools
+$(TMUX): $(GCC)
 	sudo apt install -y \
 		libncurses5-dev \
 		libevent-dev
