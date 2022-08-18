@@ -83,7 +83,7 @@ $(FSELECT): $(CARGO)
 
 handlr: $(HANDLR)
 $(HANDLR): $(CARGO)
-	$(CARGO) install --force handlr
+	$(CARGO) install --force handlr-regex
 
 ls-colors: $(LS_COLORS)
 $(LS_COLORS):
