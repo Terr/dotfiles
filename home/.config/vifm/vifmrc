@@ -423,8 +423,12 @@ filetype *.iso,*.img,*.nrg
 " for unknown file types.
 " For *nix:
 filetype * 
-    \ {Open in XDG handler}
+    \ {Open}
     \ handlr open &,
+    \ {Open}
+    \ xdg-open &,
+    \ {Open}
+    \ open &,
     \ {Open in vim}
     \ vim,
 "fileviewer * xxd
