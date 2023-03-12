@@ -378,6 +378,10 @@ filetype *.bmp
     \ {Convert to PNG}
     \ convert %c %c:r.png,
 
+filetype *.jpg
+    \ {Remove EXIF meta data}
+    \ exiv2 rm %c
+
 filetype *.png
     \ {Optimize with pngquant (lossy)}
     \ pngquant --quality 75-95 %c
