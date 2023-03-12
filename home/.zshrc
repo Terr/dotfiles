@@ -103,6 +103,12 @@ alias 7l="7z l"
 ## Semgrep
 alias sg="semgrep --disable-version-check"
 
+## Terraform
+alias tf="terraform"
+
+## Neovim
+alias nv="nvim"
+
 ## Send a commonly used TERM when ssh'ing when using something uncommon
 [[ "$TERM" == "tmux-256color" || "$TERM" == "alacritty" ]] && alias ssh="TERM=screen ssh"
 
