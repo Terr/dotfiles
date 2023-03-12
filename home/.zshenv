@@ -19,6 +19,9 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 export HOMEBREW_NO_EMOJI=1
 export HOMEBREW_NO_ANALYTICS=1 # https://docs.brew.sh/Analytics
 
+# Terraform
+export TF_PLUGIN_CACHE_DIR=$HOME/.cache/terraform
+
 # Disable metrics and advertising of various programs
 # (but honestly, these things should be opt-in)
 ## Initiative for a standard to stop tracking, not really adopted yet
