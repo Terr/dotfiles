@@ -109,7 +109,7 @@ alias tf="terraform"
 ## Neovim
 alias nv="nvim"
 
-## Send a commonly used TERM when ssh'ing when using something uncommon
+## Send a commonly used TERM when ssh'ing and using an uncommon TERM
 [[ "$TERM" == "tmux-256color" || "$TERM" == "alacritty" ]] && alias ssh="TERM=screen ssh"
 
 # Inspect a Docker Compose container

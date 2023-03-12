@@ -41,7 +41,7 @@ export SAM_CLI_TELEMETRY=0                # https://docs.aws.amazon.com/serverle
 export VCPKG_DISABLE_METRICS=1            # https://github.com/microsoft/vcpkg/blob/master/docs/about/privacy.md
 export NPM_CONFIG_FUND=false              # https://github.com/npm/cli/issues/595#issuecomment-565929067
 export INFLUXDB_REPORTING_DISABLED=1      # https://docs.influxdata.com/influxdb/v1.8/administration/config/#reporting-disabled--false
-export export SEMGREP_SEND_METRICS=off    # https://github.com/returntocorp/semgrep/pull/3874
+export SEMGREP_SEND_METRICS=off    # https://github.com/returntocorp/semgrep/pull/3874
 
 # Apply local environments, such as custom PATHs. This file is not stored in the dotfiles repository.
 if [[ -e $HOME/.zshenv.local ]]; then
