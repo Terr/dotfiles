@@ -138,7 +138,7 @@ function open() {
 [ -f "$HOME"/bin/LS_COLORS ] && which dircolors >/dev/null && eval $(dircolors -b "$HOME"/bin/LS_COLORS)
 
 # Command line syntax highlighting
-[ -f "$HOME"/bin/zsh-syntax-highlighting-filetypes.zsh ] && source $HOME/bin/zsh-syntax-highlighting-filetypes.zsh
+[ -d "$HOME"/bin/zsh-syntax-highlighting ] && source $HOME/bin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # tmuxinator
 [ -s "$HOME/.tmuxinator/scripts/tmuxinator" ] && source $HOME/.tmuxinator/scripts/tmuxinator
