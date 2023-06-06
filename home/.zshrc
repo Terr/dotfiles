@@ -115,23 +115,23 @@ alias nv="nvim"
 # Inspect a Docker Compose container
 function dcins() 
 {
-    docker inspect $(dc ps -q "$1")
+	docker inspect $(dc ps -q "$1")
 }
 
 # mkdir & cd
 function mkcd() 
 {
-    mkdir -p -- "$1" && cd -P -- "$1"
+	mkdir -p -- "$1" && cd -P -- "$1"
 }
 
 function open() {
-    if [ "$(uname)" = "Darwin" ]; then
-        /usr/bin/open $@
-    elif command -v handlr &>/dev/null; then
-        handlr open $@
-    else
-        xdg-open 1>~/.local/open.log 2>&1 $@ &
-    fi
+	if [ "$(uname)" = "Darwin" ]; then
+		/usr/bin/open $@
+	elif command -v handlr &>/dev/null; then
+		handlr open $@
+	else
+		xdg-open 1>~/.local/open.log 2>&1 $@ &
+	fi
 }
 
 # ls colors
