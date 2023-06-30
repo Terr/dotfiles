@@ -124,4 +124,4 @@ $(TMUX): $(GCC)
 zsh-syntax-highlighting: $(ZSH_SYNTAX_HIGHLIGHTING)
 $(ZSH_SYNTAX_HIGHLIGHTING):
 	mkdir -p $$HOME/bin
-	ln -s $(MAKEFILE_DIR)/bin/zsh-syntax-highlighting $$HOME/bin
+	ln -s $(MAKEFILE_DIR)/home/bin/zsh-syntax-highlighting $$HOME/bin
