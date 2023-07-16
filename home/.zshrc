@@ -109,6 +109,12 @@ alias tf="terraform"
 ## Neovim
 alias nv="nvim"
 
+## Minikube
+alias mk="minikube"
+
+## Kubectl
+alias kc="kubectl"
+
 ## Send a commonly used TERM when ssh'ing and using an uncommon TERM
 [[ "$TERM" == "tmux-256color" || "$TERM" == "alacritty" ]] && alias ssh="TERM=screen ssh"
 

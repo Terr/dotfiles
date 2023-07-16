@@ -12,6 +12,9 @@ export LSCOLORS=ExGxcxdxCxegedabagacad
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export FZF_COMPLETION_TRIGGER='~~'
 
+# Minikube
+export MINIKUBE_IN_STYLE=0  # Disables emojis
+
 # ripgrep
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
