@@ -193,7 +193,11 @@ command! reload :write | restart
 "        \ apvlv %f,
 "
 "" Audio
-"filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
+filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus*
+        \ {Play using qmmp}
+        \ qmmp %f &,
+        \ {Enqueue in qmmp}
+        \ qmmp -e %f &,
 "       \ {Play using ffplay}
 "       \ ffplay -nodisp -autoexit %c,
 "       \ {Play using MPlayer}
@@ -347,9 +351,9 @@ command! reload :write | restart
 "filextype *.pro qtcreator %f &
 "
 "" Directories
-"filextype */
-"        \ {View in thunar}
-"        \ Thunar %f &,
+filextype */
+         \ {View images in sxiv}
+         \ sxiv -t %f &,
 
 " Syntax highlighting in preview
 "
@@ -370,7 +374,7 @@ command! reload :write | restart
 "
 " fileviewer *.jpg,*.png shellpic %c
 
-filetype *.bmp,*.png,*.jpg,*.jpeg,*.gif,*.pcx
+filextype *.bmp,*.png,*.jpg,*.jpeg,*.gif,*.pcx
     \ {View}
     \ handlr open %c,
 
@@ -379,20 +383,35 @@ filetype *.bmp
     \ convert %c %c:r.png,
 
 filetype *.jpg
-    \ {Remove EXIF meta data}
+    \ {Remove EXIF metadata}
     \ exiv2 rm %c
+fileviewer *.jpg exiv2 pr %c
 
 filetype *.png
     \ {Optimize with pngquant (lossy)}
     \ pngquant --quality 75-95 %c
 
+"fileviewer *.mp3 mp3info
+"fileviewer *.flac soxi
+
+filetype *.mp3,*.flac,*.ogg,*.opus
+    \ {Open in XDG handler}
+    \ handlr open %f &,
+    \ {Enqueue in vlc}
+    \ vlc --one-instance --playlist-enqueue %f 2>/dev/null &
+
 fileviewer *.7z,*.zip,*.arj,*.cab,*.jar,*.war,*.ear,*.oxt 7z l %c
+
+filetype *.rar
+    \ {List files}
+    \ unrar l
+fileviewer *.rar unrar l
 
 filetype *.zip
     \ {Mount with fuse-zip}
     \ FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR,
 
-filetype *.7z,*.zip,*.arj,*.cab,*.jar,*.war,*.ear,*.oxt
+filetype *.7z,*.zip,*.arj,*.cab,*.jar,*.war,*.ear,*.oxt,*.lha
        \ {List files}
        \ 7z l %c|LESS= less,
        \ {Extract here}
@@ -409,6 +428,7 @@ filetype *.tar.*
     \ tar xf %c,
     \ {Extract in OTHER}
     \ tar xf %c -C %D,
+fileviewer *.tar.* tar --list --verbose --file
 
 filetype *.iso,*.img,*.nrg
     \ {Mount with fuseiso}
@@ -431,6 +451,12 @@ filetype *
     \ open &,
     \ {Open in vim}
     \ vim,
+    \ {MD5 checksum}
+    \ !!md5sum %f,
+    \ {SHA1 checksum}
+    \ !!sha1sum %f,
+    \ {SHA256 checksum}
+    \ !!sha256sum %f
 "fileviewer * xxd
 
 " For OS X:
