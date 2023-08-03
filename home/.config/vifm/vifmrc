@@ -488,6 +488,8 @@ set vifminfo=dhistory,chistory,state,tui,shistory,
 " Show file open options (alt-space and alt-enter)
 nmap <space> :file<cr>  
 nmap <cr> :file<cr>  
+vmap <space> :file<cr>
+vmap <cr> :file<cr>
 
 " Sample mappings
 
