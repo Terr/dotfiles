@@ -153,10 +153,10 @@ function open() {
 [ -f ~/.fzf.zsh  ] && source ~/.fzf.zsh
 
 # fasd
-[ -f  "$HOME"/bin/fasd ] && eval "$($HOME/bin/fasd --init auto)"
+[ -f  "$HOME"/bin/fasd ] && eval "$($HOME/bin/fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"
 
 # Apply local settings, such as custom aliases. This file is not stored in the dotfiles repository.
 if [[ -e $HOME/.zshrc.local ]]; then
-	echo "Applying local settings from $HOME/.zshrc.local"
-	source $HOME/.zshrc.local
+    echo "Applying local settings from $HOME/.zshrc.local"
+    source $HOME/.zshrc.local
 fi
