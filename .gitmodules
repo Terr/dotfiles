@@ -1,7 +1,6 @@
 [submodule "home/.fzf"]
 	path = home/.fzf
 	url = https://github.com/junegunn/fzf.git
-
-[submodule "home/bin/zsh-syntax-highlighting"]
-   path = home/bin/zsh-syntax-highlighting
-   url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "home/bin/zsh-fast-syntax-highlighting"]
+	path = home/bin/zsh-fast-syntax-highlighting
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
