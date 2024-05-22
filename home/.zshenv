@@ -3,7 +3,7 @@ export SHELL=zsh
 
 # Settings for less: quit if only 1 screen of text, output color control
 # characters in raw format and do not clear screen when starting/quitting less
-export LESS='--no-init --quit-if-one-screen --raw-control-chars'
+export LESS='--no-init --quit-if-one-screen --RAW-CONTROL-CHARS'
 
 # Colors for ls (in case ~/bin/LS_COLORS is missing or dircolors isn't installed)
 export LSCOLORS=ExGxcxdxCxegedabagacad
