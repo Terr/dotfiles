@@ -144,10 +144,10 @@ function open() {
 [ -f "$HOME"/bin/LS_COLORS ] && which dircolors >/dev/null && eval $(dircolors -b "$HOME"/bin/LS_COLORS)
 
 # Command line syntax highlighting
-[ -d "$HOME"/bin/zsh-syntax-highlighting ] && source $HOME/bin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+[ -d "$HOME/bin/zsh-fast-syntax-highlighting" ] && source "$HOME/bin/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
 # tmuxinator
-[ -s "$HOME/.tmuxinator/scripts/tmuxinator" ] && source $HOME/.tmuxinator/scripts/tmuxinator
+[ -s "$HOME/.tmuxinator/scripts/tmuxinator" ] && source "$HOME/.tmuxinator/scripts/tmuxinator"
 
 # fzf
 [ -f ~/.fzf.zsh  ] && source ~/.fzf.zsh
