@@ -9,6 +9,8 @@
 	ci = commit
 	co = checkout
 	re = remote
+[init]
+    defaultBranch = main
 [include]
     path = ~/.gitconfig.local
 [push]
