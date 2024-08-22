@@ -105,6 +105,8 @@ alias sg="semgrep --disable-version-check"
 
 ## Terraform
 alias tf="terraform"
+alias tfw="terraform workspace show"
+alias tfws="terraform workspace select"
 
 ## Neovim
 alias nv="nvim"
