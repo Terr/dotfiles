@@ -1,5 +1,5 @@
 export EDITOR=vim
-export SHELL=zsh
+export SHELL=$(which zsh)
 
 # Settings for less: quit if only 1 screen of text, output color control
 # characters in raw format and do not clear screen when starting/quitting less
