@@ -70,6 +70,9 @@ set norunexec
 " colorscheme Default
 colorscheme solarized-dark
 
+highlight User1 ctermbg=default ctermfg=Blue cterm=bold
+highlight User2 ctermbg=default ctermfg=LightBlack cterm=bold
+
 " Format for displaying time in file list. For example:
 " TIME_STAMP_FORMAT=%m/%d-%H:%M
 " See man date or man strftime for details.
@@ -114,7 +117,7 @@ endif
 
 " Set custom status line look
 
-set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
+set statusline="%2* Hint: %z %=%1* .%{expand('%f:e')}  %A %10u:%-7g %15s %20d"
 
 " ------------------------------------------------------------------------------
 
