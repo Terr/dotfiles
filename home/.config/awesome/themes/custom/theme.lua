@@ -1,26 +1,34 @@
----------------------------
+------------------------------------
 -- Modified default awesome theme --
----------------------------
+------------------------------------
 
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
+local color = require("gears.color")
+local cairo = require("lgi").cairo
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
+-- Color list
+theme.foreground_focus_color = "#ffffff"
+--theme.background_focus_color = "#1e293d"
+--theme.background_focus_color = "#555555"
+theme.background_focus_color = "#333333"
+
 theme.font          = "JetBrains Mono 10"
 
 theme.bg_normal     = "#111111"
-theme.bg_focus      = "#333333"
+theme.bg_focus      = theme.background_focus_color
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
+theme.fg_focus      = theme.foreground_focus_color
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
@@ -29,6 +37,8 @@ theme.border_width  = dpi(0)
 theme.border_normal = "#000000"
 theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
+
+theme.titlebar_bg_focus = theme.background_focus_color
 
 -- There are other variable sets
 -- overriding the default one when
