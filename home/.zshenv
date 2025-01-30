@@ -12,6 +12,10 @@ export LSCOLORS=ExGxcxdxCxegedabagacad
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export FZF_COMPLETION_TRIGGER='~~'
 
+# Poetry (Python)
+## Have Poetry create virtualenvs at "project/.venv" instead of under a central directory in "~/.cache/pypoetry"
+export POETRY_VIRTUALENVS_IN_PROJECT=1
+
 # Minikube
 export MINIKUBE_IN_STYLE=0  # Disables emojis
 
