@@ -10,6 +10,8 @@ require("awful.autofocus")
 local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
+local xresources = require("beautiful.xresources")
+local dpi = xresources.apply_dpi
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
@@ -197,11 +199,51 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist {
-        screen  = s,
-        filter  = awful.widget.tasklist.filter.currenttags,
-        buttons = tasklist_buttons
-    }
+    --s.mytasklist = awful.widget.tasklist {
+        --screen  = s,
+        --filter  = awful.widget.tasklist.filter.currenttags,
+        --buttons = tasklist_buttons,
+    --}
+
+    s.mytasklist = awful.widget.tasklist({
+        screen = s,
+        filter = awful.widget.tasklist.filter.currenttags,
+        buttons = tasklist_buttons,
+        style = {
+            font = beautiful.tasklist_font,
+            bg = beautiful.tasklist_bg_normal,
+        },
+        layout = {
+            spacing = dpi(4),
+            --layout = wibox.layout.fixed.horizontal
+            layout = wibox.layout.flex.horizontal,
+        },
+        widget_template = {
+            {
+                {
+                    {
+                        {
+                            id = "icon_role",
+                            widget = wibox.widget.imagebox,
+                        },
+                        margins = dpi(2),
+                        widget = wibox.container.margin,
+                    },
+                    {
+                        id = "text_role",
+                        widget = wibox.widget.textbox,
+                    },
+                    layout = wibox.layout.fixed.horizontal,
+                },
+                forced_width = dpi(500),
+                left = dpi(6),
+                right = dpi(8),
+                widget = wibox.container.margin,
+            },
+            id = "background_role",
+            widget = wibox.container.background,
+        },
+    })
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s, height = 24 })
@@ -215,7 +257,16 @@ awful.screen.connect_for_each_screen(function(s)
             s.mytaglist,
             s.mypromptbox,
         },
-        s.mytasklist, -- Middle widget
+        { -- Middle widget
+            layout = wibox.layout.align.horizontal,
+            -- Uncomment this line to center the tasks
+            --expand = "outside",
+            nil,
+            {
+                s.mytasklist,
+                layout = wibox.layout.fixed.horizontal,
+            },
+        },
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             --mykeyboardlayout,
@@ -539,6 +590,12 @@ awful.rules.rules = {
                      screen = awful.screen.preferred,
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
+    },
+
+    -- This makes new clients (windows) show up at the end of the tasklist, instead of at the beginning
+    {   rule = { },
+        properties = { },
+        callback = awful.client.setslave
     },
 
     -- Floating clients.
