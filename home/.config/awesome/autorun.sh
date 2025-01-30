@@ -15,6 +15,9 @@ run "xset r rate 200"
 # Set cursor to a normal mouse pointer
 run "xsetroot -cursor_name left_ptr"
 
-if [ -x ~/.config/awesome/autorun.local.sh ];  then
+SSH_AGENT_ID="ssh-${RANDOM}${RANDOM}"
+run "ssh-agent -a /tmp/${SSH_AGENT_ID}.pid"
+
+if [ -x ~/.config/awesome/autorun.local.sh ]; then
    ~/.config/awesome/autorun.local.sh
 fi
