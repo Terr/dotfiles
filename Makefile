@@ -67,7 +67,7 @@ $(BAT): $(CARGO)
 
 cargo: $(CARGO)
 $(CARGO): $(GCC)
-	$(MAKEFILE_DIR)/bin/rustup.sh -y
+	$(MAKEFILE_DIR)/home/bin/rustup.sh -y
 
 fasd: $(FASD)
 $(FASD):
