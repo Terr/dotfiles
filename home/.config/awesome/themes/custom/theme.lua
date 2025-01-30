@@ -100,7 +100,20 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path.."default/titlebar
 theme.titlebar_maximized_button_normal_active = themes_path.."default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active  = themes_path.."default/titlebar/maximized_focus_active.png"
 
--- theme.wallpaper = themes_path.."default/background.png"
+--theme.wallpaper = themes_path.."default/background.png"
+
+-- This extremely roundabout way to just create a solid color background is so
+-- that `gears.wallpaper.maximized()` can be used in rc.lua, whether
+-- `theme.wallpaper` is an image path or a image surface
+-- The alternative, `theme.wallpaper = "#000000"`, would only work with
+-- `gears.wallpaper.set()`
+local img = cairo.ImageSurface.create(cairo.Format.ARGB32, 100, 100)
+local cr = cairo.Context(img)
+cr:set_source(color("#000000"))
+cr:rectangle(0, 0, 100, 100)
+cr:fill()
+cr:paint()
+theme.wallpaper = img
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
