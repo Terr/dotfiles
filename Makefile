@@ -30,6 +30,7 @@ LS_COLORS := $(HOME)/bin/LS_COLORS
 RIPGREP := $(CARGO_BIN)/rg
 SEMGREP := $(PYTHON_USER_BIN)/semgrep
 TMUX := /usr/local/bin/tmux
+VIU := $(CARGO_BIN)/viu
 ZSH_SYNTAX_HIGHLIGHTING := $(HOME)/bin/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 all: submodules \
@@ -43,6 +44,7 @@ all: submodules \
 	$(RIPGREP) \
 	$(SEMGREP) \
 	$(TMUX) \
+	$(VIU) \
 	$(ZSH_SYNTAX_HIGHLIGHTING)
 
 build-tools: $(GCC)
@@ -120,6 +122,10 @@ $(TMUX): $(GCC)
 	sudo make install
 	cd -
 	rm -rf ${TMPDIR}
+
+viu: $(VIU)
+$(VIU): $(CARGO)
+	$(CARGO) install --force viu
 
 zsh-syntax-highlighting: $(ZSH_SYNTAX_HIGHLIGHTING)
 $(ZSH_SYNTAX_HIGHLIGHTING):
