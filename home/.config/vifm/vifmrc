@@ -70,6 +70,8 @@ set norunexec
 " colorscheme Default
 colorscheme solarized-dark
 
+highlight BrokenLink cterm=reverse
+highlight Executable ctermfg=Orange1 cterm=bold
 highlight User1 ctermbg=default ctermfg=Blue cterm=bold
 highlight User2 ctermbg=default ctermfg=LightBlack cterm=bold
 
@@ -180,7 +182,9 @@ command! reload :write | restart
 " Pdf
 "filextype *.pdf zathura %c %i &, apvlv %c, xpdf %c, evince %c &
 "fileviewer *.pdf pdftotext -nopgbrk %c -
-"
+highlight {*.pdf}
+    \ ctermfg=MediumPurple
+
 "" PostScript
 "filextype *.ps,*.eps,*.ps.gz
 "        \ {View in zathura}
@@ -207,7 +211,9 @@ filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus*,*.mo
 "       \ mplayer %f,
 "fileviewer *.mp3 mp3info
 "fileviewer *.flac soxi
-"
+highlight {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus*,*.mod,*.s3m}
+    \ ctermfg=RosyBrown
+
 "" Video
 "filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 "         \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
@@ -224,6 +230,11 @@ fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
           \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
           \*.as[fx]
          \ ffprobe -pretty -hide_banner %c 2>&1
+
+highlight {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
+          \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
+          \*.as[fx]}
+    \ ctermfg=LightGreen
 
 "" Web
 "filextype *.html,*.htm
@@ -263,6 +274,9 @@ filetype *.bmp
 filetype *.png
     \ {Optimize with pngquant (lossy)}
     \ pngquant --quality 75-95 %c
+
+highlight {*.jpg,*.jpeg,*.png,*.gif,*.webp,*.bmp,*.pcx,*.xpm}
+    \ ctermfg=LightMagenta
 
 "" MD5
 filetype *.md5
@@ -323,6 +337,9 @@ filetype *.iso,*.img,*.nrg
     \ {Mount with fuseiso}
     \ FUSE_MOUNT|fuseiso %SOURCE_FILE %DESTINATION_DIR,
 
+highlight {*.iso,*.img,*.nrg,*.dmg,*.dsk,*.bin,*.cue}
+    \ ctermfg=Magenta
+
 "" SshMount
 "filetype *.ssh
 "       \ {Mount with sshfs}
@@ -341,6 +358,7 @@ filetype *.iso,*.img,*.nrg
 "       \ 7z x -o"%D" %c,
 "       \ {Mount with fuse-7z}
 "       \ FUSE_MOUNT|fuse-7z %SOURCE_FILE %DESTINATION_DIR,
+
 filetype *.rar
     \ {List files}
     \ unrar l
@@ -371,6 +389,12 @@ filetype *.tar*
     \ {Extract in OTHER}
     \ tar xf %c -C %D,
 fileviewer *.tar.* tar --list --verbose --file
+
+highlight {*.7z,*.ace,*.arj,*.bz2,*.cpio,*.deb,*.dz,*.gz,*.jar,*.lzh,*.lzma,
+          \*.rar,*.rpm,*.rz,*.tar,*.taz,*.tb2,*.tbz,*.tbz2,*.tgz,*.tlz,*.trz,
+          \*.txz,*.tz,*.tz2,*.xz,*.z,*.zip,*.zoo}
+    \ ctermfg=Green
+
 " Source code
 fileviewer *.py,*.rs,*.cc?,*.[ch]pp,*.css,*.html?,*.jsx?,*.pl,*.json
     \ bat --color=always --plain
@@ -385,6 +409,7 @@ fileviewer *.txt,*.md,*.outl*
 
 "" TuDu files
 "filetype *.tudu tudu -f %c
+
 "" Directories
 filextype */
          \ {View images in sxiv}
@@ -571,3 +596,187 @@ nnoremap <f8> :delete<cr>
 "
 " let $VIFM_SERVER_NAME = v:servername
 
+" File icons
+" Mostly borrowed from https://github.com/MidHunterX/Hunter-OS/blob/master/.config/vifm/vifmrc
+set classify=' :dir:/, :exe:, :reg:, :link:,? :?:, ::../::'
+
+" Independent Super Directories
+set classify+='
+      \  ::Desktop/::, ::Downloads/,,dl/::, ::Documents/::, ::Music/::,
+      \  ::Pictures/::, ::Videos/::, ::Public/::, ::Templates/::,
+      \'
+
+" Independent Directories
+"set classify+='
+"      \  ::home/::,  ::videos/::,  ::share/::,  ::nvim/::,  ::media/::,
+"      \ 󰨞 ::Code - OSS/::,  ::tmux/::,  ::GIMP/::,
+"      \ 󰌌 ::keyd/::, 󱓞 ::starship/::,  ::VSCodium/::
+"      \  ::public/::, 󰉍 ::downloads/::, 󰉏 ::pictures/::, 󰉐 ::root/::, 󰙨 ::tests/::,
+"      \ 󰫦 ::vendor/::, 󱍙 ::music/::, 󱧼 ::src/::,  ::data/::,  ::repos/::,
+"      \  ::shared/::,  ::notes/::,  ::dropbox::,  ::gdrive/::,
+"      \'
+
+" Independent Extensions
+set classify+='
+      \  ::*.java::,  ::*.epub::,  ::*.ejs::,  ::*.twig::,  ::*.c::,
+      \  ::*.lua::,  ::*.elm::,  ::*.pp::,  ::*.org::,  ::*.svelte::,
+      \  ::*.zig::,  ::*.fnl::,  ::*.apk::,  ::*.scala::,  ::*.swift::,
+      \  ::*.less::,  ::*.clj::,  ::*.t::,  ::*.cljs::,  ::*.rdb::,
+      \  ::*.info::,  ::*.dart::,  ::*.erl::,  ::*.ai::,  ::*.iml::,
+      \  ::*.psd::,  ::*.list::,  ::*.magnet::,  ::*.mk::,  ::*.rss::,
+      \  ::*.coffee::,  ::*.rl::,  ::*.log::,  ::*.pdf::,  ::*.xul::,
+      \  ::*.gform::, 󰈡 ::*.slt::, 󰗆 ::*.rproj::, 󰡄 ::*.vue::, 󰦝 ::*.asc::,
+      \ 󰪪 ::*.pdb::, 󱁉 ::*.gv::,
+      \'
+
+" Independent Files
+set classify+='
+      \  ::heroku.yml::, 󰚩 ::robots.txt::, 󰜫 ::webpack.config.js::,
+      \  ::netlify.toml::,  ::manifest::,  ::url::,  ::pkgbuild::, 󰀂 ::hosts::,
+      \ 󰅱 ::std::,  ::jenkinsfile::,
+      \'
+
+" Dot Files
+set classify+='
+      \  ::.dbus/::,  ::.git/::,  ::.github/::,  ::.gitlab-ci.yml::,  ::.idlerc::,
+      \  ::.vscode/::,  ::.atom/::,  ::.mozilla/::,
+      \'
+
+" ICON SET FROM LSD
+set classify+='
+      \  ::*.7z,,*.ar,,*.bz2,,*.gz,,*.lz,,*.rar,,*.tar,,*.taz,,*.tbz,,*.tbz2::,
+      \  ::*.tgz,,*.xz,,*.zip,,*.zst::,
+      \  ::*.apng,,*.avif,,*.heic,,*.heif,,*.heix,,*.ico,,*.image::,
+      \  ::*.webp,,*.pxm,,*.svg,,*.tiff,,*.xcf,,img::,
+      \  ::*.jpeg,,*.jpg,,*.png,,*.bmp,,*.gif::,
+      \  ::*.avi,,*.flv,,*.m4v,,*.mkv,,*.mov,,*.mp4,,*.ogv,,*.video,,*.webm,,*.wmv::,
+      \  ::*.ape,,*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.cue,,*.flac,,*.m2a,,*.m4a::,
+      \  ::*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.opus,,*.ra::,
+      \  ::*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::,
+      \  ::*.awk,,*.bash_history,,*.bash_profile,,*.bashrc,,*.bash,,*.csh,,*.elf::,
+      \  ::*.fish,,*.ksh,,*.ps1,,*.shell,,*.sh,,*.zshrc,,*.zsh-theme,,*.zsh::,
+      \  ::*.bat,,*.dll,,*.exe,,*.msi,,*.windows::,
+      \  ::*.cfg,,*.conf,,*.editorconfig,,*.ini,,.asoundrc,,bspwmrc,,.clang-format::,
+      \  ::config.ac,,config.mk,,cron.deny,,crontab,,crypttab,,.editorconfig::,
+      \  ::,,.fennelrc,,group,,gshadow,,hostname,,.htaccess,,htoprc,,.htpasswd::,
+      \  ::.inputrc,,inputrc,,kbuild,,kconfig,,kdeglobals,,kdenliverc,,lsb-release::,
+      \  ::.lynxrc,,makefile.ac,,makefile,,muttrc,,.muttrc,,.mutt,,neomuttrc::,
+      \  ::.neomuttrc,,os-release,,profile,,.profile,,rc.lua,,shadow,,.shellcheckrc::,
+      \  ::shells,,subgid,,subuid,,sxhkdrc,,tigrc,,tox.ini,,vagrantfile,,.wgetrc::,
+      \  ::wgetrc,,.xauthority,,.Xauthority,,.xinitrc,,.xmodmap,,.Xmodmap,,xmonad.hs::,
+      \  ::.xprofile,,.Xprofile,,.xresources,,zathurarc,,.zcompdump,,config::,
+      \'
+
+set classify+='
+      \  ::*.cc,,*.cpp,,*.cp,,*.c++,,*.cxx::,
+      \  ::*.css,,*.lss,,css,,styles::,
+      \  ::*.cjs,,*.js,,*.mjs,,js::,
+      \  ::*.sass,,*.scss,,sass,,scss::,
+      \  ::*.class,,*.jar,,*.java::,
+      \ 󰅲 ::*.cl,,*.elc,,*.el,,*.lisp::,
+      \  ::*.gemfile,,*.gemspec,,*.guardfile,,*.procfile,,*.rakefile,,*.rb::,
+      \  ::*.rspec,,*.rspec_parallel,,*.rspec_status,,*.ru,,.rvm::,
+      \  ::*.a,,*.jl,,*.ld,,*.so,,obj::,
+      \  ::*.avro,,*.jsonc,,*.json,,*.properties,,*.toml,,*.yaml,,*.yml::,
+      \  ::*.asp,,*.xml,,libexec,,lib32,,lib64,,lib::,
+      \  ::*.bin,,*.o,,*.sym::,
+      \ 󰁯 ::*.bak,,*.old,,*.orig,,backups::,
+      \  ::*.desktop,,desktop::,
+      \  ::assets/,,.assets/,,content/,,static/::,
+      \  ::*.htm,,*.html::,
+      \  ::*.ebook,,*.mobi::,
+      \'
+
+set classify+='
+      \  ::*.cls,,*.styl,,*.stylus,,*.tex::,
+      \  ::*.egg-info,,*.ipynb,,*.py,,*.pyc,,.bpython_history,,.jupyter,,.pypirc::,
+      \  ::.python_history,,.tox,,__pycache__,,pyproject.toml::,
+      \  ::.electron-gyp/,,.node-gyp/,,.npm/,,node_modules/::,
+      \  ::.audacity-data/,,.config/,,bin/,,conf.d/,,config/,,cron.d/,,cron.daily/::,
+      \  ::cron.hourly/,,cron.monthly/,,cron.weekly/,,etc/,,include/,,metadata/,,sbin/::,
+      \  ::user-dirs.dirs/,,xorg.conf.d/::,
+      \  ::*.phar,,*.php,,composer.json,,composer.lock::,
+      \  ::*.markdown,,*.md,,*.mkd,,*.rdoc,,*.readme,,*.rmd,,changelog,,readme::,
+      \  ::*.adoc,,*.asciidoc::,
+      \  ::*.man,,doc,,documents::,
+      \  ::*.license,,*.sig,,.git-credentials,,authorized_keys,,contributing::,
+      \  ::copyright,,known_hosts,,license.md,,license.txt,,license,,licenses::,
+      \  ::maintainers,,unlicense::,
+      \  ::*.hbs,,*.mustache::,
+      \  ::gulpfile.coffee,,gulpfile.js,,gulpfile.ls::,
+      \  ::gruntfile.coffee,,gruntfile.js,,gruntfile.ls::,
+      \  ::*.go,,go.mod,,go.sum,,go.work::,
+      \'
+
+set classify+='
+      \  ::*.cts,,*.mts,,*.ts,,ts::,
+      \  ::*.swp,,*.vim,,.vim,,.viminfo,,.vimrc,,vim,,vimrc,,.vim/::,
+      \  ::*.ex,,*.exs::,
+      \  ::.doom.d,,.emacs.d,,.spacemacs,,config.el,,custom.el,,init.el,,packages.el::,
+      \  ::*.kt,,*.kts::,
+      \  ::*.gradle,,gradle.properties,,gradle,,gradlew.bat,,gradlew::,
+      \  ::*.nim,,*.nimble::,
+      \  ::*.ml,,*.mli,,*.mll,,*.mly::,
+      \  ::*.pl,,*.plx,,*.pm,,*.pod::,
+      \  ::*.rlib,,*.rmeta,,*.rs,,.cargo,,.release.toml,,.rustup,,cargo.lock::,
+      \  ::cargo.toml,,rustfmt.toml::,
+      \  ::.yarnrc,,yarn.lock::,
+      \  ::.node_repl_history,,package-lock.json,,package.json::,
+      \  ::*.npmignore,,npmignore::,
+      \  ::*.unity32,,*.unity::,
+      \  ::*.diff,,*.patch::,
+      \  ::*.erb,,*.rubydoc,,*.slim,,rubydoc::,
+      \  ::*.hs,,*.lhs::,
+      \  ::*.fs,,*.fsi,,*.fsx::,
+      \  ::*.sublime-menu,,*.sublime-package,,*.sublime-project,,*.sublime-session::,
+      \'
+
+set classify+='
+      \  ::*.jsx,,*.tsx::,
+      \  ::*.sqlite3,,.sqlite_history::,
+      \  ::.icons/,,favicon.ico,,favicons/,,icons/::,
+      \  ::*.lock,,.pki,,hidden,,passwd,,sudoers::,
+      \  ::*.eot,,*.font,,*.otf,,*.ttc,,*.ttf,,*.woff2,,*.woff::,
+      \  ::build.ninja,,configure,,meson.build::,
+      \  ::*.mgc,,magic::,
+      \  ::*.h,,*.hh,,*.hpp,,*.hxx::,
+      \  ::*.in,,*.rtf,,*.txt::,
+      \  ::*.ds_store,,*.localized,,.ds_store,,localized,,*.plist,,*.scpt::,
+      \  ::.android,,.fastboot::,
+      \  ::*.deb,,*.pkg,,*.rpm,,*.xbps::,
+      \  ::*.cypher,,*.dat,,*.db,,*.dump,,*.img,,*.iso,,*.kusto,,*.ldb,,*.malloy::,
+      \  ::*.prql,,*.rq,,*.sql,,fstab::,
+      \  ::*.doc,,*.docx,,*.gdoc,,*.odt::,
+      \  ::*.csv,,*.gsheet,,*.ods,,*.xls,,*.xlsx::,
+      \  ::*.gslides,,*.odp,,*.ppt,,*.pptx::,
+      \  ::*.git,,.gitattributes,,.gitconfig,,.gitignore,,.gitmodules,,gitignore_global::,
+      \  ::*.trash,,.trash::,
+      \  ::*.cshtml,,*.razor::,
+      \  ::*.dockerfile,,docker-compose.yml,,dockerfile::,
+      \  ::*.ebuild,,*.eclass,,portage::,
+      \'
+
+set classify+='
+      \  ::*.nix,,.nix-channels,,.nix-defexpr::,
+      \  ::template/,,xbps-src/,,xbps.d/::,
+      \  ::*.download,,*.part,,*.timestamp,,timezone::,
+      \  ::*.env,,.env,,.eslintrc.js,,.eslintrc.json,,.eslintrc.yml,,environment,,metadata.xml::,
+      \  ::*.asm,,*.s,,module.symvers::,
+      \  ::*.whl,,build,,dist::,
+      \  ::.ash,,.ash_history,,.kshrc,,a.out,,scripts/::,
+      \ 󰃨 ::.cache/,,.ccls-cache/,,.mypy_cache/,,cache/::,
+      \ 󰇰 ::.mailcap/,,mail/::,
+      \ 󰌆 ::*.key,,*.pem,,*.pub::,
+      \ 󰌛 ::*.cs,,*.csproj,,*.csx::,
+      \ 󰌠 ::requirements.txt,,runtime.txt,,venv/::,
+      \ 󰐑 ::*.bio,,*.fpl,,*.m3u8,,*.m3u,,*.pls,,*.vlc,,*.wpl::,
+      \ 󰒍 ::*.torrent,,api::,
+      \ 󰕥 ::md5sum,,sha256sum::,
+      \ 󰙅 ::.mime.types,,mime.types::,
+      \ 󰟔 ::*.r,,*.rdata,,*.rds::,
+      \ 󰢬 ::.gnupg/,,.ssh/,,pam.d/::,
+      \ 󰨖 ::*.srt,,*.sub::,
+      \ 󰷖 ::id_dsa,,id_rsa,,id_ecdsa::,
+      \ 󱆃 ::.bash_history,,.bash_logout,,.bash_profile,,.bashrc,,.cshrc,,.zlogin::,
+      \ 󱆃 ::.zlogout,,.zprofile,,.zsh_history,,.zshrc,,csh.cshrc,,csh.login,,csh.logout::,
+      \'
