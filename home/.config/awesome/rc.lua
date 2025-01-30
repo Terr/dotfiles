@@ -17,6 +17,8 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
+-- More familiar alt-tab window switching
+local switcher = require("extensions.awesome-switcher")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -163,6 +165,10 @@ local function set_wallpaper(s)
     end
 end
 
+-- Settings for awesome-switcher
+switcher.settings.preview_box_bg = "#555555aa"                                      -- background color
+switcher.settings.preview_box_title_font = {"JetBrains Mono", "italic", "normal"}   -- the font for cairo
+
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
@@ -280,15 +286,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
 
-    awful.key({ "Mod1",           }, "Tab",
-        function ()
-            -- awful.client.focus.history.previous()
-            awful.client.focus.byidx(-1)
-            if client.focus then
-                client.focus:raise()
-            end
-        end,
-        {description = "go back (same tag)", group = "client"}),
+    -- Switch to last active tag
     awful.key({ modkey,           }, "Tab",
         function ()
             awful.tag.history.restore()
@@ -297,6 +295,27 @@ globalkeys = gears.table.join(
             end
         end,
         {description = "go back (across tags)", group = "client"}),
+
+    -- Window switching (within the same tag)
+    awful.key({ "Mod1",           }, "Tab",
+      function ()
+          switcher.switch(1, "Mod1", "Alt_L", "Shift", "Tab")
+      end),
+
+    awful.key({ "Mod1", "Shift"   }, "Tab",
+      function ()
+          switcher.switch(-1, "Mod1", "Alt_L", "Shift", "Tab")
+      end),
+
+    --awful.key({ "Mod1",           }, "Tab",
+        --function ()
+            ---- awful.client.focus.history.previous()
+            --awful.client.focus.byidx(-1)
+            --if client.focus then
+                --client.focus:raise()
+            --end
+        --end,
+        --{description = "go back (same tag)", group = "client"}),
 
     -- Standard terminal
     awful.key({ modkey, }, "Return",
