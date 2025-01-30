@@ -288,8 +288,18 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+    awful.key({                   }, "Print",
+        function()
+            awful.spawn.easy_async([[
+            flameshot \
+                screen --path /home/terr/Pictures
+            ]], function(stdout, stderr, reason, exit_code) end)
+        end,
+        {description = "take screenshot", group = "utilities"}),
+
     awful.key({ modkey,           }, "F1",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
+
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
 
@@ -297,14 +307,17 @@ globalkeys = gears.table.join(
         awful.client.focus.global_bydirection("left", nil, true)
         if client.focus then client.focus:raise() end
     end, {description = "focus client on the left", group = "focus"}),
+
     awful.key({ modkey,           }, "Right", function()
         awful.client.focus.global_bydirection("right", nil, true)
         if client.focus then client.focus:raise() end
     end, {description = "focus client on the right", group = "focus"}),
+
     awful.key({ modkey,           }, "Up", function()
         awful.client.focus.global_bydirection("up", nil, true)
         if client.focus then client.focus:raise() end
     end, {description = "focus client above", group = "focus"}),
+
     awful.key({ modkey,           }, "Down", function()
         awful.client.focus.global_bydirection("down", nil, true)
         if client.focus then client.focus:raise() end
