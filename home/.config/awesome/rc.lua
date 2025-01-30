@@ -68,8 +68,8 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     awful.layout.suit.floating,
-    awful.layout.suit.tile,
-    --awful.layout.suit.tile.left,
+    --awful.layout.suit.tile,
+    awful.layout.suit.tile.left,
     --awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
     awful.layout.suit.fair,
@@ -117,43 +117,43 @@ mytextclock = wibox.widget.textclock()
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
-                    awful.button({ }, 1, function(t) t:view_only() end),
-                    awful.button({ modkey }, 1, function(t)
-                                              if client.focus then
-                                                  client.focus:move_to_tag(t)
-                                              end
-                                          end),
-                    awful.button({ }, 3, awful.tag.viewtoggle),
-                    awful.button({ modkey }, 3, function(t)
-                                              if client.focus then
-                                                  client.focus:toggle_tag(t)
-                                              end
-                                          end),
-                    awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
-                    awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
-                )
+    awful.button({ }, 1, function(t) t:view_only() end),
+    awful.button({ modkey }, 1, function(t)
+        if client.focus then
+            client.focus:move_to_tag(t)
+        end
+    end),
+    awful.button({ }, 3, awful.tag.viewtoggle),
+    awful.button({ modkey }, 3, function(t)
+        if client.focus then
+            client.focus:toggle_tag(t)
+        end
+    end),
+    awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
+    awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
+)
 
 local tasklist_buttons = gears.table.join(
-                     awful.button({ }, 1, function (c)
-                                              if c == client.focus then
-                                                  c.minimized = true
-                                              else
-                                                  c:emit_signal(
-                                                      "request::activate",
-                                                      "tasklist",
-                                                      {raise = true}
-                                                  )
-                                              end
-                                          end),
-                     awful.button({ }, 3, function()
-                                              awful.menu.client_list({ theme = { width = 250 } })
-                                          end),
-                     awful.button({ }, 4, function ()
-                                              awful.client.focus.byidx(1)
-                                          end),
-                     awful.button({ }, 5, function ()
-                                              awful.client.focus.byidx(-1)
-                                          end))
+    awful.button({ }, 1, function (c)
+        if c == client.focus then
+            c.minimized = true
+        else
+            c:emit_signal(
+                "request::activate",
+                "tasklist",
+                {raise = true}
+            )
+        end
+    end),
+    awful.button({ }, 3, function()
+        awful.menu.client_list({ theme = { width = 250 } })
+    end),
+    awful.button({ }, 4, function()
+        awful.client.focus.byidx(1)
+    end),
+    awful.button({ }, 5, function()
+        awful.client.focus.byidx(-1)
+    end))
 
 local function set_wallpaper(s)
     -- Wallpaper
@@ -413,9 +413,9 @@ globalkeys = gears.table.join(
               {description = "increase the number of columns", group = "layout"}),
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
               {description = "decrease the number of columns", group = "layout"}),
-    awful.key({ modkey,           }, "]", function () awful.layout.inc( 1)                end,
+    awful.key({ modkey, "Shift"   }, "]", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
-    awful.key({ modkey,           }, "[", function () awful.layout.inc(-1)                end,
+    awful.key({ modkey, "Shift"   }, "[", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
 
     awful.key({ modkey, "Control" }, "n",
@@ -478,8 +478,36 @@ clientkeys = gears.table.join(
               {description = "move to master", group = "client"}),
     awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
-    awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
+
+    awful.key({ modkey, "Control" }, "k",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
+
+    awful.key({ modkey, "Control"   }, "s",      function (c) c.sticky = not c.sticky          end,
+              {description = "toggle sticky", group = "client"}),
+
+    awful.key({ modkey, "Control"   }, "t",      function (c) if c.opacity < 1.0 then c.opacity = 1.0 else c.opacity = 0.6 end         end,
+              {description = "toggle translucency", group = "client"}),
+
+    awful.key({ modkey, "Control"   }, "Page_Up",      function (c) if c.opacity > 0.1 then c.opacity = c.opacity - 0.1 end         end,
+              {description = "increase translucency", group = "client"}),
+    awful.key({ modkey, "Control"   }, "Page_Down",      function (c) if c.opacity < 1.0 then c.opacity = c.opacity + 0.1 end         end,
+              {description = "decrease translucency", group = "client"}),
+
+    awful.button({ modkey, "Control" }, 4, function (c)
+      c:emit_signal("request::activate", "mouse_click", {raise = true})
+      capi.mousegrabber.run(function (_mouse)
+        c.opacity = c.opacity + 0.1
+        return false
+      end, 'mouse')
+    end, {description = "decrease translucency", group = "client"}),
+    awful.button({ modkey, "Control" }, 5, function (c)
+      c:emit_signal("request::activate", "mouse_click", {raise = true})
+      capi.mousegrabber.run(function (_mouse)
+        c.opacity = c.opacity - 0.1
+        return false
+      end, 'mouse')
+    end, {description = "increase translucency", group = "client"}),
+
     awful.key({ modkey,           }, "n",
         function (c)
             -- The client currently has the input focus, so it cannot be
@@ -627,11 +655,20 @@ awful.rules.rules = {
           "ConfigManager",  -- Thunderbird's about:config.
           "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
         }
-      }, properties = { floating = true }},
+      },
+      properties = { floating = true }},
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+      },
+      -- Don't add titlebars to these clients
+      except_any = {
+          class = {
+              "Qmmp"
+          }
+      },
+
+      properties = { titlebars_enabled = true }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
