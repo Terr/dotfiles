@@ -451,7 +451,7 @@ filetype *.mp3,*.flac,*.ogg,*.opus
 " uncommenting one of lines below will result in ignoring 'vi[x]cmd' option
 " for unknown file types.
 " For *nix:
-filextype *
+filextype *,.*
     \ {Open}
     \ handlr open &,
     \ {Open}
@@ -459,9 +459,9 @@ filextype *
     \ {Open}
     \ open &
 
-filextype *
-    \ {Open in vim}
-    \ vim,
+filetype *,.*
+    \ {File info}
+    \ !!file %f,
     \ {MD5 checksum}
     \ !!md5sum %f,
     \ {SHA1 checksum}
@@ -470,10 +470,10 @@ filextype *
     \ !!sha256sum %f
 
 " Default directory (pre)viewer
-fileviewer */ ls -l
+fileviewer */,.*/ ls -l
 
 " Default file viewer
-fileviewer *
+fileviewer *,.*
     \ bat --color=always --plain
 
 
