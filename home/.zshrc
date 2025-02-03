@@ -100,6 +100,9 @@ alias dce="dc exec"
 alias 7x="7z x"
 alias 7l="7z l"
 
+## tar
+alias ztar="tar --zstd"
+
 ## Semgrep
 alias sg="semgrep --disable-version-check"
 
