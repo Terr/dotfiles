@@ -404,8 +404,8 @@ fileviewer *.py,*.rs,*.cc?,*.[ch]pp,*.css,*.html?,*.jsx?,*.pl,*.json
 "fileviewer *.doc catdoc %c
 "fileviewer *.docx docx2txt.pl %f -
 
-fileviewer *.txt,*.md,*.outl*
-    \ less %c
+fileviewer *.json
+    \ jq --color-output . %c
 
 "" TuDu files
 "filetype *.tudu tudu -f %c
@@ -473,7 +473,9 @@ filextype *
 fileviewer */ ls -l
 
 " Default file viewer
-fileviewer * xxd
+fileviewer *
+    \ bat --color=always --plain
+
 
 " For OS X:
 " filetype * open
