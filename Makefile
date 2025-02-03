@@ -9,12 +9,14 @@ HAS_HOMEBREW := $(shell command -v brew >/dev/null && echo 1 || echo 0)
 PYTHON := python3
 WGET := wget
 
-ifeq ($(IS_MACOS), 1)
-	PYTHON_VERSION := $(shell $(PYTHON) --version|grep --only-matching --regexp='\d\.\d')
-	PYTHON_USER_BIN := $(HOME)/Library/Python/$(PYTHON_VERSION)/bin
-else
-	PYTHON_USER_BIN := $(HOME)/.local/bin
-endif
+# ifeq ($(IS_MACOS), 1)
+# 	PYTHON_VERSION := $(shell $(PYTHON) --version|grep --only-matching --regexp='\d\.\d')
+# 	PYTHON_USER_BIN := $(HOME)/Library/Python/$(PYTHON_VERSION)/bin
+# else
+# 	PYTHON_USER_BIN := $(HOME)/.local/bin
+# endif
+
+PIPX_USER_BIN=$(HOME)/.local/bin
 
 CARGO_BIN := $(HOME)/.cargo/bin
 
@@ -28,7 +30,7 @@ GCC := /usr/bin/gcc
 HANDLR = $(CARGO_BIN)/handlr
 LS_COLORS := $(HOME)/bin/LS_COLORS
 RIPGREP := $(CARGO_BIN)/rg
-SEMGREP := $(PYTHON_USER_BIN)/semgrep
+SEMGREP := $(PIPX_USER_BIN)/semgrep
 TMUX := /usr/local/bin/tmux
 VIU := $(CARGO_BIN)/viu
 ZSH_SYNTAX_HIGHLIGHTING := $(HOME)/bin/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
@@ -104,7 +106,7 @@ $(RIPGREP): $(CARGO)
 
 semgrep: $(SEMGREP)
 $(SEMGREP):
-	$(PYTHON) -m pip install --user --upgrade semgrep
+	pipx install semgrep
 
 tmux: $(TMUX)
 .ONESHELL:
