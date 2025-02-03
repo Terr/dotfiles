@@ -780,5 +780,5 @@ set classify+='
       \ 󰨖 ::*.srt,,*.sub::,
       \ 󰷖 ::id_dsa,,id_rsa,,id_ecdsa::,
       \ 󱆃 ::.bash_history,,.bash_logout,,.bash_profile,,.bashrc,,.cshrc,,.zlogin::,
-      \ 󱆃 ::.zlogout,,.zprofile,,.zsh_history,,.zshrc,,csh.cshrc,,csh.login,,csh.logout::,
+      \ 󱆃 ::.zlogout,,.zprofile,,.zsh_history,,.zshrc*,,csh.cshrc,,csh.login,,csh.logout,,.zshenv*::
       \'
