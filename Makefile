@@ -114,9 +114,6 @@ $(SEMGREP):
 tmux: $(TMUX)
 .ONESHELL:
 $(TMUX): $(GCC)
-	sudo apt install -y \
-		libncurses5-dev \
-		libevent-dev
 	# Make a clone of my personal of tmux
 	$(eval TMPDIR := $(shell mktemp --directory))
 	git clone --depth 1 https://github.com/Terr/tmux.git ${TMPDIR}
