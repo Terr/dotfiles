@@ -27,7 +27,6 @@ FASD := $(HOME)/bin/fasd
 FD := $(CARGO_BIN)/fd
 FSELECT := $(CARGO_BIN)/fselect
 GCC := /usr/bin/gcc
-HANDLR := $(CARGO_BIN)/handlr
 HEXYL := $(CARGO_BIN)/hexyl
 LS_COLORS := $(HOME)/bin/LS_COLORS
 RIPGREP := $(CARGO_BIN)/rg
@@ -42,7 +41,6 @@ all: submodules \
 	$(FASD) \
 	$(FD) \
 	$(FSELECT) \
-	$(HANDLR) \
 	$(LS_COLORS) \
 	$(RIPGREP) \
 	$(SEMGREP) \
@@ -85,10 +83,6 @@ $(FD): $(CARGO)
 fselect: $(FSELECT)
 $(FSELECT): $(CARGO)
 	$(CARGO) install --force fselect
-
-handlr: $(HANDLR)
-$(HANDLR): $(CARGO)
-	$(CARGO) install --force handlr-regex
 
 hexyl: $(HEXYL)
 $(HEXYL): $(CARGO)

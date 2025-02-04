@@ -179,7 +179,13 @@ command! reload :write | restart
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.
 
-" Pdf
+" Standard "open" action for Linux and MacOS
+" Using sh (or bash) is necessary for vifm to detect the command as 'present'
+filextype *
+    \ {Open}
+    \ sh --norc --noprofile -c '(xdg-open %c || open %c) 2>/dev/null' &
+
+" PDF
 "filextype *.pdf zathura %c %i &, apvlv %c, xpdf %c, evince %c &
 "fileviewer *.pdf pdftotext -nopgbrk %c -
 highlight {*.pdf}
@@ -245,19 +251,15 @@ highlight {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
 "        \ {Open with uzbl}
 "        \ uzbl-browser %f %i &,
 "filetype *.html,*.htm links, lynx
-"
+
 "" Object
 "filetype *.o nm %f | less
-"
+
 "" Man page
 "filetype *.[1-8] man ./%c
 "fileviewer *.[1-8] man ./%c | col -b
-"
-"" Images
-filextype *.jpg,*.jpeg,*.png,*.gif,*.webp,*.bmp,*.pcx,*.xpm
-    \ {View}
-    \ handlr open %c,
 
+"" Images
 filetype *.jpg,*.jpeg,*.png,*.webp,*.xpm
     \ {View EXIF metadata}
     \ !!exiv2 print %c,
@@ -438,26 +440,10 @@ filextype */
 "fileviewer *.flac soxi
 
 filetype *.mp3,*.flac,*.ogg,*.opus
-    \ {Open in XDG handler}
-    \ handlr open %f &,
     \ {Enqueue in vlc}
     \ vlc --one-instance --playlist-enqueue %f 2>/dev/null &
 
 " filetype *.png,*.jpg,*.jpeg,*.bmp,*.gif,*.pcx
-
-" Open all other files with default system programs (you can also remove all
-" :file[x]type commands above to ensure they don't interfere with system-wide
-" settings).  By default all unknown files are opened with 'vi[x]cmd'
-" uncommenting one of lines below will result in ignoring 'vi[x]cmd' option
-" for unknown file types.
-" For *nix:
-filextype *,.*
-    \ {Open}
-    \ handlr open &,
-    \ {Open}
-    \ xdg-open &,
-    \ {Open}
-    \ open &
 
 filetype *,.*
     \ {File info}
@@ -479,12 +465,6 @@ fileviewer */,.*/ ls -l
 " Default file viewer
 fileviewer *,.*
     \ hexyl --no-position %c --length=64KiB
-
-
-" For OS X:
-" filetype * open
-" For Windows:
-" filetype * start, explorer
 
 " ------------------------------------------------------------------------------
 
