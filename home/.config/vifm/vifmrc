@@ -469,12 +469,16 @@ filetype *,.*
     \ {SHA256 checksum}
     \ !!sha256sum %f
 
+" Text files
+fileviewer <text/plain>
+    \ bat --color=always --plain
+
 " Default directory (pre)viewer
 fileviewer */,.*/ ls -l
 
 " Default file viewer
 fileviewer *,.*
-    \ bat --color=always --plain
+    \ hexyl --no-position %c --length=64KiB
 
 
 " For OS X:

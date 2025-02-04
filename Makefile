@@ -27,7 +27,8 @@ FASD := $(HOME)/bin/fasd
 FD := $(CARGO_BIN)/fd
 FSELECT := $(CARGO_BIN)/fselect
 GCC := /usr/bin/gcc
-HANDLR = $(CARGO_BIN)/handlr
+HANDLR := $(CARGO_BIN)/handlr
+HEXYL := $(CARGO_BIN)/hexyl
 LS_COLORS := $(HOME)/bin/LS_COLORS
 RIPGREP := $(CARGO_BIN)/rg
 SEMGREP := $(PIPX_USER_BIN)/semgrep
@@ -88,6 +89,10 @@ $(FSELECT): $(CARGO)
 handlr: $(HANDLR)
 $(HANDLR): $(CARGO)
 	$(CARGO) install --force handlr-regex
+
+hexyl: $(HEXYL)
+$(HEXYL): $(CARGO)
+	$(CARGO) install --force hexyl
 
 ls-colors: $(LS_COLORS)
 $(LS_COLORS):
