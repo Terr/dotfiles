@@ -49,16 +49,6 @@ all: submodules \
 	$(VIU) \
 	$(ZSH_SYNTAX_HIGHLIGHTING)
 
-build-tools: $(GCC)
-$(GCC):
-	if [ $(HAS_APT) -eq 1 ]; then \
-		sudo apt-get install -y \
-			automake \
-			pkg-config \
-			gcc; \
-	fi
-	# TODO Other package managers
-
 .PHONY:
 submodules:
 	git submodule update --init
