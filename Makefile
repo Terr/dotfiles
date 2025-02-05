@@ -90,13 +90,14 @@ $(HEXYL): $(CARGO)
 	$(CARGO) install --force hexyl
 
 ls-colors: $(LS_COLORS)
+.ONESHELL:
 $(LS_COLORS):
 	mkdir -p "$$HOME/bin"
-	if [ ! -e "$$HOME/bin/LS_COLORS" -a "$$HOME/bin/LS_COLORS" ]; then
+	if [ ! -e "${LS_COLORS}" -a -L "${LS_COLORS}" ]; then
 		# Symlink is broken
-		rm "$$HOME/bin/LS_COLORS"
+		rm "${LS_COLORS}"
 	fi
-	ln -s "$(MAKEFILE_DIR)/bin/LS_COLORS" "$$HOME/bin"
+	ln -s "$(MAKEFILE_DIR)/home/bin/LS_COLORS" "${LS_COLORS}"
 ifeq ($(IS_MACOS), 1)
 	if [ ! -f "$$HOME/bin/dircolors" ]; then \
 		brew install coreutils; \
