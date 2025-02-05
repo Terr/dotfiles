@@ -460,7 +460,7 @@ fileviewer */,.*/ ls -l
 
 " Default file viewer
 fileviewer *,.*
-    \ hexyl --no-position %c --length=64KiB
+    \ hexyl --no-position --character-table ascii --length=64KiB %c
 
 " ------------------------------------------------------------------------------
 
