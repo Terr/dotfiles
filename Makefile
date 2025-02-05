@@ -41,6 +41,7 @@ all: submodules \
 	$(FASD) \
 	$(FD) \
 	$(FSELECT) \
+	$(HEXYL) \
 	$(LS_COLORS) \
 	$(RIPGREP) \
 	$(SEMGREP) \
