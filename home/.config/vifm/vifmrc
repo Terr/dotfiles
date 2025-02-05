@@ -397,10 +397,6 @@ highlight {*.7z,*.ace,*.arj,*.bz2,*.cpio,*.deb,*.dz,*.gz,*.jar,*.lzh,*.lzma,
           \*.txz,*.tz,*.tz2,*.xz,*.z,*.zip,*.zoo}
     \ ctermfg=Green
 
-" Source code
-fileviewer *.py,*.rs,*.cc?,*.[ch]pp,*.css,*.html?,*.jsx?,*.pl,*.json
-    \ bat --color=always --plain
-
 " Office files
 "filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx libreoffice %f &
 "fileviewer *.doc catdoc %c
@@ -456,7 +452,7 @@ filetype *,.*
     \ !!sha256sum %f
 
 " Text files
-fileviewer <text/plain>
+fileviewer <text/*>
     \ bat --color=always --plain
 
 " Default directory (pre)viewer
