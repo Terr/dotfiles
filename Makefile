@@ -121,7 +121,7 @@ $(TMUX): $(GCC)
 	./autogen.sh
 	./configure 
 	make -j${NPROC}
-	sudo make install
+	sudo make install || su -c 'make install'
 	cd -
 	rm -rf ${TMPDIR}
 
