@@ -35,6 +35,8 @@ TMUX := /usr/local/bin/tmux
 VIU := $(CARGO_BIN)/viu
 ZSH_SYNTAX_HIGHLIGHTING := $(HOME)/bin/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
+.PHONY: submodules
+
 all: submodules \
 	$(BAT) \
 	$(CARGO) \
@@ -49,7 +51,6 @@ all: submodules \
 	$(VIU) \
 	$(ZSH_SYNTAX_HIGHLIGHTING)
 
-.PHONY:
 submodules:
 	git submodule update --init
 
