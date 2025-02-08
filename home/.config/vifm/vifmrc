@@ -529,6 +529,9 @@ elseif executable('xsel')
                 \ echo -n %c:p | xsel --clipboard --input %i<cr>
 endif
 
+" Starts a "cd" prompt, as if selecting the path textbox in a GUI file explorer
+nmap <C-l> :cd<Space>
+
 " Mappings for faster renaming
 nnoremap I cw<c-a>
 nnoremap cc cw<c-u>
