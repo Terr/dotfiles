@@ -395,6 +395,13 @@ globalkeys = gears.table.join(
         end,
         {description = "open vifm file manager", group = "launcher"}),
 
+    -- Note taking / journal
+    awful.key({ modkey, }, "j",
+        function ()
+            awful.spawn("firejail obsidian --no-sandbox")
+        end,
+        {description = "open Obsidian", group = "launcher"}),
+
     awful.key({ modkey, }, "space",
         function ()
             awful.spawn([[
