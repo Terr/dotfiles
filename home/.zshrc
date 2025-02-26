@@ -70,6 +70,8 @@ alias gsl="git stash list"
 
 ## Python poetry
 alias pt="poetry"
+### Poetry 2.0 doesn't come with a "shell" command by default anymore
+alias pts='$(poetry env activate)'
 
 ## ripgrep aliases
 alias rg="rg --pretty"
