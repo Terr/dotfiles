@@ -269,7 +269,7 @@ filetype *.jpg,*.jpeg,*.png,*.webp,*.xpm
     \ {View EXIF metadata}
     \ !!exiv2 print %c,
     \ {Remove EXIF metadata}
-    \ exiv2 rm %c
+    \ exiv2 rm %f
 
 fileviewer *.jpg,*.jpeg,*.png,*.gif,*.webp,*.bmp,*.pcx,*.xpm
     \ bash -c "COLORTERM=ansi256 viu --blocks --static --width 74 %c"
@@ -439,8 +439,6 @@ filextype */
 filetype *.mp3,*.flac,*.ogg,*.opus
     \ {Enqueue in vlc}
     \ vlc --one-instance --playlist-enqueue %f 2>/dev/null &
-
-" filetype *.png,*.jpg,*.jpeg,*.bmp,*.gif,*.pcx
 
 filetype *,.*
     \ {File info}
