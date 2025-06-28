@@ -177,6 +177,13 @@ command! reload :write | restart
 " You can also add %CLEAR if you want to clear screen before running FUSE
 " program.
 
+" Mounting of Zip files (more options later on)
+" Placed here at the top because it's a better default option than any
+" standard zip "Open" action
+filetype *.zip
+    \ {Mount with fuse-zip}
+    \ FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR,
+
 " Standard "open" action for Linux and MacOS
 " Using sh (or bash) is necessary for vifm to detect the command as 'present'
 filextype *
@@ -363,10 +370,6 @@ filetype *.rar
     \ {List files}
     \ unrar l
 fileviewer *.rar unrar l
-
-filetype *.zip
-    \ {Mount with fuse-zip}
-    \ FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR,
 
 filetype *.7z,*.zip,*.arj,*.cab,*.jar,*.war,*.ear,*.oxt,*.lha
        \ {List files}
