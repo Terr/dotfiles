@@ -65,13 +65,11 @@ set vimhelp
 
 set norunexec
 
-" Selected color scheme
-
-" colorscheme Default
 colorscheme solarized-dark
 
 highlight BrokenLink cterm=reverse
 highlight Executable ctermfg=Orange1 cterm=bold
+highlight Selected cterm=reverse
 highlight User1 ctermbg=default ctermfg=Blue cterm=bold
 highlight User2 ctermbg=default ctermfg=LightBlack cterm=bold
 
