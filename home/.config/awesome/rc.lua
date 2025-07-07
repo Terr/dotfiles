@@ -168,8 +168,14 @@ local function set_wallpaper(s)
 end
 
 -- Settings for awesome-switcher
-switcher.settings.preview_box_bg = "#555555aa"                                      -- background color
-switcher.settings.preview_box_title_font = {"JetBrains Mono", "italic", "normal"}   -- the font for cairo
+switcher.settings.preview_box_delay = 100
+--- the font for cairo
+switcher.settings.preview_box_title_font = {"JetBrains Mono", "italic", "normal"}
+switcher.settings.preview_box_title_font_size_factor = 1.0
+switcher.settings.preview_box_title_color = {1, 1, 1, 1}
+--- background color
+switcher.settings.preview_box_bg = "#555555ee"
+switcher.settings.preview_box_border = "#555555aa"
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
