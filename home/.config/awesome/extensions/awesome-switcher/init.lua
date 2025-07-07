@@ -164,9 +164,9 @@ end
 
 function _M.createPreviewText(client)
 	if client.class then
-		return " - " .. client.class
+		return " " .. client.class
 	else
-		return " - " .. client.name
+		return " " .. client.name
 	end
 end
 
