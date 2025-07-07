@@ -258,21 +258,8 @@ function _M.preview()
 	-- create a list that holds the clients to preview, from left to right
 	local leftRightTab = {}
 	local leftRightTabToAltTabIndex = {} -- save mapping from leftRightTab to altTabTable as well
-	local nLeft
-	local nRight
-	if #_M.altTabTable == 2 then
-		nLeft = 0
-		nRight = 2
-	else
-		nLeft = math.floor(#_M.altTabTable / 2)
-		nRight = math.ceil(#_M.altTabTable / 2)
-	end
 
-	for i = 1, nLeft do
-		table.insert(leftRightTab, _M.altTabTable[#_M.altTabTable - nLeft + i].client)
-		table.insert(leftRightTabToAltTabIndex, #_M.altTabTable - nLeft + i)
-	end
-	for i = 1, nRight do
+	for i = 1, #_M.altTabTable do
 		table.insert(leftRightTab, _M.altTabTable[i].client)
 		table.insert(leftRightTabToAltTabIndex, i)
 	end
@@ -322,6 +309,7 @@ function _M.preview()
 				local a = 0.8
 				local overlay = 0.6
 				local fontSize = smallFont
+				-- Enlarge the thumbnail of the selected client, and remove transparency
 				if c == _M.altTabTable[_M.altTabIndex].client then
 					a = 0.9
 					overlay = 0
@@ -398,7 +386,7 @@ function _M.preview()
 				-- Overlays
 				cr:scale(1/sx, 1/sy)
 				cr:translate(-tx, -ty)
-				cr:set_source_rgba(0,0,0,overlay)
+				cr:set_source_rgba(0, 0, 0, overlay)
 				cr:rectangle(tx, ty, sx * cg.width, sy * cg.height)
 				cr:fill()
 			end
@@ -510,7 +498,7 @@ function _M.switch(dir, mod_key1, release_key, mod_key2, key_switch)
 					end
 
 					keygrabber.stop()
-				
+
 				elseif key == key_switch and event == "press" then
 					if gears.table.hasitem(mod, mod_key2) then
 						-- Move to previous client on Shift-Tab
