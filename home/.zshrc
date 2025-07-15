@@ -257,7 +257,7 @@ source ~/.zsh/themes/nicoulaj-modifaj.zsh-theme
 [ -s "$HOME/.tmuxinator/scripts/tmuxinator" ] && source "$HOME/.tmuxinator/scripts/tmuxinator"
 
 # fzf
-[ -f ~/.fzf.zsh  ] && source ~/.fzf.zsh
+[ -f "$HOME/bin/fzf"  ] && source <("$HOME/bin/fzf" --zsh)
 
 # fasd
 [ -f  "$HOME"/bin/fasd ] && eval "$($HOME/bin/fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install)"

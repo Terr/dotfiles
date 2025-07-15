@@ -26,6 +26,7 @@ CARGO := $(CARGO_BIN)/cargo
 FASD := $(HOME)/bin/fasd
 FD := $(CARGO_BIN)/fd
 FSELECT := $(CARGO_BIN)/fselect
+FZF := $(HOME)/bin/fzf
 GCC := /usr/bin/gcc
 HEXYL := $(CARGO_BIN)/hexyl
 LS_COLORS := $(HOME)/bin/LS_COLORS
@@ -43,6 +44,7 @@ all: submodules \
 	$(FASD) \
 	$(FD) \
 	$(FSELECT) \
+	$(FZF) \
 	$(HEXYL) \
 	$(LS_COLORS) \
 	$(RIPGREP) \
@@ -64,7 +66,7 @@ $(CARGO): $(GCC)
 
 fasd: $(FASD)
 $(FASD):
-	mkdir -p $$HOME/bin
+	mkdir -p "$$HOME/bin"
 	$(WGET) -O $$HOME/bin/fasd https://raw.githubusercontent.com/whjvenyl/fasd/c35874dac5491468ed746dda05d23c560d451dfa/fasd
 	chmod u+x $$HOME/bin/fasd
 
@@ -75,6 +77,11 @@ $(FD): $(CARGO)
 fselect: $(FSELECT)
 $(FSELECT): $(CARGO)
 	$(CARGO) install --force fselect
+
+fzf: $(FZF)
+$(FZF):
+	mkdir -p "$$HOME/bin"
+	$(WGET) -O- https://github.com/junegunn/fzf/releases/download/v0.64.0/fzf-0.64.0-linux_amd64.tar.gz|tar -zx -C "$$HOME/bin" -f- fzf
 
 hexyl: $(HEXYL)
 $(HEXYL): $(CARGO)
