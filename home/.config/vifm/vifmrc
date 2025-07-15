@@ -451,7 +451,12 @@ filetype *,.*
     \ !!sha256sum %f
 
 " Text files
-fileviewer <text/*>
+"" While libmagic reports .bat files as "text/x-msdos-batch", glib (which has
+"" higher priority) does not prefix it with "text/". This and probably other
+"" file types will have to be added manually here
+"" You can check the file type as determined by vifm with Ctrl-G
+"" See: https://github.com/vifm/vifm/issues/1060
+fileviewer <text/*,application/x-bat>
     \ bat --color=always --plain
 
 " Default directory (pre)viewer
